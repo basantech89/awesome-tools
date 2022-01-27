@@ -1,0 +1,27 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"strict": true,
+		"target": "es5",
+		"allowSyntheticDefaultImports": true,
+		"downlevelIteration": true,
+		"sourceMap": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"jsx": "react",
+		"lib": ["dom", "esnext"],
+		"isolatedModules": true,
+		"skipLibCheck": true
+	},
+	"include": [
+		"packages/awesome-ui"
+	],
+	"exclude": [
+		"**/dist",
+		"node_modules",
+		"**/node_modules",
+		"**/*.spec.ts",
+		"**/__tests__",
+		"**/*.test.ts",
+	]
+}

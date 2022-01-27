@@ -1,0 +1,12 @@
+[submodule "awesome-ui"]
+	path = packages/awesome-ui
+	url = git@github.com:basantech89/awesome-ui.git
+[submodule "awesome-portfolio"]
+	path = packages/awesome-portfolio
+	url = git@github.com:basantech89/awesome-portfolio.git
+[submodule "commitizen"]
+	path = tooling/commitizen
+	url = git@github.com:basantech89/commitizen.git
+[submodule "eslint-config"]
+	path = tooling/eslint-config
+	url = git@github.com:basantech89/eslint-config.git

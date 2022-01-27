@@ -1,0 +1,12 @@
+{
+  "name": "awesome-tools",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "utilities/*",
+    "tooling/*"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
