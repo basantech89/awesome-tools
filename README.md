@@ -1,15 +1,31 @@
-# AwesomeTools
-
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
-
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+# Awesome Tools
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
-## Finish your CI setup
+## Details
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/IQzJfLBrl1)
+- This project is a monorepo managed with [Nx](https://nx.dev/?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and [Bun](https://bun.sh/) as the package manager.
 
+- Each workspace specified with `workspaces` key in `package.json` is a git submodule pointing to its own repository.
+
+- This repository uses Biome as the linter.
+
+- Commit messages should follow the Conventional Commits specification. Use the Commitizen tool configured in the repository to commit changes.
+
+- The monorepo contains multiple packages and tools located in the `packages` and `tools` directories respectively.
+
+
+## Tools
+
+- Biome plugin for Nx is used to lint the projects in the monorepo located in the `tools/biome/` directory.
+
+- Commitizen is set up to help create properly formatted commit messages according to the Conventional Commits specification located in the `tools/commitizen/` directory.
 
 ## Generate a library
 
@@ -65,26 +81,39 @@ npx nx sync:check
 
 [Learn more about nx sync](https://nx.dev/reference/nx-commands#sync)
 
+## Contributors ✨
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
-## Install Nx Console
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/basantech89"><img src="https://avatars.githubusercontent.com/u/30287271?v=4?s=100" width="100px;" alt="Basant Soni"/><br /><sub><b>Basant Soni</b></sub></a><br /><a href="https://github.com/basantech89/awesome-tools/issues?q=author%3Abasantech89" title="Bug reports">🐛</a> <a href="https://github.com/basantech89/awesome-tools/commits?author=basantech89" title="Code">💻</a> <a href="#infra-basantech89" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/basantech89/awesome-tools/commits?author=basantech89" title="Documentation">📖</a> <a href="#plugin-basantech89" title="Plugin/utility libraries">🔌</a> <a href="#tool-basantech89" title="Tools">🔧</a> <a href="https://github.com/basantech89/awesome-tools/commits?author=basantech89" title="Tests">⚠️</a> <a href="#maintenance-basantech89" title="Maintenance">🚧</a></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td align="center" size="13px" colspan="7">
+        <img src="https://raw.githubusercontent.com/all-contributors/all-contributors-cli/1b8533af435da9854653492b1327a23a4dbd0a10/assets/logo-small.svg">
+          <a href="https://all-contributors.js.org/docs/en/bot/usage">Add your contributions</a>
+        </img>
+      </td>
+    </tr>
+  </tfoot>
+</table>
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

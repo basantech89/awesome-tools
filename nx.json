@@ -1,32 +1,39 @@
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
-    "production": [
-      "default"
-    ],
-    "sharedGlobals": [
-      "{workspaceRoot}/.github/workflows/ci.yml"
-    ]
-  },
-  "nxCloudId": "69209a7005f6bb4f5f3fef28",
-  "plugins": [
-    {
-      "plugin": "@nx/js/typescript",
-      "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        },
-        "build": {
-          "targetName": "build",
-          "configName": "tsconfig.lib.json",
-          "buildDepsName": "build-deps",
-          "watchDepsName": "watch-deps"
-        }
-      }
-    }
-  ]
+	"$schema": "./node_modules/nx/schemas/nx-schema.json",
+	"namedInputs": {
+		"default": ["{projectRoot}/**/*", "sharedGlobals"],
+		"production": ["default"],
+		"sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
+	},
+	"nxCloudId": "69209a7005f6bb4f5f3fef28",
+	"plugins": [
+		"@awesome-tools/biome",
+		{
+			"plugin": "@nx/js/typescript",
+			"options": {
+				"typecheck": {
+					"targetName": "typecheck"
+				},
+				"build": {
+					"targetName": "build",
+					"configName": "tsconfig.lib.json",
+					"buildDepsName": "build-deps",
+					"watchDepsName": "watch-deps"
+				}
+			}
+		}
+	],
+	"release": {
+		"projectsRelationship": "independent",
+		"version": {
+			"preVersionCommand": "npx nx run-many -t build"
+		}
+	},
+	"targetDefaults": {
+		"@nx/js:tsc": {
+			"cache": true,
+			"dependsOn": ["^build"],
+			"inputs": ["production", "^production"]
+		}
+	}
 }

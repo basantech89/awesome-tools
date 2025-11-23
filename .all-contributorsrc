@@ -1,0 +1,32 @@
+{
+  "projectName": "@awesome-tools/biome",
+  "projectOwner": "basantech89",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "tools/biome/README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "gitmoji",
+  "contributors": [
+    {
+      "login": "basantech89",
+      "name": "Basant Soni",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30287271?v=4",
+      "profile": "https://github.com/basantech89",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "infra",
+        "maintenance",
+        "plugin",
+        "tool",
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": true
+}

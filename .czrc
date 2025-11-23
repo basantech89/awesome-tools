@@ -1,0 +1,105 @@
+{
+	"allowCustomScopes": true,
+	"allowEmptyScope": false,
+	"allowBreakingChanges": ["feat", "fix"],
+	"subjectLimit": 200,
+	"useEmoji": true,
+	"emojiAlign": "left",
+	"types": [
+		{
+			"value": "feat",
+			"name": "🎉 feat:\tAdding a new feature",
+			"emoji": "🎉"
+		},
+		{
+			"value": "fix",
+			"name": "🐛 fix:\tFixing a bug",
+			"emoji": "🐛"
+		},
+		{
+			"value": "hotfix",
+			"name": "🚑 hotfix:\tCritical hotfix",
+			"emoji": "🚑"
+		},
+		{
+			"value": "docs",
+			"name": "📝 docs:\tAdd or update documentation",
+			"emoji": "📝"
+		},
+		{
+			"value": "style",
+			"name": "💄 style:\tAdd or update styles, ui or ux",
+			"emoji": "💄"
+		},
+		{
+			"value": "refactor",
+			"name": "♻️ refactor:\tCode change that neither fixes a bug nor adds a feature",
+			"emoji": "♻️"
+		},
+		{
+			"value": "perf",
+			"name": "⚡️perf:\tCode change that improves performance",
+			"emoji": "⚡️"
+		},
+		{
+			"value": "test",
+			"name": "✅ test:\tAdding tests cases",
+			"emoji": "✅"
+		},
+		{
+			"value": "chore",
+			"name": "🚚 chore:\tChanges to the build process or auxiliary tools\n\t\tand libraries such as documentation generation",
+			"emoji": "🚚"
+		},
+		{
+			"value": "revert",
+			"name": "⏪️revert:\tRevert to a commit",
+			"emoji": "⏪️"
+		},
+		{
+			"value": "wip",
+			"name": "🚧 wip:\tWork in progress",
+			"emoji": "🚧"
+		},
+		{
+			"value": "build",
+			"name": "👷 build:\tAdd or update regards to build process",
+			"emoji": "👷"
+		},
+		{
+			"value": "ci",
+			"name": "💚 ci:\tFixing CI build",
+			"emoji": "💚"
+		},
+		{
+			"value": "security",
+			"name": "🔒 security:\tFixing security issues",
+			"emoji": "🔒"
+		},
+		{
+			"value": "init",
+			"name": "✨ init:\tInitial commit",
+			"emoji": "✨"
+		}
+	],
+	"scopes": [
+		{
+			"name": "ui"
+		},
+		{
+			"name": "ci"
+		},
+		{
+			"name": "test"
+		},
+		{
+			"name": "core"
+		},
+		{
+			"name": "tool"
+		},
+		{
+			"name": "backend"
+		}
+	]
+}
