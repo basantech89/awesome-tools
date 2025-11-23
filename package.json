@@ -1,20 +1,61 @@
 {
-  "name": "@awesome-tools/source",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {},
-  "private": true,
-  "dependencies": {},
-  "devDependencies": {
-    "@nx/js": "22.1.0",
-    "@swc-node/register": "~1.9.1",
-    "@swc/core": "~1.5.7",
-    "@swc/helpers": "~0.5.11",
-    "nx": "22.1.0",
-    "tslib": "^2.3.0",
-    "typescript": "~5.9.2"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+	"name": "@awesome-tools/source",
+	"version": "0.0.0",
+	"license": "MIT",
+	"scripts": {
+		"prepare": "husky",
+		"contributors:init": "all-contributors init",
+		"contributors:add": "all-contributors add",
+		"contributors:generate": "all-contributors generate"
+	},
+	"private": true,
+	"type": "module",
+	"dependencies": {
+		"@nx/devkit": "22.1.1"
+	},
+	"devDependencies": {
+		"@awesome-tools/biome": "workspace:*",
+		"@awesome-tools/commitizen": "workspace:*",
+		"@biomejs/biome": "^2.3.7",
+		"@commitlint/cli": "^20.1.0",
+		"@commitlint/config-conventional": "^20.0.0",
+		"@commitlint/types": "^20.0.0",
+		"@nx/jest": "22.1.1",
+		"@nx/js": "22.1.1",
+		"@nx/plugin": "^22.1.1",
+		"@nx/react": "^22.1.1",
+		"@swc-node/register": "~1.9.2",
+		"@swc/cli": "~0.6.0",
+		"@swc/core": "~1.5.29",
+		"@swc/helpers": "~0.5.17",
+		"@types/node": "20.19.9",
+		"all-contributors-cli": "^6.26.1",
+		"commitlint-config-gitmoji": "^2.3.1",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.7",
+		"nx": "22.1.0",
+		"tslib": "^2.8.1",
+		"typescript": "~5.9.3",
+		"verdaccio": "^6.0.5"
+	},
+	"lint-staged": {
+		"*": "nx lint"
+	},
+	"workspaces": [
+		"packages/*",
+		"tools/*"
+	],
+	"nx": {
+		"includedScripts": [],
+		"targets": {
+			"local-registry": {
+				"executor": "@nx/js:verdaccio",
+				"options": {
+					"port": 4873,
+					"config": ".verdaccio/config.yml",
+					"storage": "tmp/local-registry/storage"
+				}
+			}
+		}
+	}
 }
