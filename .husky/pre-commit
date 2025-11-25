@@ -1,1 +1,15 @@
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+DEFAULT_BRANCHES="main|dev|stage|qa|release|fix|hotfix"
+DEFAULT_SCOPES="backend|ui|api"
+
+#https://regex101.com/r/5poldO/1
+BRANCH_REGEX="^((${DEFAULT_BRANCHES})|([a-z]{2,}|dev|release|stage)(\/(${DEFAULT_SCOPES}))?\/[a-z0-9]+)$"
+
+if ! [[ $BRANCH =~ $BRANCH_REGEX ]]; then
+  echo "Your commit was rejected due to branch naming convention."
+  echo "Please rename your branch, e.g. your_initials/feature-name"
+  exit 1
+fi
+
 nx lint
