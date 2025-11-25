@@ -1,7 +1,15 @@
-# Awesome Tools
+# Awesome Tools for everyone 🚀
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+[![CI](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml/badge.svg)](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml)
+[![License: Apache 2](https://img.shields.io/badge/License-Apache2-blue.svg)](https://opensource.org/license/apache-2-0)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Code of Conduct](https://img.shields.io/badge/code-of%20conduct-green.svg)](https://publiclab.org/conduct)
+
 
 [Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
@@ -9,11 +17,11 @@
 
 - This project is a monorepo managed with [Nx](https://nx.dev/?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and [Bun](https://bun.sh/) as the package manager.
 
-- Each workspace specified with `workspaces` key in `package.json` is a git submodule pointing to its own repository.
+- Workspaces are specified by the `workspaces` key in `package.json`.
 
 - This repository uses Biome as the linter.
 
-- Commit messages should follow the Conventional Commits specification. Use the Commitizen tool configured in the repository to commit changes.
+- Commit messages should follow the Conventional Commits specification. Use the Commitizen tool configured in the repository to commit changes. Execute `bun cz` to create a commit.
 
 - The monorepo contains multiple packages and tools located in the `packages` and `tools` directories respectively.
 

@@ -1,6 +1,0 @@
-[submodule "tools/commitizen"]
-	path = tools/commitizen
-	url = git@github.com:basantech89/commitizen.git
-[submodule "tools/biome"]
-	path = tools/biome
-	url = git@github.com:basantech89/biome-config.git

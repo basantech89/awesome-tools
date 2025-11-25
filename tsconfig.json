@@ -5,6 +5,15 @@
   "references": [
     {
       "path": "./tools/biome"
+    },
+    {
+      "path": "./tools/commitizen"
+    },
+    {
+      "path": "./packages/ui"
+    },
+    {
+      "path": "./packages/utils"
     }
   ]
 }

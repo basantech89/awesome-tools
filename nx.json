@@ -2,10 +2,18 @@
 	"$schema": "./node_modules/nx/schemas/nx-schema.json",
 	"namedInputs": {
 		"default": ["{projectRoot}/**/*", "sharedGlobals"],
-		"production": ["default"],
+		"production": [
+			"default",
+			"!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+			"!{projectRoot}/tsconfig.spec.json",
+			"!{projectRoot}/src/test-setup.[jt]s",
+			"!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+			"!{projectRoot}/.storybook/**/*",
+			"!{projectRoot}/tsconfig.storybook.json"
+		],
 		"sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
 	},
-	"nxCloudId": "69209a7005f6bb4f5f3fef28",
+	"nxCloudId": "692a5a29de0ff2ccb2c03652",
 	"plugins": [
 		"@awesome-tools/biome",
 		{
@@ -21,19 +29,77 @@
 					"watchDepsName": "watch-deps"
 				}
 			}
+		},
+		{
+			"plugin": "@nx/vite/plugin",
+			"options": {
+				"buildTargetName": "build",
+				"testTargetName": "test",
+				"serveTargetName": "serve",
+				"devTargetName": "dev",
+				"previewTargetName": "preview",
+				"serveStaticTargetName": "serve-static",
+				"typecheckTargetName": "typecheck",
+				"buildDepsTargetName": "build-deps",
+				"watchDepsTargetName": "watch-deps"
+			}
+		},
+		{
+			"plugin": "@nx/storybook/plugin",
+			"options": {
+				"serveStorybookTargetName": "storybook",
+				"buildStorybookTargetName": "build-storybook",
+				"testStorybookTargetName": "test-storybook",
+				"staticStorybookTargetName": "static-storybook",
+				"buildDepsTargetName": "build-deps",
+				"watchDepsTargetName": "watch-deps"
+			}
+		},
+		{
+			"plugin": "@nx/vitest",
+			"options": {
+				"testTargetName": "vitest:test",
+				"ciTargetName": "test-ci"
+			}
 		}
 	],
-	"release": {
-		"projectsRelationship": "independent",
-		"version": {
-			"preVersionCommand": "npx nx run-many -t build"
-		}
-	},
 	"targetDefaults": {
 		"@nx/js:tsc": {
 			"cache": true,
 			"dependsOn": ["^build"],
 			"inputs": ["production", "^production"]
+		},
+		"test": {
+			"dependsOn": ["^build"]
+		}
+	},
+	"release": {
+		"projectsRelationship": "independent",
+		"releaseTag": {
+			"requireSemver": true
+		},
+		"version": {
+			"conventionalCommits": true
+		},
+		"git": {
+			"commitMessage": "🚚 chore(release): publish version",
+			"commitArgs": [
+				"-m",
+				"Signed-off-by: Basant Soni <basantech89@gmail.com>"
+			],
+			"tag": true
+		},
+		"changelog": {
+			"projectChangelogs": {
+				"createRelease": "github"
+			}
+		}
+	},
+	"generators": {
+		"@nx/react": {
+			"library": {
+				"unitTestRunner": "none"
+			}
 		}
 	}
 }

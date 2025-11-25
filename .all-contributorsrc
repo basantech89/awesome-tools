@@ -1,10 +1,10 @@
 {
-  "projectName": "@awesome-tools/biome",
+  "projectName": "@awesome-tools/ui",
   "projectOwner": "basantech89",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
-    "tools/biome/README.md"
+    "packages/ui/README.md"
   ],
   "imageSize": 100,
   "commit": false,
