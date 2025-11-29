@@ -1,7 +1,10 @@
 {
 	"$schema": "./node_modules/nx/schemas/nx-schema.json",
 	"namedInputs": {
-		"default": ["{projectRoot}/**/*", "sharedGlobals"],
+		"default": [
+			"{projectRoot}/**/*",
+			"sharedGlobals"
+		],
 		"production": [
 			"default",
 			"!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -11,9 +14,11 @@
 			"!{projectRoot}/.storybook/**/*",
 			"!{projectRoot}/tsconfig.storybook.json"
 		],
-		"sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
+		"sharedGlobals": [
+			"{workspaceRoot}/.github/workflows/ci.yml"
+		]
 	},
-	"nxCloudId": "69209a7005f6bb4f5f3fef28",
+	"nxCloudId": "692a5a29de0ff2ccb2c03652",
 	"plugins": [
 		"@awesome-tools/biome",
 		{
@@ -66,11 +71,18 @@
 	"targetDefaults": {
 		"@nx/js:tsc": {
 			"cache": true,
-			"dependsOn": ["^build"],
-			"inputs": ["production", "^production"]
+			"dependsOn": [
+				"^build"
+			],
+			"inputs": [
+				"production",
+				"^production"
+			]
 		},
 		"test": {
-			"dependsOn": ["^build"]
+			"dependsOn": [
+				"^build"
+			]
 		}
 	},
 	"release": {
