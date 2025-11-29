@@ -1,10 +1,10 @@
-# Commitizen for multi/mono repos 🔥
+# Commitizen for multi or mono repo projects 🔥
 
 [![CI](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml/badge.svg)](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml)
 
 ## Table of Contents
 
-- [Commitizen for multi/mono repos 🔥](#commitizen-for-multimono-repos-)
+- [Commitizen for multi or mono repo projects 🔥](#commitizen-for-multi-or-mono-repo-projects-)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)

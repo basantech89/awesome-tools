@@ -1,80 +1,80 @@
 {
-  "name": "@awesome-tools/biome",
-  "version": "0.1.0",
-  "description": "NX plugin and config for biome.",
-  "main": "./dist/index.js",
-  "author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/basantech89/biome-config.git"
-  },
-  "exports": {
-    "./config": "./biome.json",
-    "./package.json": "./package.json",
-    ".": {
-      "@awesome-tools/source": "./src/index.ts",
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
-  },
-  "files": [
-    "dist",
-    "!**/*.tsbuildinfo"
-  ],
-  "nx": {
-    "name": "biome",
-    "targets": {
-      "build": {
-        "executor": "@nx/js:tsc",
-        "outputs": [
-          "{options.outputPath}"
-        ],
-        "options": {
-          "outputPath": "tools/biome/dist",
-          "main": "tools/biome/src/index.ts",
-          "tsConfig": "tools/biome/tsconfig.lib.json",
-          "rootDir": "tools/biome/src",
-          "generatePackageJson": false,
-          "assets": [
-            {
-              "input": "./tools/biome/src",
-              "glob": "**/!(*.ts)",
-              "output": "."
-            },
-            {
-              "input": "./tools/biome/src",
-              "glob": "**/*.d.ts",
-              "output": "."
-            }
-          ]
-        }
-      }
-    },
-    "tags": [
-      "lint",
-      "biome",
-      "type:lint",
-      "scope:shared"
-    ]
-  },
-  "dependencies": {
-    "@biomejs/biome": "^2.3.8",
-    "tslib": "^2.3.0"
-  },
-  "keywords": [
-    "lint",
-    "biome",
-    "awesome-tools"
-  ],
-  "bugs": {
-    "url": "https://github.com/basantech89/biome-config/issues"
-  },
-  "homepage": "https://github.com/basantech89/biome-config#readme",
-  "publishConfig": {
-    "access": "public"
-  },
-  "license": "ISC"
+	"name": "@awesome-tools/biome",
+	"version": "0.1.0",
+	"description": "NX plugin and config for biome for everyone 🚨",
+	"main": "./dist/index.js",
+	"author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/basantech89/awesome-tools.git"
+	},
+	"exports": {
+		"./config": "./biome.json",
+		"./package.json": "./package.json",
+		".": {
+			"@awesome-tools/source": "./src/index.ts",
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"default": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"!**/*.tsbuildinfo"
+	],
+	"nx": {
+		"name": "biome",
+		"targets": {
+			"build": {
+				"executor": "@nx/js:tsc",
+				"outputs": [
+					"{options.outputPath}"
+				],
+				"options": {
+					"outputPath": "tools/biome/dist",
+					"main": "tools/biome/src/index.ts",
+					"tsConfig": "tools/biome/tsconfig.lib.json",
+					"rootDir": "tools/biome/src",
+					"generatePackageJson": false,
+					"assets": [
+						{
+							"input": "./tools/biome/src",
+							"glob": "**/!(*.ts)",
+							"output": "."
+						},
+						{
+							"input": "./tools/biome/src",
+							"glob": "**/*.d.ts",
+							"output": "."
+						}
+					]
+				}
+			}
+		},
+		"tags": [
+			"lint",
+			"biome",
+			"type:lint",
+			"scope:shared"
+		]
+	},
+	"dependencies": {
+		"@biomejs/biome": "^2.3.8",
+		"tslib": "^2.3.0"
+	},
+	"keywords": [
+		"lint",
+		"biome",
+		"awesome-tools"
+	],
+	"bugs": {
+		"url": "https://github.com/basantech89/awesome-tools/issues"
+	},
+	"homepage": "https://github.com/basantech89/awesome-tools#readme",
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "ISC"
 }

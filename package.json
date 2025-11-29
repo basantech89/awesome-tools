@@ -12,6 +12,19 @@
 	},
 	"private": true,
 	"type": "module",
+	"description": "Awesome tools for everyone 🚀",
+	"author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/basantech89/awesome-tools.git"
+	},
+	"keywords": [
+		"awesome-tools"
+	],
+	"bugs": {
+		"url": "https://github.com/basantech89/awesome-tools/issues"
+	},
+	"homepage": "https://github.com/basantech89/awesome-tools#readme",
 	"dependencies": {
 		"@nx/devkit": "22.1.1",
 		"react": "^19.0.0",

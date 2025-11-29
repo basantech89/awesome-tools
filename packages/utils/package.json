@@ -1,32 +1,52 @@
 {
-  "name": "@awesome-tools/utils",
-  "version": "0.1.0",
-  "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "@awesome-tools/source": "./src/index.ts",
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
-  },
-  "files": [
-    "dist",
-    "!**/*.tsbuildinfo"
-  ],
-  "nx": {
-    "name": "utils",
-    "tags": [
-      "utils",
-      "type:utils",
-      "scope:shared"
-    ]
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  }
+	"name": "@awesome-tools/utils",
+	"description": "Common utilities for everyone 🚚",
+	"author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
+	"version": "0.1.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/basantech89/awesome-tools.git"
+	},
+	"keywords": [
+		"utils",
+		"awesome-utils",
+		"utilities",
+		"awesome-tools"
+	],
+	"bugs": {
+		"url": "https://github.com/basantech89/awesome-tools/issues"
+	},
+	"license": "ISC",
+	"homepage": "https://github.com/basantech89/awesome-tools#readme",
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		"./package.json": "./package.json",
+		".": {
+			"@awesome-tools/source": "./src/index.ts",
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"default": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"!**/*.tsbuildinfo"
+	],
+	"nx": {
+		"name": "utils",
+		"tags": [
+			"utils",
+			"type:utils",
+			"scope:shared"
+		]
+	},
+	"dependencies": {
+		"tslib": "^2.3.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }

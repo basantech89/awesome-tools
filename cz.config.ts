@@ -1,4 +1,7 @@
 import { execSync } from 'node:child_process'
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { definePrompt } from 'cz-git'
 
 function addSignedOffByTrailer(commitMessage: string) {
@@ -25,15 +28,15 @@ function addSignedOffByTrailer(commitMessage: string) {
 	}
 }
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const packages = fs.readdirSync(path.resolve(__dirname, 'packages'))
+const tools = fs.readdirSync(path.resolve(__dirname, 'tools'))
+
 export const scopes = [
 	{
 		name: 'release',
-	},
-	{
-		name: 'ui',
-	},
-	{
-		name: 'utils',
 	},
 	{
 		name: 'ci',
@@ -50,6 +53,7 @@ export const scopes = [
 	{
 		name: 'backend',
 	},
+	...[...packages, ...tools].map(name => ({ name })),
 ]
 
 export const types = [

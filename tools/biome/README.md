@@ -1,10 +1,10 @@
-# Biome NX Plugin 🚨
+# Biome nx plugin and config for everyone 🚨
 
 [![CI](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml/badge.svg)](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml)
 
 ## Table of Contents
 
-- [Biome NX Plugin 🚨](#biome-nx-plugin-)
+- [Biome nx plugin and config for everyone 🚨](#biome-nx-plugin-and-config-for-everyone-)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
