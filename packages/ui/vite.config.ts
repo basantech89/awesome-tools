@@ -6,7 +6,6 @@ import react from '@vitejs/plugin-react-swc'
 import dts from 'vite-plugin-dts'
 import { defineConfig } from 'vitest/config'
 
-
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
 	root: import.meta.dirname,

@@ -29,7 +29,8 @@
     "src/**/*.stories.mdx",
     ".storybook/*.js",
     ".storybook/*.ts",
-    "./global.d.ts"
+    "./global.d.ts",
+    ".storybook/preview.ts"
   ],
   "references": [
     {

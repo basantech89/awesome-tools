@@ -5,7 +5,6 @@ import '../src/index.css'
 const preview: Preview = {
 	parameters: {
 		layout: 'centered',
-
 		viewport: {
 			options: {
 				...MINIMAL_VIEWPORTS,

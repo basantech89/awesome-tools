@@ -23,7 +23,9 @@
 			"recommended": true,
 			"nursery": {
 				"useSortedClasses": {
-					"options": {},
+					"options": {
+						"functions": ["cn", "clsx", "cva", "tv"]
+					},
 					"level": "error",
 					"fix": "safe"
 				}
