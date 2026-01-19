@@ -1,0 +1,862 @@
+[07:28:43.115] [INFO] Storybook upgrade - v10.1.11
+[07:28:43.116] [INFO] detect-projects-spinner-start: Detecting projects...
+[07:28:43.117] [DEBUG] Finding Storybook projects...
+[07:28:43.355] [DEBUG] Found 1 Storybook projects
+[07:28:43.356] [INFO] detect-projects-spinner: Detecting projects: 1 projects
+[07:28:43.356] [DEBUG] Getting Storybook data...
+[07:28:43.356] [DEBUG] Getting Storybook info...
+[07:28:43.410] [DEBUG] Loading main config...
+[07:28:43.410] [DEBUG] Getting stories paths...
+[07:28:43.417] [DEBUG] Getting package manager...
+[07:28:43.739] [DEBUG] Getting package.json info for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:28:43.739] [DEBUG] Getting Storybook version...
+[07:28:43.739] [DEBUG] /packages/ui/.storybook - Validating before version... 10.1.9
+[07:28:43.739] [DEBUG] /packages/ui/.storybook - Validating upgrade compatibility...
+[07:28:43.739] [DEBUG] /packages/ui/.storybook - Fetching NPM version information...
+[07:28:43.739] [DEBUG] Getting CLI versions from NPM for storybook...
+[07:28:43.739] [DEBUG] Executing command: npm info storybook version
+[07:28:43.741] [DEBUG] Getting CLI versions from NPM for storybook@next...
+[07:28:43.741] [DEBUG] Executing command: npm info storybook@next version
+[07:28:44.184] [DEBUG] /packages/ui/.storybook - Evaluating blockers...
+[07:28:44.188] [DEBUG] Getting installed version for @storybook/experimental-addon-test...
+[07:28:44.189] [DEBUG] Executing command: npm ls --json --depth=99
+[07:28:59.785] [DEBUG] Executing command: npm ls --json --depth=0
+[07:29:02.674] [DEBUG] An issue occurred while trying to find dependencies metadata using npm: Error: Command failed with exit code 1: npm ls --json --depth=0
+{
+  "version": "0.0.0",
+  "name": "@awesome-tools/source",
+  "problems": [
+    "missing: @awesome-tools/ui@file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui, required by @awesome-tools/source@0.0.0",
+    "missing: @awesome-tools/utils@file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/utils, required by @awesome-tools/source@0.0.0"
+  ],
+  "dependencies": {
+    "@awesome-tools/biome": {
+      "version": "0.1.0",
+      "resolved": "file:../../tools/biome",
+      "overridden": false,
+      "dependencies": {
+        "@biomejs/biome": {
+          "version": "2.3.8",
+          "resolved": "file:../../../../node_modules/.bun/@biomejs+biome@2.3.8/node_modules/@biomejs/biome",
+          "overridden": false
+        },
+        "tslib": {
+          "version": "2.8.1",
+          "resolved": "file:../../../node_modules/.bun/tslib@2.8.1/node_modules/tslib",
+          "overridden": false
+        }
+      }
+    },
+    "@awesome-tools/commitizen": {
+      "version": "1.2.0",
+      "resolved": "file:../../tools/commitizen",
+      "overridden": false,
+      "dependencies": {
+        "commitizen": {
+          "version": "4.3.1",
+          "resolved": "file:../../../node_modules/.bun/commitizen@4.3.1+ab2bc74d4a8b20fb/node_modules/commitizen",
+          "overridden": false
+        },
+        "cz-conventional-changelog": {
+          "version": "3.3.0",
+          "resolved": "file:../../../node_modules/.bun/cz-conventional-changelog@3.3.0+ab2bc74d4a8b20fb/node_modules/cz-conventional-changelog",
+          "overridden": false
+        },
+        "cz-git": {
+          "version": "1.12.0",
+          "resolved": "file:../../../node_modules/.bun/cz-git@1.12.0/node_modules/cz-git",
+          "overridden": false
+        }
+      }
+    },
+    "@awesome-tools/ui": {
+      "required": "file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui",
+      "missing": true,
+      "problems": [
+        "missing: @awesome-tools/ui@file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui, required by @awesome-tools/source@0.0.0"
+      ]
+    },
+    "@awesome-tools/utils": {
+      "missing": true,
+      "problems": [
+        "missing: @awesome-tools/utils@file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/utils, required by @awesome-tools/source@0.0.0"
+      ]
+    },
+    "@biomejs/biome": {
+      "version": "2.3.8",
+      "resolved": "file:../.bun/@biomejs+biome@2.3.8/node_modules/@biomejs/biome",
+      "overridden": false
+    },
+    "@chromatic-com/storybook": {
+      "version": "4.1.3",
+      "resolved": "file:../.bun/@chromatic-com+storybook@4.1.3+9f3b22dde761aee3/node_modules/@chromatic-com/storybook",
+      "overridden": false
+    },
+    "@commitlint/cli": {
+      "version": "20.1.0",
+      "resolved": "file:../.bun/@commitlint+cli@20.1.0+ab2bc74d4a8b20fb/node_modules/@commitlint/cli",
+      "overridden": false
+    },
+    "@commitlint/config-conventional": {
+      "version": "20.0.0",
+      "resolved": "file:../.bun/@commitlint+config-conventional@20.0.0/node_modules/@commitlint/config-conventional",
+      "overridden": false
+    },
+    "@commitlint/types": {
+      "version": "20.0.0",
+      "resolved": "file:../.bun/@commitlint+types@20.0.0/node_modules/@commitlint/types",
+      "overridden": false
+    },
+    "@nx/devkit": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+devkit@22.1.3+89ff41a60cb93b00/node_modules/@nx/devkit",
+      "overridden": false
+    },
+    "@nx/jest": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+jest@22.1.3+6e5c5331313f1c09/node_modules/@nx/jest",
+      "overridden": false
+    },
+    "@nx/js": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+js@22.1.3+1a82529e3cda0fb3/node_modules/@nx/js",
+      "overridden": false
+    },
+    "@nx/plugin": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+plugin@22.1.3+2df6720ac374119e/node_modules/@nx/plugin",
+      "overridden": false
+    },
+    "@nx/react": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+react@22.1.3+60b2e998ae54538c/node_modules/@nx/react",
+      "overridden": false
+    },
+    "@nx/storybook": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+storybook@22.1.3+f33eb22dbefd4a36/node_modules/@nx/storybook",
+      "overridden": false
+    },
+    "@nx/vite": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+vite@22.1.3+3a994af6fc143682/node_modules/@nx/vite",
+      "overridden": false
+    },
+    "@nx/vitest": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+vitest@22.1.3+3a994af6fc143682/node_modules/@nx/vitest",
+      "overridden": false
+    },
+    "@nx/web": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+web@22.1.3+1a82529e3cda0fb3/node_modules/@nx/web",
+      "overridden": false
+    },
+    "@storybook/addon-a11y": {
+      "version": "10.1.9",
+      "resolved": "file:../.bun/@storybook+addon-a11y@10.1.9+9f3b22dde761aee3/node_modules/@storybook/addon-a11y",
+      "overridden": false
+    },
+    "@storybook/addon-docs": {
+      "version": "10.1.9",
+      "resolved": "file:../.bun/@storybook+addon-docs@10.1.9+1f86703fda7714dc/node_modules/@storybook/addon-docs",
+      "overridden": false
+    },
+    "@storybook/addon-vitest": {
+      "version": "10.1.9",
+      "resolved": "file:../.bun/@storybook+addon-vitest@10.1.9+8bdf37daf567c3f9/node_modules/@storybook/addon-vitest",
+      "overridden": false
+    },
+    "@storybook/react-vite": {
+      "version": "10.1.9",
+      "resolved": "file:../.bun/@storybook+react-vite@10.1.9+84ef41cf6f98b961/node_modules/@storybook/react-vite",
+      "overridden": false
+    },
+    "@swc-node/register": {
+      "version": "1.9.2",
+      "resolved": "file:../.bun/@swc-node+register@1.9.2+5cda4b482ffef5e8/node_modules/@swc-node/register",
+      "overridden": false
+    },
+    "@swc/cli": {
+      "version": "0.6.0",
+      "resolved": "file:../.bun/@swc+cli@0.6.0+af7dbd7dbfa5dbe5/node_modules/@swc/cli",
+      "overridden": false
+    },
+    "@swc/core": {
+      "version": "1.5.29",
+      "resolved": "file:../.bun/@swc+core@1.5.29+5315289eb6d3a83d/node_modules/@swc/core",
+      "overridden": false
+    },
+    "@swc/helpers": {
+      "version": "0.5.17",
+      "resolved": "file:../.bun/@swc+helpers@0.5.17/node_modules/@swc/helpers",
+      "overridden": false
+    },
+    "@types/node": {
+      "version": "20.19.9",
+      "resolved": "file:../.bun/@types+node@20.19.9/node_modules/@types/node",
+      "overridden": false
+    },
+    "@types/react-dom": {
+      "version": "19.2.3",
+      "resolved": "file:../.bun/@types+react-dom@19.2.3+b3aeb48c1f537661/node_modules/@types/react-dom",
+      "overridden": false
+    },
+    "@types/react": {
+      "version": "19.2.7",
+      "resolved": "file:../.bun/@types+react@19.2.7/node_modules/@types/react",
+      "overridden": false
+    },
+    "@vitejs/plugin-react-swc": {
+      "version": "3.11.0",
+      "resolved": "file:../.bun/@vitejs+plugin-react-swc@3.11.0+deed3082af5cfa81/node_modules/@vitejs/plugin-react-swc",
+      "overridden": false
+    },
+    "@vitejs/plugin-react": {
+      "version": "5.1.2",
+      "resolved": "file:../.bun/@vitejs+plugin-react@5.1.2+31c22c1bcf74647f/node_modules/@vitejs/plugin-react",
+      "overridden": false
+    },
+    "@vitest/browser-playwright": {
+      "version": "4.0.14",
+      "resolved": "file:../.bun/@vitest+browser-playwright@4.0.14+819c36fbdce41820/node_modules/@vitest/browser-playwright",
+      "overridden": false
+    },
+    "@vitest/coverage-v8": {
+      "version": "4.0.14",
+      "resolved": "file:../.bun/@vitest+coverage-v8@4.0.14+050d0889dc964c97/node_modules/@vitest/coverage-v8",
+      "overridden": false
+    },
+    "@vitest/ui": {
+      "version": "4.0.14",
+      "resolved": "file:../.bun/@vitest+ui@4.0.14+7305293af06cc7d4/node_modules/@vitest/ui",
+      "overridden": false
+    },
+    "ajv": {
+      "version": "8.17.1",
+      "resolved": "file:.bun/ajv@8.17.1/node_modules/ajv",
+      "overridden": false
+    },
+    "all-contributors-cli": {
+      "version": "6.26.1",
+      "resolved": "file:.bun/all-contributors-cli@6.26.1+d56b95ac411b1cdd/node_modules/all-contributors-cli",
+      "overridden": false
+    },
+    "commitlint-config-gitmoji": {
+      "version": "2.3.1",
+      "resolved": "file:.bun/commitlint-config-gitmoji@2.3.1/node_modules/commitlint-config-gitmoji",
+      "overridden": false
+    },
+    "cz-git": {
+      "version": "1.12.0",
+      "resolved": "file:.bun/cz-git@1.12.0/node_modules/cz-git",
+      "overridden": false
+    },
+    "husky": {
+      "version": "9.1.7",
+      "resolved": "file:.bun/husky@9.1.7/node_modules/husky",
+      "overridden": false
+    },
+    "jiti": {
+      "version": "2.4.2",
+      "resolved": "file:.bun/jiti@2.4.2/node_modules/jiti",
+      "overridden": false
+    },
+    "jsdom": {
+      "version": "22.1.0",
+      "resolved": "file:.bun/jsdom@22.1.0/node_modules/jsdom",
+      "overridden": false
+    },
+    "lint-staged": {
+      "version": "16.2.7",
+      "resolved": "file:.bun/lint-staged@16.2.7/node_modules/lint-staged",
+      "overridden": false
+    },
+    "nx": {
+      "version": "22.1.3",
+      "resolved": "file:.bun/nx@22.1.3+4ca920d5ffdcb90c/node_modules/nx",
+      "overridden": false
+    },
+    "playwright": {
+      "version": "1.57.0",
+      "resolved": "file:.bun/playwright@1.57.0/node_modules/playwright",
+      "overridden": false
+    },
+    "react-aria": {
+      "version": "3.45.0",
+      "resolved": "file:.bun/react-aria@3.45.0+2b5434204782a989/node_modules/react-aria",
+      "overridden": false
+    },
+    "react-dom": {
+      "version": "19.2.0",
+      "resolved": "file:.bun/react-dom@19.2.0+2f44e903108183df/node_modules/react-dom",
+      "overridden": false
+    },
+    "react": {
+      "version": "19.2.0",
+      "resolved": "file:.bun/react@19.2.0/node_modules/react",
+      "overridden": false
+    },
+    "storybook": {
+      "version": "10.1.9",
+      "resolved": "file:.bun/storybook@10.1.9+69783f3ac9617547/node_modules/storybook",
+      "overridden": false
+    },
+    "ts-node": {
+      "version": "10.9.1",
+      "resolved": "file:.bun/ts-node@10.9.1+214f04aaeb283fa1/node_modules/ts-node",
+      "overridden": false
+    },
+    "tslib": {
+      "version": "2.8.1",
+      "resolved": "file:.bun/tslib@2.8.1/node_modules/tslib",
+      "overridden": false
+    },
+    "typescript": {
+      "version": "5.9.3",
+      "resolved": "file:.bun/typescript@5.9.3/node_modules/typescript",
+      "overridden": false
+    },
+    "verdaccio": {
+      "version": "6.2.3",
+      "resolved": "file:.bun/verdaccio@6.2.3+d56b95ac411b1cdd/node_modules/verdaccio",
+      "overridden": false
+    },
+    "vite-plugin-dts": {
+      "version": "4.5.4",
+      "resolved": "file:.bun/vite-plugin-dts@4.5.4+a1d4569e070eeb62/node_modules/vite-plugin-dts",
+      "overridden": false
+    },
+    "vite-tsconfig-paths": {
+      "version": "5.1.4",
+      "resolved": "file:.bun/vite-tsconfig-paths@5.1.4+4eb7d0de06dbdf18/node_modules/vite-tsconfig-paths",
+      "overridden": false
+    },
+    "vite": {
+      "version": "7.2.4",
+      "resolved": "file:.bun/vite@7.2.4+9c12a5fce88be3da/node_modules/vite",
+      "overridden": false
+    },
+    "vitest": {
+      "version": "4.0.14",
+      "resolved": "file:.bun/vitest@4.0.14+7305293af06cc7d4/node_modules/vitest",
+      "overridden": false
+    }
+  },
+  "error": {
+    "code": "ELSPROBLEMS",
+    "summary": "missing: @awesome-tools/ui@file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui, required by @awesome-tools/source@0.0.0\nmissing: @awesome-tools/utils@file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/utils, required by @awesome-tools/source@0.0.0",
+    "detail": ""
+  }
+}
+[07:29:02.675] [INFO] detect-projects-spinner-stop: 1 project detected
+[07:29:02.675] [DEBUG] Found 1 valid projects and 0 error projects
+[07:29:02.675] [INFO] Upgrading from [1m10.1.9[22m to [1m10.1.11[22m
+[07:29:02.677] [INFO] upgrade-dependencies-task-start: Fetching versions to update package.json files..
+[07:29:02.677] [DEBUG] Updating dependencies in /packages/ui/.storybook...
+[07:29:02.677] [INFO] upgrade-dependencies-task: /packages/ui/package.json
+/package.json
+[07:29:02.678] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:02.678] [DEBUG] {
+  "upgradedDependencies": []
+}
+[07:29:02.678] [DEBUG] {
+  "upgradedDevDependencies": []
+}
+[07:29:02.678] [DEBUG] {
+  "upgradedPeerDependencies": []
+}
+[07:29:02.678] [DEBUG] Getting package.json info for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:02.678] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:02.678] [DEBUG] Getting package.json info for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:02.678] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:02.679] [DEBUG] Getting package.json info for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:02.679] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:02.679] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:02.679] [DEBUG] Getting CLI versions from NPM for @chromatic-com/storybook...
+[07:29:02.679] [DEBUG] Executing command: npm info @chromatic-com/storybook version
+[07:29:04.112] [DEBUG] {
+  "upgradedDependencies": []
+}
+[07:29:04.112] [DEBUG] {
+  "upgradedDevDependencies": [
+    "@storybook/addon-a11y@10.1.11",
+    "@storybook/addon-docs@10.1.11",
+    "@storybook/addon-vitest@10.1.11",
+    "@storybook/react-vite@10.1.11",
+    "storybook@10.1.11",
+    "@chromatic-com/storybook@^5.0.0"
+  ]
+}
+[07:29:04.112] [DEBUG] {
+  "upgradedPeerDependencies": []
+}
+[07:29:04.112] [DEBUG] Getting package.json info for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:04.112] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:04.113] [DEBUG] Getting package.json info for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:04.113] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:04.113] [DEBUG] Getting CLI versions from NPM for @storybook/addon-a11y...
+[07:29:04.113] [DEBUG] Executing command: npm info @storybook/addon-a11y version
+[07:29:05.683] [DEBUG] Getting CLI versions from NPM for @storybook/addon-docs...
+[07:29:05.683] [DEBUG] Executing command: npm info @storybook/addon-docs version
+[07:29:06.986] [DEBUG] Getting CLI versions from NPM for @storybook/addon-vitest...
+[07:29:06.986] [DEBUG] Executing command: npm info @storybook/addon-vitest version
+[07:29:08.384] [DEBUG] Getting CLI versions from NPM for @storybook/react-vite...
+[07:29:08.384] [DEBUG] Executing command: npm info @storybook/react-vite version
+[07:29:09.476] [DEBUG] Using cached version for storybook...
+[07:29:09.476] [DEBUG] Using cached version for @chromatic-com/storybook...
+[07:29:09.477] [DEBUG] Getting package.json info for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:09.477] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:09.477] [INFO] upgrade-dependencies-task-success: Updated package versions in package.json files
+[07:29:09.477] [INFO] detect-automigrations-task-start: Detecting automigrations...
+[07:29:09.477] [DEBUG] Starting automigration collection across 1 projects and 19 fixes...
+[07:29:09.477] [INFO] detect-automigrations-task: Checking automigrations for /packages/ui/.storybook...
+[07:29:09.477] [DEBUG] Processing project: /packages/ui/.storybook
+[07:29:09.477] [DEBUG] Checking fix eslintPlugin for project /packages/ui/.storybook...
+[07:29:09.477] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:09.477] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:09.477] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:09.478] [DEBUG] Checking fix addon-mdx-gfm-remove for project /packages/ui/.storybook...
+[07:29:09.478] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:09.478] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:09.478] [DEBUG] Checking fix addon-storysource-code-panel for project /packages/ui/.storybook...
+[07:29:09.478] [DEBUG] Checking fix upgrade-storybook-related-dependencies for project /packages/ui/.storybook...
+[07:29:09.478] [DEBUG] Checking for incompatible storybook packages...
+[07:29:09.478] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:09.478] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:09.479] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:09.479] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:09.479] [DEBUG] Getting installed version for @nx/storybook...
+[07:29:09.479] [DEBUG] Executing command: npm ls --json --depth=99
+[07:29:26.245] [DEBUG] Executing command: npm ls --json --depth=0
+[07:29:28.942] [DEBUG] An issue occurred while trying to find dependencies metadata using npm: Error: Command failed with exit code 1: npm ls --json --depth=0
+{
+  "version": "0.0.0",
+  "name": "@awesome-tools/source",
+  "problems": [
+    "missing: @awesome-tools/ui@file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui, required by @awesome-tools/source@0.0.0",
+    "missing: @awesome-tools/utils@file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/utils, required by @awesome-tools/source@0.0.0",
+    "invalid: @chromatic-com/storybook@4.1.3 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@chromatic-com/storybook",
+    "invalid: @storybook/addon-a11y@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@storybook/addon-a11y",
+    "invalid: @storybook/addon-docs@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@storybook/addon-docs",
+    "invalid: @storybook/addon-vitest@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@storybook/addon-vitest",
+    "invalid: @storybook/react-vite@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@storybook/react-vite",
+    "invalid: storybook@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/storybook"
+  ],
+  "dependencies": {
+    "@awesome-tools/biome": {
+      "version": "0.1.0",
+      "resolved": "file:../../tools/biome",
+      "overridden": false,
+      "dependencies": {
+        "@biomejs/biome": {
+          "version": "2.3.8",
+          "resolved": "file:../../../../node_modules/.bun/@biomejs+biome@2.3.8/node_modules/@biomejs/biome",
+          "overridden": false
+        },
+        "tslib": {
+          "version": "2.8.1",
+          "resolved": "file:../../../node_modules/.bun/tslib@2.8.1/node_modules/tslib",
+          "overridden": false
+        }
+      }
+    },
+    "@awesome-tools/commitizen": {
+      "version": "1.2.0",
+      "resolved": "file:../../tools/commitizen",
+      "overridden": false,
+      "dependencies": {
+        "commitizen": {
+          "version": "4.3.1",
+          "resolved": "file:../../../node_modules/.bun/commitizen@4.3.1+ab2bc74d4a8b20fb/node_modules/commitizen",
+          "overridden": false
+        },
+        "cz-conventional-changelog": {
+          "version": "3.3.0",
+          "resolved": "file:../../../node_modules/.bun/cz-conventional-changelog@3.3.0+ab2bc74d4a8b20fb/node_modules/cz-conventional-changelog",
+          "overridden": false
+        },
+        "cz-git": {
+          "version": "1.12.0",
+          "resolved": "file:../../../node_modules/.bun/cz-git@1.12.0/node_modules/cz-git",
+          "overridden": false
+        }
+      }
+    },
+    "@awesome-tools/ui": {
+      "required": "file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui",
+      "missing": true,
+      "problems": [
+        "missing: @awesome-tools/ui@file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui, required by @awesome-tools/source@0.0.0"
+      ]
+    },
+    "@awesome-tools/utils": {
+      "missing": true,
+      "problems": [
+        "missing: @awesome-tools/utils@file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/utils, required by @awesome-tools/source@0.0.0"
+      ]
+    },
+    "@biomejs/biome": {
+      "version": "2.3.8",
+      "resolved": "file:../.bun/@biomejs+biome@2.3.8/node_modules/@biomejs/biome",
+      "overridden": false
+    },
+    "@chromatic-com/storybook": {
+      "version": "4.1.3",
+      "resolved": "file:../.bun/@chromatic-com+storybook@4.1.3+9f3b22dde761aee3/node_modules/@chromatic-com/storybook",
+      "overridden": false,
+      "invalid": "\"^5.0.0\" from the root project",
+      "problems": [
+        "invalid: @chromatic-com/storybook@4.1.3 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@chromatic-com/storybook"
+      ]
+    },
+    "@commitlint/cli": {
+      "version": "20.1.0",
+      "resolved": "file:../.bun/@commitlint+cli@20.1.0+ab2bc74d4a8b20fb/node_modules/@commitlint/cli",
+      "overridden": false
+    },
+    "@commitlint/config-conventional": {
+      "version": "20.0.0",
+      "resolved": "file:../.bun/@commitlint+config-conventional@20.0.0/node_modules/@commitlint/config-conventional",
+      "overridden": false
+    },
+    "@commitlint/types": {
+      "version": "20.0.0",
+      "resolved": "file:../.bun/@commitlint+types@20.0.0/node_modules/@commitlint/types",
+      "overridden": false
+    },
+    "@nx/devkit": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+devkit@22.1.3+89ff41a60cb93b00/node_modules/@nx/devkit",
+      "overridden": false
+    },
+    "@nx/jest": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+jest@22.1.3+6e5c5331313f1c09/node_modules/@nx/jest",
+      "overridden": false
+    },
+    "@nx/js": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+js@22.1.3+1a82529e3cda0fb3/node_modules/@nx/js",
+      "overridden": false
+    },
+    "@nx/plugin": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+plugin@22.1.3+2df6720ac374119e/node_modules/@nx/plugin",
+      "overridden": false
+    },
+    "@nx/react": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+react@22.1.3+60b2e998ae54538c/node_modules/@nx/react",
+      "overridden": false
+    },
+    "@nx/storybook": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+storybook@22.1.3+f33eb22dbefd4a36/node_modules/@nx/storybook",
+      "overridden": false
+    },
+    "@nx/vite": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+vite@22.1.3+3a994af6fc143682/node_modules/@nx/vite",
+      "overridden": false
+    },
+    "@nx/vitest": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+vitest@22.1.3+3a994af6fc143682/node_modules/@nx/vitest",
+      "overridden": false
+    },
+    "@nx/web": {
+      "version": "22.1.3",
+      "resolved": "file:../.bun/@nx+web@22.1.3+1a82529e3cda0fb3/node_modules/@nx/web",
+      "overridden": false
+    },
+    "@storybook/addon-a11y": {
+      "version": "10.1.9",
+      "resolved": "file:../.bun/@storybook+addon-a11y@10.1.9+9f3b22dde761aee3/node_modules/@storybook/addon-a11y",
+      "overridden": false,
+      "invalid": "\"10.1.11\" from the root project",
+      "problems": [
+        "invalid: @storybook/addon-a11y@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@storybook/addon-a11y"
+      ]
+    },
+    "@storybook/addon-docs": {
+      "version": "10.1.9",
+      "resolved": "file:../.bun/@storybook+addon-docs@10.1.9+1f86703fda7714dc/node_modules/@storybook/addon-docs",
+      "overridden": false,
+      "invalid": "\"10.1.11\" from the root project",
+      "problems": [
+        "invalid: @storybook/addon-docs@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@storybook/addon-docs"
+      ]
+    },
+    "@storybook/addon-vitest": {
+      "version": "10.1.9",
+      "resolved": "file:../.bun/@storybook+addon-vitest@10.1.9+8bdf37daf567c3f9/node_modules/@storybook/addon-vitest",
+      "overridden": false,
+      "invalid": "\"10.1.11\" from the root project",
+      "problems": [
+        "invalid: @storybook/addon-vitest@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@storybook/addon-vitest"
+      ]
+    },
+    "@storybook/react-vite": {
+      "version": "10.1.9",
+      "resolved": "file:../.bun/@storybook+react-vite@10.1.9+84ef41cf6f98b961/node_modules/@storybook/react-vite",
+      "overridden": false,
+      "invalid": "\"10.1.11\" from the root project",
+      "problems": [
+        "invalid: @storybook/react-vite@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@storybook/react-vite"
+      ]
+    },
+    "@swc-node/register": {
+      "version": "1.9.2",
+      "resolved": "file:../.bun/@swc-node+register@1.9.2+5cda4b482ffef5e8/node_modules/@swc-node/register",
+      "overridden": false
+    },
+    "@swc/cli": {
+      "version": "0.6.0",
+      "resolved": "file:../.bun/@swc+cli@0.6.0+af7dbd7dbfa5dbe5/node_modules/@swc/cli",
+      "overridden": false
+    },
+    "@swc/core": {
+      "version": "1.5.29",
+      "resolved": "file:../.bun/@swc+core@1.5.29+5315289eb6d3a83d/node_modules/@swc/core",
+      "overridden": false
+    },
+    "@swc/helpers": {
+      "version": "0.5.17",
+      "resolved": "file:../.bun/@swc+helpers@0.5.17/node_modules/@swc/helpers",
+      "overridden": false
+    },
+    "@types/node": {
+      "version": "20.19.9",
+      "resolved": "file:../.bun/@types+node@20.19.9/node_modules/@types/node",
+      "overridden": false
+    },
+    "@types/react-dom": {
+      "version": "19.2.3",
+      "resolved": "file:../.bun/@types+react-dom@19.2.3+b3aeb48c1f537661/node_modules/@types/react-dom",
+      "overridden": false
+    },
+    "@types/react": {
+      "version": "19.2.7",
+      "resolved": "file:../.bun/@types+react@19.2.7/node_modules/@types/react",
+      "overridden": false
+    },
+    "@vitejs/plugin-react-swc": {
+      "version": "3.11.0",
+      "resolved": "file:../.bun/@vitejs+plugin-react-swc@3.11.0+deed3082af5cfa81/node_modules/@vitejs/plugin-react-swc",
+      "overridden": false
+    },
+    "@vitejs/plugin-react": {
+      "version": "5.1.2",
+      "resolved": "file:../.bun/@vitejs+plugin-react@5.1.2+31c22c1bcf74647f/node_modules/@vitejs/plugin-react",
+      "overridden": false
+    },
+    "@vitest/browser-playwright": {
+      "version": "4.0.14",
+      "resolved": "file:../.bun/@vitest+browser-playwright@4.0.14+819c36fbdce41820/node_modules/@vitest/browser-playwright",
+      "overridden": false
+    },
+    "@vitest/coverage-v8": {
+      "version": "4.0.14",
+      "resolved": "file:../.bun/@vitest+coverage-v8@4.0.14+050d0889dc964c97/node_modules/@vitest/coverage-v8",
+      "overridden": false
+    },
+    "@vitest/ui": {
+      "version": "4.0.14",
+      "resolved": "file:../.bun/@vitest+ui@4.0.14+7305293af06cc7d4/node_modules/@vitest/ui",
+      "overridden": false
+    },
+    "ajv": {
+      "version": "8.17.1",
+      "resolved": "file:.bun/ajv@8.17.1/node_modules/ajv",
+      "overridden": false
+    },
+    "all-contributors-cli": {
+      "version": "6.26.1",
+      "resolved": "file:.bun/all-contributors-cli@6.26.1+d56b95ac411b1cdd/node_modules/all-contributors-cli",
+      "overridden": false
+    },
+    "commitlint-config-gitmoji": {
+      "version": "2.3.1",
+      "resolved": "file:.bun/commitlint-config-gitmoji@2.3.1/node_modules/commitlint-config-gitmoji",
+      "overridden": false
+    },
+    "cz-git": {
+      "version": "1.12.0",
+      "resolved": "file:.bun/cz-git@1.12.0/node_modules/cz-git",
+      "overridden": false
+    },
+    "husky": {
+      "version": "9.1.7",
+      "resolved": "file:.bun/husky@9.1.7/node_modules/husky",
+      "overridden": false
+    },
+    "jiti": {
+      "version": "2.4.2",
+      "resolved": "file:.bun/jiti@2.4.2/node_modules/jiti",
+      "overridden": false
+    },
+    "jsdom": {
+      "version": "22.1.0",
+      "resolved": "file:.bun/jsdom@22.1.0/node_modules/jsdom",
+      "overridden": false
+    },
+    "lint-staged": {
+      "version": "16.2.7",
+      "resolved": "file:.bun/lint-staged@16.2.7/node_modules/lint-staged",
+      "overridden": false
+    },
+    "nx": {
+      "version": "22.1.3",
+      "resolved": "file:.bun/nx@22.1.3+4ca920d5ffdcb90c/node_modules/nx",
+      "overridden": false
+    },
+    "playwright": {
+      "version": "1.57.0",
+      "resolved": "file:.bun/playwright@1.57.0/node_modules/playwright",
+      "overridden": false
+    },
+    "react-aria": {
+      "version": "3.45.0",
+      "resolved": "file:.bun/react-aria@3.45.0+2b5434204782a989/node_modules/react-aria",
+      "overridden": false
+    },
+    "react-dom": {
+      "version": "19.2.0",
+      "resolved": "file:.bun/react-dom@19.2.0+2f44e903108183df/node_modules/react-dom",
+      "overridden": false
+    },
+    "react": {
+      "version": "19.2.0",
+      "resolved": "file:.bun/react@19.2.0/node_modules/react",
+      "overridden": false
+    },
+    "storybook": {
+      "version": "10.1.9",
+      "resolved": "file:.bun/storybook@10.1.9+69783f3ac9617547/node_modules/storybook",
+      "overridden": false,
+      "invalid": "\"10.1.11\" from the root project",
+      "problems": [
+        "invalid: storybook@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/storybook"
+      ]
+    },
+    "ts-node": {
+      "version": "10.9.1",
+      "resolved": "file:.bun/ts-node@10.9.1+214f04aaeb283fa1/node_modules/ts-node",
+      "overridden": false
+    },
+    "tslib": {
+      "version": "2.8.1",
+      "resolved": "file:.bun/tslib@2.8.1/node_modules/tslib",
+      "overridden": false
+    },
+    "typescript": {
+      "version": "5.9.3",
+      "resolved": "file:.bun/typescript@5.9.3/node_modules/typescript",
+      "overridden": false
+    },
+    "verdaccio": {
+      "version": "6.2.3",
+      "resolved": "file:.bun/verdaccio@6.2.3+d56b95ac411b1cdd/node_modules/verdaccio",
+      "overridden": false
+    },
+    "vite-plugin-dts": {
+      "version": "4.5.4",
+      "resolved": "file:.bun/vite-plugin-dts@4.5.4+a1d4569e070eeb62/node_modules/vite-plugin-dts",
+      "overridden": false
+    },
+    "vite-tsconfig-paths": {
+      "version": "5.1.4",
+      "resolved": "file:.bun/vite-tsconfig-paths@5.1.4+4eb7d0de06dbdf18/node_modules/vite-tsconfig-paths",
+      "overridden": false
+    },
+    "vite": {
+      "version": "7.2.4",
+      "resolved": "file:.bun/vite@7.2.4+9c12a5fce88be3da/node_modules/vite",
+      "overridden": false
+    },
+    "vitest": {
+      "version": "4.0.14",
+      "resolved": "file:.bun/vitest@4.0.14+7305293af06cc7d4/node_modules/vitest",
+      "overridden": false
+    }
+  },
+  "error": {
+    "code": "ELSPROBLEMS",
+    "summary": "missing: @awesome-tools/ui@file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui, required by @awesome-tools/source@0.0.0\nmissing: @awesome-tools/utils@file:/Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/utils, required by @awesome-tools/source@0.0.0\ninvalid: @chromatic-com/storybook@4.1.3 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@chromatic-com/storybook\ninvalid: @storybook/addon-a11y@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@storybook/addon-a11y\ninvalid: @storybook/addon-docs@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@storybook/addon-docs\ninvalid: @storybook/addon-vitest@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@storybook/addon-vitest\ninvalid: @storybook/react-vite@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/@storybook/react-vite\ninvalid: storybook@10.1.9 /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/storybook",
+    "detail": ""
+  }
+}
+[07:29:28.942] [DEBUG] Getting CLI versions from NPM for @nx/storybook...
+[07:29:28.942] [DEBUG] Executing command: npm info @nx/storybook version
+[07:29:30.262] [DEBUG] Checking fix initial-globals for project /packages/ui/.storybook...
+[07:29:30.274] [DEBUG] Checking fix addon-globals-api for project /packages/ui/.storybook...
+[07:29:30.276] [DEBUG] Checking fix addon-a11y-addon-test for project /packages/ui/.storybook...
+[07:29:30.278] [DEBUG] Checking fix consolidated-imports for project /packages/ui/.storybook...
+[07:29:30.279] [DEBUG] Checking fix addon-experimental-test for project /packages/ui/.storybook...
+[07:29:30.279] [DEBUG] Using cached installed version for @storybook/experimental-addon-test...
+[07:29:30.279] [DEBUG] Checking fix rnstorybook-config for project /packages/ui/.storybook...
+[07:29:30.279] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:30.279] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:30.279] [DEBUG] Checking fix migrate-addon-console for project /packages/ui/.storybook...
+[07:29:30.279] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:30.279] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:30.279] [DEBUG] Checking fix nextjs-to-nextjs-vite for project /packages/ui/.storybook...
+[07:29:30.279] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:30.279] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:30.279] [DEBUG] Checking fix remove-addon-interactions for project /packages/ui/.storybook...
+[07:29:30.279] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:30.279] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:30.279] [DEBUG] Checking fix renderer-to-framework for project /packages/ui/.storybook...
+[07:29:30.279] [DEBUG] Checking fix remove-essential-addons for project /packages/ui/.storybook...
+[07:29:30.279] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/packages/ui/package.json...
+[07:29:30.279] [DEBUG] Using cached package.json for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
+[07:29:30.279] [DEBUG] Checking fix addon-a11y-parameters for project /packages/ui/.storybook...
+[07:29:30.279] [DEBUG] Checking fix remove-docs-autodocs for project /packages/ui/.storybook...
+[07:29:30.282] [DEBUG] Checking fix wrap-getAbsolutePath for project /packages/ui/.storybook...
+[07:29:30.284] [DEBUG] Checking fix fix-faux-esm-require for project /packages/ui/.storybook...
+[07:29:30.284] [INFO] detect-automigrations-task: 
+Automigrations detected:
+[07:29:30.284] [INFO] detect-automigrations-task-success: No automigrations detected
+[07:29:30.284] [DEBUG] Completed automigrations for /packages/ui/.storybook
+[07:29:30.284] [INFO] Installing dependencies...
+[07:29:30.285] [INFO] install-dependencies-spinner-start: Installing dependencies...
+[07:29:30.285] [DEBUG] Executing command: bun install
+[07:29:30.312] [INFO] Installing dependencies...: bun install v1.3.3 (274e01c7)
+
+[07:29:30.312] [INFO] install-dependencies-spinner: Installing dependencies...: bun install v1.3.3 (274e0
+[07:29:40.349] [INFO] Installing dependencies...: 
++ @chromatic-com/storybook@5.0.0
++ @nx/storybook@22.1.3
++ @storybook/addon-a11y@10.1.11
++ @storybook/addon-docs@10.1.11
++ @storybook/addon-vitest@10.1.11
++ @storybook/react-vite@10.1.11
++ storybook@10.1.11
+
+22 packages installed [10.05s]
+
+[07:29:40.349] [INFO] install-dependencies-spinner: Installing dependencies...: + @chromatic-com/storyboo
+[07:29:40.356] [INFO] Dependencies installed
+[07:29:40.356] [INFO] install-dependencies-spinner-stop: Dependencies installed
+[07:29:40.356] [WARN] Since you are in a monorepo, we advise you to deduplicate your dependencies. We can do this for you but it might take some time.
+[07:29:58.005] [PROMPT] Execute bun run dedupe? {"choice":true}
+[07:29:58.005] [INFO] Deduplicating dependencies...
+[07:29:58.005] [INFO] Deduplicating dependencies...
+[07:29:58.006] [DEBUG] Executing command: bun dedupe
+[07:29:58.028] [ERROR] An error occurred while deduplicating dependencies. {"error":"Error: Command failed with exit code 1: bun dedupe\nerror: Script not found \"dedupe\"\n    at makeError (file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:12912:95)\n    at file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:13486:27\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async Object.executeTask (file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-GRQFL3SI.js:3668:11)\n    at async BUNProxy.dedupeDependencies (file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:11267:5)\n    at async upgrade (file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9428:107)\n    at async file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9558:70\n    at async withTelemetry (file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-2372JZ52.js:209:12)\n    at async Command.<anonymous> (file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9554:3)"}
+[07:29:58.028] [INFO] [31mCommand failed with exit code 1: bun dedupe
+error: Script not found "dedupe"[39m
+[07:29:58.029] [ERROR] [38;2;241;97;97mError: Command failed with exit code 1: bun dedupe
+error: Script not found "dedupe"[39m
+    at makeError (file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:12912:95)
+    at file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:13486:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Object.executeTask (file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-GRQFL3SI.js:3668:11)
+    at async BUNProxy.dedupeDependencies (file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:11267:5)
+    at async upgrade (file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9428:107)
+    at async file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9558:70
+    at async withTelemetry (file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-2372JZ52.js:209:12)
+    at async Command.<anonymous> (file:///Users/basantsoni/.npm/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9554:3)
+[07:29:58.837] [ERROR] Error: Command failed with exit code 1: bun dedupe
+error: Script not found "dedupe"

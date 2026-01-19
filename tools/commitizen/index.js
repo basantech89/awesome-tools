@@ -10,6 +10,6 @@ const __dirname = path.dirname(__filename)
 bootstrap({
 	cliPath: __dirname,
 	config: {
-		path: path.join(__dirname, 'node_modules/cz-git'),
+		path: 'cz-git',
 	},
 })

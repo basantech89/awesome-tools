@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react-vite'
 import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from 'storybook/viewport'
-import '../src/index.css'
+import '../src/styles.css'
 
 const preview: Preview = {
 	parameters: {
@@ -21,9 +21,6 @@ const preview: Preview = {
 
 		docs: {
 			codePanel: true,
-			toc: {
-				title: 'Contents',
-			},
 		},
 
 		a11y: {

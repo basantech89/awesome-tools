@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "dist",
+    "baseUrl": ".",
     "lib": [
       "DOM"
     ],
@@ -17,7 +18,7 @@
     "moduleResolution": "bundler",
     "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
     "paths": {
-      "@/*": [
+      "#ui/*": [
         "./src/*"
       ]
     }

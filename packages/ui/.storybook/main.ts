@@ -10,11 +10,14 @@ const config: StorybookConfig = {
 		getAbsolutePath('@storybook/addon-a11y'),
 		getAbsolutePath('@chromatic-com/storybook'),
 	],
+	features: {
+		developmentModeForBuild: true,
+	},
 	framework: {
 		name: getAbsolutePath('@storybook/react-vite'),
 		options: {
 			builder: {
-				viteConfigPath: 'vite.config.ts',
+				viteConfigPath: 'vite.storybook.ts',
 			},
 		},
 	},

@@ -6,7 +6,7 @@
     "moduleResolution": "bundler",
     "jsx": "preserve",
     "paths": {
-      "@/*": [
+      "#ui/*": [
         "./src/*"
       ]
     }
@@ -30,7 +30,7 @@
     ".storybook/*.js",
     ".storybook/*.ts",
     "./global.d.ts",
-    ".storybook/preview.ts"
+    ".storybook/preview.tsx"
   ],
   "references": [
     {

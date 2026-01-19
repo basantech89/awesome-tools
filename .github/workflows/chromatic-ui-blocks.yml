@@ -1,0 +1,31 @@
+name: 'publish-storybook-ui-blocks'
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'packages/ui-blocks/src/**'
+
+jobs:
+  chromatic:
+    name: 'Run Chromatic'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install --no-cache
+
+      - uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN_UI_BLOCKS }}
+          onlyChanged: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          workingDir: packages/ui-blocks
+          buildCommand: nx build-storybook ui-blocks
+          

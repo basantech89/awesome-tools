@@ -1,8 +1,13 @@
-type DeepRequired<T> = T extends Array<infer U>
-	? Array<DeepRequired<U>>
-	: T extends object
-		? { [K in keyof T]-?: DeepRequired<T[K]> }
-		: T
+export type DictVal = string | number | boolean
+
+export type Dict<K extends string = string, V = DictVal> = Record<K, V>
+
+type DeepRequired<T> =
+	T extends Array<infer U>
+		? Array<DeepRequired<U>>
+		: T extends object
+			? { [K in keyof T]-?: DeepRequired<T[K]> }
+			: T
 
 export type DeepRequireKeys<T extends object, K extends keyof T> = Omit<
 	T,

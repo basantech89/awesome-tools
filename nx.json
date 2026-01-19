@@ -34,7 +34,6 @@
 			"plugin": "@nx/vite/plugin",
 			"options": {
 				"buildTargetName": "build",
-				"testTargetName": "test",
 				"serveTargetName": "serve",
 				"devTargetName": "dev",
 				"previewTargetName": "preview",
@@ -61,6 +60,17 @@
 				"testTargetName": "vitest:test",
 				"ciTargetName": "test-ci"
 			}
+		},
+		{
+			"plugin": "@nx/next/plugin",
+			"options": {
+				"startTargetName": "start",
+				"buildTargetName": "build",
+				"devTargetName": "dev",
+				"serveStaticTargetName": "serve-static",
+				"buildDepsTargetName": "build-deps",
+				"watchDepsTargetName": "watch-deps"
+			}
 		}
 	],
 	"targetDefaults": {
@@ -79,6 +89,7 @@
 			"requireSemver": true
 		},
 		"version": {
+			"preVersionCommand": "nx run-many -t build",
 			"conventionalCommits": true
 		},
 		"git": {
@@ -87,18 +98,38 @@
 				"-m",
 				"Signed-off-by: Basant Soni <basantech89@gmail.com>"
 			],
-			"tag": true
+			"tag": true,
+			"changelog": {
+				"projectChangelogs": {
+					"createRelease": "github"
+				}
+			}
 		},
 		"changelog": {
-			"projectChangelogs": {
-				"createRelease": "github"
-			}
+			"projectChangelogs": true
 		}
 	},
 	"generators": {
 		"@nx/react": {
 			"library": {
+				"style": "tailwind",
+				"linter": "none",
 				"unitTestRunner": "none"
+			},
+			"application": {
+				"babel": true,
+				"style": "tailwind",
+				"linter": "none",
+				"bundler": "vite"
+			},
+			"component": {
+				"style": "tailwind"
+			}
+		},
+		"@nx/next": {
+			"application": {
+				"style": "tailwind",
+				"linter": "none"
 			}
 		}
 	}

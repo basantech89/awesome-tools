@@ -11,10 +11,9 @@
 		"url": "https://github.com/basantech89/awesome-tools.git"
 	},
 	"exports": {
-		"./config": "./biome.json",
+		"./config": "./dist/biome.json",
 		"./package.json": "./package.json",
 		".": {
-			"@awesome-tools/source": "./src/index.ts",
 			"types": "./dist/index.d.ts",
 			"import": "./dist/index.js",
 			"default": "./dist/index.js"
@@ -39,6 +38,7 @@
 					"rootDir": "tools/biome/src",
 					"generatePackageJson": false,
 					"assets": [
+						"{projectRoot}/biome.json",
 						{
 							"input": "./tools/biome/src",
 							"glob": "**/!(*.ts)",

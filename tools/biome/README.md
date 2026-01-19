@@ -14,6 +14,7 @@
     - [💡 Feature Requests](#-feature-requests)
   - [NX Biome Plugin](#nx-biome-plugin)
   - [Building](#building)
+  - [Credits](#credits)
 
 ## Installation
 
@@ -34,7 +35,7 @@ Add a biome.json to your project root with the following content:
 }
 ```
 
-Then prepend this plugin to your `nx.json`:
+Optionally, if you're using NX, prepend this plugin to your `nx.json`:
 
 ```json5
 {
@@ -77,3 +78,11 @@ This library was generated with [Nx](https://nx.dev).
 ## Building
 
 Run `nx build biome` to build the library.
+
+## Credits
+
+This project wouldn't have been possible without the amazing work done by
+
+[Biome](https://biomejs.dev/)
+[NX](https://nx.dev/)
+

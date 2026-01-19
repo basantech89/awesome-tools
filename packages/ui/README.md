@@ -11,7 +11,7 @@
   - [Issues](#issues)
     - [🐛 Bugs](#-bugs)
     - [💡 Feature Requests](#-feature-requests)
-  - [NX Biome Plugin](#nx-biome-plugin)
+    - [Credits](#credits)
 
 ## Installation
 
@@ -46,6 +46,13 @@ Please file an issue for bugs, missing documentation, or unexpected behavior.
 Please file an issue to suggest new features. Vote on feature requests by adding
 a 👍. This helps maintainers prioritize what to work on.
 
-## NX Biome Plugin
-
 This library was generated with [Nx](https://nx.dev).
+
+### Credits
+
+This project wouldn't have been possible without the amazing work done by
+
+[Base UI](https://base-ui.com/)
+[Shadcn UI](https://ui.shadcn.com/)
+[Storybook](https://storybook.js.org/)
+[Chromatic](https://www.chromatic.com/)

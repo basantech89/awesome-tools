@@ -1,0 +1,4 @@
+@import "@awesome-tools/ui/styles.css";
+
+/* Tell Tailwind to scan ui package source files for classes */
+@source "../node_modules/@awesome-tools/ui/src";

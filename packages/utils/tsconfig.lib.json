@@ -3,8 +3,10 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
-    "emitDeclarationOnly": false,
+    "emitDeclarationOnly": true,
     "forceConsistentCasingInFileNames": true,
     "types": [
       "node"
@@ -26,6 +28,7 @@
     "src/**/*.test.js",
     "src/**/*.spec.js",
     "src/**/*.test.jsx",
-    "src/**/*.spec.jsx"
+    "src/**/*.spec.jsx",
+    "src/**/__tests__/**"
   ]
 }

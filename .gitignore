@@ -50,3 +50,7 @@ vitest.config.*.timestamp*
 
 .env
 .env.*
+
+# Next.js
+.next
+out

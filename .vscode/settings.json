@@ -1,0 +1,7 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "tailwindCSS.experimental.configFile": {
+    "packages/ui/src/index.css": "packages/ui/src/**",
+    "packages/ui-blocks/src/index.css": "packages/ui-blocks/src/**"
+  }
+}

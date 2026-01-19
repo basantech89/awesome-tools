@@ -8,6 +8,17 @@
     "lib": [
       "es2022"
     ],
+    "paths": {
+      "@awesome-tools/ui": [
+        "./packages/ui/src/index.ts"
+      ],
+      "@awesome-tools/ui-blocks": [
+        "./packages/ui-blocks/src/index.ts"
+      ],
+      "@awesome-tools/utils": [
+        "./packages/utils/src/index.ts"
+      ]
+    },
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "noEmitOnError": true,
