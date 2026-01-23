@@ -1,14 +1,14 @@
 import type { Preview } from '@storybook/react-vite'
-import { Toaster } from 'sonner'
 import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from 'storybook/viewport'
 
+import { Toaster } from '#blocks'
 import './storybook-styles.css'
 
 const preview: Preview = {
 	decorators: [
 		Story => (
 			<div className="w-screen">
-				<Toaster />
+				<Toaster richColors theme="system" />
 				<Story />
 			</div>
 		),
