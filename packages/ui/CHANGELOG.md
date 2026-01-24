@@ -1,3 +1,13 @@
+## 0.3.0 (2026-01-24)
+
+### 🚀 Features
+
+- **ui:** bump awesome-ui version to pass unpublished version ([afbad38](https://github.com/basantech89/awesome-tools/commit/afbad38))
+
+### ❤️ Thank You
+
+- Basant Soni
+
 ## 0.2.0 (2026-01-24)
 
 ### 🚀 Features
