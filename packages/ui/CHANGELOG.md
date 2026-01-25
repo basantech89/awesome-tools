@@ -1,3 +1,17 @@
+## 0.3.1 (2026-01-25)
+
+### 🚀 Features
+
+- **scaffolder:** add package scaffolder ([3fc6531](https://github.com/basantech89/awesome-tools/commit/3fc6531))
+
+### 🧱 Updated Dependencies
+
+- Updated utils to 0.2.1
+
+### ❤️ Thank You
+
+- Basant Soni
+
 ## 0.3.0 (2026-01-24)
 
 ### 🚀 Features

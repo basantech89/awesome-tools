@@ -1,6 +1,6 @@
 {
   "name": "@awesome-tools/biome",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "NX plugin and config for biome for everyone 🚨",
   "main": "./dist/index.js",
   "author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
