@@ -1,15 +1,16 @@
 /// <reference types='vitest' />
 
+import { globSync } from 'node:fs'
 import path, { resolve } from 'node:path'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
-import { glob } from 'glob'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 
 const getInputEntries = () => {
-	const files = glob.sync(resolve(process.cwd(), 'src/**/*.{ts,tsx}'))
+	const files = globSync(resolve(process.cwd(), 'src/**/*.{ts,tsx}'))
+
 	return files.reduce(
 		(acc, file) => {
 			const entryName = file

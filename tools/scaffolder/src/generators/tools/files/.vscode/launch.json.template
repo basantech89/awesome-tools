@@ -1,0 +1,48 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach to Node",
+      "port": 9229,
+      "request": "attach",
+      "restart": true,
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    },
+    {
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}/apps/backend",
+      "remoteRoot": "/app",
+      "name": "Attach to Remote",
+      "restart": true,
+      "port": 9229,
+      "request": "attach",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    },
+    {
+      "type": "node",
+      "processId": "${input:process_pid}",
+      "name": "Attach by PID",
+      "request": "attach",
+      "restart": true
+    }
+  ],
+  "inputs": [
+    {
+      "id": "process_pid",
+      "type": "command",
+      "command": "shellCommand.execute",
+      "args": {
+        "command": "lsof -i :3001 | awk '{ print $2 }' | sed -n '2p'"
+      }
+    }
+  ]
+}

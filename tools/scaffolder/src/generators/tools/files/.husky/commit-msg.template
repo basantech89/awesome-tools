@@ -1,0 +1,1 @@
+<%= pm %> commitlint --edit $1

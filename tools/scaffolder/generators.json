@@ -1,0 +1,9 @@
+{
+	"generators": {
+		"tools": {
+			"factory": "./dist/generators/tools/tools",
+			"schema": "./dist/generators/tools/schema.json",
+			"description": "Install awesome tools in the root of the project."
+		}
+	}
+}

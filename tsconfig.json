@@ -19,7 +19,7 @@
       "path": "./packages/ui-blocks"
     },
     {
-      "path": "./packages/test-next"
+      "path": "./tools/scaffolder"
     }
   ]
 }

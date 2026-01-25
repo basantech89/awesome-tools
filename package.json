@@ -1,104 +1,101 @@
 {
-	"name": "@awesome-tools/source",
-	"version": "0.0.0",
-	"license": "MIT",
-	"scripts": {
-		"prepare": "husky",
-		"contributors:init": "all-contributors init",
-		"contributors:add": "all-contributors add",
-		"contributors:generate": "all-contributors generate",
-		"validate": "nx run-many -t lint test build typecheck",
-		"validate:affected": "nx affected -t lint test build typecheck --tui false",
-		"release": "nx release --first-release --skip-publish"
-	},
-	"private": true,
-	"type": "module",
-	"description": "Awesome tools for everyone 🚀",
-	"author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/basantech89/awesome-tools.git"
-	},
-	"keywords": [
-		"awesome-tools"
-	],
-	"bugs": {
-		"url": "https://github.com/basantech89/awesome-tools/issues"
-	},
-	"homepage": "https://github.com/basantech89/awesome-tools#readme",
-	"dependencies": {
-		"@nx/devkit": "22.3.3",
-		"lucide-react": "^0.562.0",
-		"react": "^19.2.0",
-		"react-aria": "^3.45.0",
-		"react-dom": "^19.2.0"
-	},
-	"devDependencies": {
-		"@awesome-tools/biome": "workspace:*",
-		"@awesome-tools/commitizen": "workspace:*",
-		"@biomejs/biome": "^2.3.7",
-		"@chromatic-com/storybook": "^5.0.0",
-		"@commitlint/cli": "^20.1.0",
-		"@commitlint/config-conventional": "^20.0.0",
-		"@commitlint/types": "^20.0.0",
-		"@nx/jest": "22.3.3",
-		"@nx/js": "22.3.3",
-		"@nx/next": "22.3.3",
-		"@nx/plugin": "22.3.3",
-		"@nx/react": "22.3.3",
-		"@nx/storybook": "22.3.3",
-		"@nx/vite": "22.3.3",
-		"@nx/vitest": "22.3.3",
-		"@nx/web": "22.3.3",
-		"@storybook/addon-a11y": "10.1.11",
-		"@storybook/addon-docs": "10.1.11",
-		"@storybook/addon-vitest": "10.1.11",
-		"@storybook/react-vite": "10.1.11",
-		"@tailwindcss/vite": "^4.1.18",
-		"@types/node": "20.19.9",
-		"@types/react": "^19.2.0",
-		"@types/react-dom": "^19.2.0",
-		"@vitejs/plugin-react": "^5.1.2",
-		"@vitest/browser-playwright": "^4.0.17",
-		"@vitest/coverage-v8": "^4.0.17",
-		"@vitest/ui": "^4.0.17",
-		"all-contributors-cli": "^6.26.1",
-		"chromatic": "^13.3.5",
-		"commitlint-config-gitmoji": "^2.3.1",
-		"cz-git": "^1.12.0",
-		"glob": "^13.0.0",
-		"husky": "^9.1.7",
-		"jsdom": "~22.1.0",
-		"lint-staged": "^16.2.7",
-		"nx": "22.3.3",
-		"playwright": "^1.56.1",
-		"storybook": "10.1.11",
-		"tailwindcss": "^4",
-		"typescript": "~5.9.3",
-		"verdaccio": "^6.0.5",
-		"vite": "^7.0.0",
-		"vite-plugin-dts": "~4.5.0",
-		"vitest": "^4.0.17"
-	},
-	"lint-staged": {
-		"*": "nx lint"
-	},
-	"workspaces": [
-		"packages/*",
-		"tools/*"
-	],
-	"nx": {
-		"includedScripts": [],
-		"targets": {
-			"local-registry": {
-				"executor": "@nx/js:verdaccio",
-				"options": {
-					"port": 4873,
-					"config": ".verdaccio/config.yml",
-					"storage": "tmp/local-registry/storage"
-				}
-			}
-		}
-	},
-	"packageManager": "yarn@4.9.4+sha512.7b1cb0b62abba6a537b3a2ce00811a843bea02bcf53138581a6ae5b1bf563f734872bd47de49ce32a9ca9dcaff995aa789577ffb16811da7c603dcf69e73750b"
+  "name": "@awesome-tools/source",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky",
+    "contributors:init": "all-contributors init",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "validate": "nx run-many -t lint test build typecheck",
+    "validate:affected": "nx affected -t lint test build typecheck --tui false",
+    "release": "nx release --first-release --skip-publish"
+  },
+  "private": true,
+  "type": "module",
+  "description": "Awesome tools for everyone 🚀",
+  "author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/basantech89/awesome-tools.git"
+  },
+  "keywords": [
+    "awesome-tools"
+  ],
+  "bugs": {
+    "url": "https://github.com/basantech89/awesome-tools/issues"
+  },
+  "homepage": "https://github.com/basantech89/awesome-tools#readme",
+  "dependencies": {
+    "@nx/devkit": "22.3.3",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.0",
+    "react-aria": "^3.45.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@awesome-tools/biome": "workspace:*",
+    "@awesome-tools/commitizen": "workspace:*",
+    "@biomejs/biome": "^2.3.7",
+    "@chromatic-com/storybook": "^5.0.0",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/types": "^20.0.0",
+    "@nx/jest": "22.3.3",
+    "@nx/js": "22.3.3",
+    "@nx/next": "22.3.3",
+    "@nx/plugin": "22.3.3",
+    "@nx/react": "22.3.3",
+    "@nx/storybook": "22.3.3",
+    "@nx/vite": "22.3.3",
+    "@nx/vitest": "22.3.3",
+    "@nx/web": "22.3.3",
+    "@storybook/addon-a11y": "10.1.11",
+    "@storybook/addon-docs": "10.1.11",
+    "@storybook/addon-vitest": "10.1.11",
+    "@storybook/react-vite": "10.1.11",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/node": "^25.0.10",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.2",
+    "@vitest/browser-playwright": "^4.0.17",
+    "@vitest/coverage-v8": "^4.0.17",
+    "@vitest/ui": "^4.0.17",
+    "all-contributors-cli": "^6.26.1",
+    "chromatic": "^13.3.5",
+    "commitlint-config-gitmoji": "^2.3.1",
+    "cz-git": "^1.12.0",
+    "husky": "^9.1.7",
+    "jsdom": "~22.1.0",
+    "lint-staged": "^16.2.7",
+    "nx": "22.3.3",
+    "playwright": "^1.56.1",
+    "storybook": "10.1.11",
+    "tailwindcss": "^4",
+    "tslib": "^2.3.0",
+    "typescript": "~5.9.3",
+    "verdaccio": "^6.0.5",
+    "vite": "^7.0.0",
+    "vite-plugin-dts": "~4.5.0",
+    "vitest": "^4.0.17"
+  },
+  "workspaces": [
+    "packages/*",
+    "tools/*"
+  ],
+  "nx": {
+    "includedScripts": [],
+    "targets": {
+      "local-registry": {
+        "executor": "@nx/js:verdaccio",
+        "options": {
+          "port": 4873,
+          "config": ".verdaccio/config.yml",
+          "storage": "tmp/local-registry/storage"
+        }
+      }
+    }
+  },
+  "packageManager": "yarn@4.9.4+sha512.7b1cb0b62abba6a537b3a2ce00811a843bea02bcf53138581a6ae5b1bf563f734872bd47de49ce32a9ca9dcaff995aa789577ffb16811da7c603dcf69e73750b"
 }

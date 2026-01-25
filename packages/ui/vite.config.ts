@@ -1,14 +1,15 @@
 /// <reference types='vitest' />
 
+import { globSync } from 'node:fs'
 import path, { resolve } from 'node:path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
-import { glob } from 'glob'
 import dts from 'vite-plugin-dts'
 import { defineConfig } from 'vitest/config'
 
 const getInputEntries = () => {
-	const files = glob.sync(resolve(process.cwd(), 'src/**/*.{ts,tsx}'))
+	const files = globSync(resolve(process.cwd(), 'src/**/*.{ts,tsx}'))
+
 	return files.reduce(
 		(acc, file) => {
 			const entryName = file
