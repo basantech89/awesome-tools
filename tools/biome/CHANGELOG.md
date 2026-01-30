@@ -1,3 +1,13 @@
+## 0.3.0 (2026-01-30)
+
+### 🚀 Features
+
+- **biome:** add no trailing comma rule ([c3498f1](https://github.com/basantech89/awesome-tools/commit/c3498f1))
+
+### ❤️ Thank You
+
+- Basant Soni
+
 ## 0.2.1 (2026-01-25)
 
 This was a version bump only for biome to align it with other projects, there were no code changes.

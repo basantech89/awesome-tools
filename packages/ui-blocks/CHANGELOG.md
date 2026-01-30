@@ -1,3 +1,10 @@
+## 0.3.2 (2026-01-30)
+
+### 🧱 Updated Dependencies
+
+- Updated utils to 0.3.0
+- Updated ui to 0.3.2
+
 ## 0.3.1 (2026-01-25)
 
 ### 🚀 Features

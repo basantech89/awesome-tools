@@ -1,3 +1,13 @@
+## 0.1.1 (2026-01-30)
+
+### 🩹 Fixes
+
+- **scaffolder:** change the pre-commit hook template ([f609186](https://github.com/basantech89/awesome-tools/commit/f609186))
+
+### ❤️ Thank You
+
+- Basant Soni
+
 ## 0.1.0 (2026-01-25)
 
 ### 🚀 Features

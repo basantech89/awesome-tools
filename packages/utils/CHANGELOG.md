@@ -1,3 +1,13 @@
+## 0.3.0 (2026-01-30)
+
+### 🚀 Features
+
+- **utils:** remove uppercaseFirst from utils ([19a3342](https://github.com/basantech89/awesome-tools/commit/19a3342))
+
+### ❤️ Thank You
+
+- Basant Soni
+
 ## 0.2.1 (2026-01-25)
 
 This was a version bump only for utils to align it with other projects, there were no code changes.

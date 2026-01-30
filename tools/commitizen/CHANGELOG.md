@@ -1,3 +1,13 @@
+## 1.4.0 (2026-01-30)
+
+### 🚀 Features
+
+- **commitizen:** fix README ([66f0f0a](https://github.com/basantech89/awesome-tools/commit/66f0f0a))
+
+### ❤️ Thank You
+
+- Basant Soni
+
 ## 1.3.1 (2026-01-25)
 
 This was a version bump only for commitizen to align it with other projects, there were no code changes.
