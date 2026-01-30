@@ -88,9 +88,22 @@
 		"releaseTag": {
 			"requireSemver": true
 		},
+		"conventionalCommits": {
+			"types": {
+				"hotfix": true,
+				"perf": true,
+				"revert": true,
+				"security": true
+			}
+		},
 		"version": {
 			"preVersionCommand": "nx run-many -t build",
 			"conventionalCommits": true
+		},
+		"changelog": {
+			"projectChangelogs": {
+				"createRelease": "github"
+			}
 		},
 		"git": {
 			"commitMessage": "🚚 chore(release): publish version",
@@ -98,15 +111,7 @@
 				"-m",
 				"Signed-off-by: Basant Soni <basantech89@gmail.com>"
 			],
-			"tag": true,
-			"changelog": {
-				"projectChangelogs": {
-					"createRelease": "github"
-				}
-			}
-		},
-		"changelog": {
-			"projectChangelogs": true
+			"tag": true
 		}
 	},
 	"generators": {

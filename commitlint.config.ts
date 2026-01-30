@@ -13,6 +13,7 @@ const Configuration: UserConfig = {
 	},
 	rules: {
 		'subject-max-length': [RuleConfigSeverity.Error, 'always', 200],
+		'subject-min-length': [RuleConfigSeverity.Error, 'always', 10],
 		'scope-empty': [RuleConfigSeverity.Error, 'never'],
 		'trailer-exists': [RuleConfigSeverity.Error, 'always', 'Signed-off-by:'],
 		'header-max-length': [RuleConfigSeverity.Error, 'always', 200],
