@@ -1,6 +1,6 @@
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
-DEFAULT_BRANCHES="main|dev|stage|qa|release|fix|hotfix"
+DEFAULT_BRANCHES="main|dev|stage|qa|release|fix|hotfix|docs"
 DEFAULT_SCOPES="backend|ui|api"
 
 #https://regex101.com/r/5poldO/1
