@@ -18,7 +18,7 @@
 ## Installation
 
 This module is distributed via [npm](https://www.npmjs.com/) which is bundled with [node](https://nodejs.org/) and
-should be installed as one of your project's `devDependencies`:
+should be installed as one of your project's `devDependencies`. Add commitizen and cz-git by running:
 
 ```
 npm install --save-dev @awesome-tools/commitizen cz-git
