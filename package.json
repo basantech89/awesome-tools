@@ -7,8 +7,8 @@
 		"contributors:init": "all-contributors init",
 		"contributors:add": "all-contributors add",
 		"contributors:generate": "all-contributors generate",
-		"validate": "nx run-many -t lint test build typecheck",
-		"validate:affected": "nx affected -t lint test build typecheck --tui false",
+		"validate": "nx run-many -t build lint test typecheck",
+		"validate:affected": "nx affected -t build lint test typecheck --tui false",
 		"release": "nx release --skip-publish"
 	},
 	"private": true,
@@ -96,6 +96,5 @@
 				}
 			}
 		}
-	},
-	"packageManager": "yarn@4.9.4+sha512.7b1cb0b62abba6a537b3a2ce00811a843bea02bcf53138581a6ae5b1bf563f734872bd47de49ce32a9ca9dcaff995aa789577ffb16811da7c603dcf69e73750b"
+	}
 }
