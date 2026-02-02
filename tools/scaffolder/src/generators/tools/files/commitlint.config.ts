@@ -8,17 +8,18 @@ const Configuration: UserConfig = {
 	prompt: {
 		settings: {
 			enableMultipleScopes: true,
-			scopeEnumSeparator: ',',
-		},
+			scopeEnumSeparator: ','
+		}
 	},
 	rules: {
 		'subject-max-length': [RuleConfigSeverity.Error, 'always', 200],
+		'subject-min-length': [RuleConfigSeverity.Error, 'always', 10],
 		'scope-empty': [RuleConfigSeverity.Error, 'never'],
 		'trailer-exists': [RuleConfigSeverity.Error, 'always', 'Signed-off-by:'],
 		'header-max-length': [RuleConfigSeverity.Error, 'always', 200],
 		'type-enum': [RuleConfigSeverity.Error, 'always', types.map(t => t.value)],
-		'scope-enum': [RuleConfigSeverity.Error, 'always', scopes.map(s => s.name)],
-	},
+		'scope-enum': [RuleConfigSeverity.Error, 'always', scopes.map(s => s.name)]
+	}
 }
 
 export default Configuration

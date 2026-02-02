@@ -17,7 +17,8 @@
     "src/**/*.json"
   ],
   "exclude": [
-    "src/generators/**/files/**/*.*"
+    "src/generators/**/files/**/*.*",
+    "src/generators/**/bun-files/**/*.*"
   ],
   "references": []
 }

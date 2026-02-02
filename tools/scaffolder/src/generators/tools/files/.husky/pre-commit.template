@@ -1,9 +1,8 @@
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 DEFAULT_BRANCHES="main|dev|stage|qa|release|fix|hotfix|docs"
-DEFAULT_SCOPES="backend|ui|api"
 
-#https://regex101.com/r/5poldO/2
+#https://regex101.com/r/5poldO/3
 BRANCH_REGEX="^((${DEFAULT_BRANCHES})|([a-z]{2,}|dev|release|stage)(\/[a-z0-9]+)?\/[a-z0-9-]+)$"
 
 if ! [[ $BRANCH =~ $BRANCH_REGEX ]]; then
@@ -12,4 +11,9 @@ if ! [[ $BRANCH =~ $BRANCH_REGEX ]]; then
   exit 1
 fi
 
-<%= pm %> validate:affected
+STAGED_PROJECTS=$(nx show projects --files=$(git diff --name-only --staged | paste -sd ',' -) --affected | tr '\n' ',')
+STAGED_PROJECTS="${STAGED_PROJECTS%,}"
+
+echo "STAGED PROJECTS: $STAGED_PROJECTS"
+
+<%= pm %> validate --projects=$STAGED_PROJECTS --tui false
