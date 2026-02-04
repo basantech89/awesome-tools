@@ -3,6 +3,14 @@
 	"$id": "Tools",
 	"title": "",
 	"type": "object",
-	"properties": {},
+	"properties": {
+		"force": {
+			"type": "boolean",
+			"description": "Force overwrite existing files",
+			"default": false,
+			"alias": "f",
+			"x-prompt": "Do you want to force overwrite existing files?"
+		}
+	},
 	"required": []
 }

@@ -1,0 +1,33 @@
+launch-templates:
+  linux-medium-js-bun:
+    resource-class: 'docker_linux_amd64/medium'
+    image: 'ubuntu22.04-node20.19-v2'
+    init-steps:
+      - name: Add bun bin to PATH
+        script: echo "PATH=$HOME/.bun/bin:$PATH" >> $NX_CLOUD_ENV
+
+      - name: Checkout
+        uses: 'nrwl/nx-cloud-workflows/v5/workflow-steps/checkout/main.yaml'
+
+      - name: Restore Browser Binary Cache
+        uses: 'nrwl/nx-cloud-workflows/v5/workflow-steps/cache/main.yaml'
+        inputs:
+          key: 'bun.lock|"browsers"'
+          paths: '../.cache/ms-playwright'
+          base-branch: 'main'
+
+      - name: Install Bun
+        script: |
+          sudo apt install -y unzip
+          curl -fsSL https://bun.sh/install | bash
+
+      - name: Install Node
+        uses: 'nrwl/nx-cloud-workflows/v5/workflow-steps/install-node/main.yaml'
+        env:
+          NODE_VERSION: '24'
+
+      - name: Install Node Modules (with Bun)
+        script: bun ci --ignore-scripts
+
+      - name: Install Chromium
+        script: bun playwright install --with-deps chromium

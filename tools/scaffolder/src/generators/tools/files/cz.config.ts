@@ -7,13 +7,13 @@ import { definePrompt } from 'cz-git'
 function addSignedOffByTrailer(commitMessage: string) {
 	try {
 		const authorIdentity = execSync('git var GIT_AUTHOR_IDENT', {
-			encoding: 'utf-8',
+			encoding: 'utf-8'
 		}).trim()
 
 		const sobLine = authorIdentity.replace(/^(.*>).*$/, 'Signed-off-by: $1')
 		const modifiedMessage = execSync(
 			`git interpret-trailers --if-missing add --trailer "${sobLine}"`,
-			{ input: commitMessage, encoding: 'utf-8' },
+			{ input: commitMessage, encoding: 'utf-8' }
 		)
 
 		return modifiedMessage.trim()
@@ -43,109 +43,114 @@ const packages = []
 for await (const workspace of glob(workspaces)) {
 	const packageJsonPath = path.join(__dirname, workspace, 'package.json')
 	const json = await readJsonFile(packageJsonPath)
-	if (json?.nx?.name) {
-		packages.push(json.nx.name)
+	let packageName = json?.nx?.name
+	if (!packageName) {
+		packageName = json?.name.split('/').pop()
+	}
+
+	if (packageName) {
+		packages.push(packageName)
 	}
 }
 
 export const scopes = [
 	{
-		name: 'release',
+		name: 'release'
 	},
 	{
-		name: 'ci',
+		name: 'ci'
 	},
 	{
-		name: 'test',
+		name: 'test'
 	},
 	{
-		name: 'core',
+		name: 'core'
 	},
 	{
-		name: 'tool',
+		name: 'tools'
 	},
 	{
-		name: 'backend',
+		name: 'backend'
 	},
-	...packages.map(name => ({ name })),
+	...packages.map(name => ({ name }))
 ]
 
 export const types = [
 	{
 		value: 'feat',
 		name: '🎉 feat:\tAdding a new feature',
-		emoji: '🎉',
+		emoji: '🎉'
 	},
 	{
 		value: 'fix',
 		name: '🐛 fix:\tFixing a bug',
-		emoji: '🐛',
+		emoji: '🐛'
 	},
 	{
 		value: 'hotfix',
-		name: '🚑 hotfix:\tCritical hotfix',
-		emoji: '🚑',
+		name: '🚑️hotfix:\tCritical hotfix',
+		emoji: '🚑️'
 	},
 	{
 		value: 'docs',
 		name: '🗃️ docs:\tAdd or update documentation',
-		emoji: '🗃️',
+		emoji: '🗃️'
 	},
 	{
 		value: 'style',
 		name: '💄 style:\tAdd or update styles, ui or ux',
-		emoji: '💄',
+		emoji: '💄'
 	},
 	{
 		value: 'refactor',
 		name: '♻️ refactor:\tCode change that neither fixes a bug nor adds a feature',
-		emoji: '♻️',
+		emoji: '♻️'
 	},
 	{
 		value: 'perf',
 		name: '⚡️perf:\tCode change that improves performance',
-		emoji: '⚡️',
+		emoji: '⚡️'
 	},
 	{
 		value: 'test',
 		name: '🧪 test:\tAdding tests cases',
-		emoji: '🧪',
+		emoji: '🧪'
 	},
 	{
 		value: 'chore',
 		name: '🚚 chore:\tChanges to the build process or auxiliary tools\n\t\tand libraries such as documentation generation',
-		emoji: '🚚',
+		emoji: '🚚'
 	},
 	{
 		value: 'revert',
 		name: '💫 revert:\tRevert to a commit',
-		emoji: '💫',
+		emoji: '💫'
 	},
 	{
 		value: 'wip',
 		name: '🚧 wip:\tWork in progress',
-		emoji: '🚧',
+		emoji: '🚧'
 	},
 	{
 		value: 'build',
 		name: '🦖 build:\tAdd or update regards to build process',
-		emoji: '🦖',
+		emoji: '🦖'
 	},
 	{
 		value: 'ci',
 		name: '🚀 ci:\tFixing CI build',
-		emoji: '🚀',
+		emoji: '🚀'
 	},
 	{
 		value: 'security',
 		name: '🚨 security:\tFixing security issues',
-		emoji: '🚨',
+		emoji: '🚨'
 	},
 	{
 		value: 'init',
 		name: '✨ init:\tInitial commit',
-		emoji: '✨',
-	},
+		emoji: '✨'
+	}
 ]
 
 export default definePrompt({
@@ -165,5 +170,5 @@ export default definePrompt({
 		return addSignedOffByTrailer(defaultMessage)
 	},
 	types,
-	scopes,
+	scopes
 })

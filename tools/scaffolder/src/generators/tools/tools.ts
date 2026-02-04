@@ -7,12 +7,13 @@ import {
 	formatFiles,
 	generateFiles,
 	getPackageManagerCommand,
+	OverwriteStrategy,
 	removeDependenciesFromPackageJson,
 	type Tree,
-	updateJson,
+	updateJson
 } from '@nx/devkit'
 
-import type { AwesomeToolsGeneratorSchema } from './schema'
+import type { AwesomeToolsGeneratorSchema } from './schema.ts'
 
 const asyncExec = util.promisify(exec)
 
@@ -21,7 +22,7 @@ const getPackageVersion = async (name: string) => {
 
 	if (stderr) {
 		throw new Error(
-			`Stderr while fetching version for package ${name}: ${stderr}`,
+			`Stderr while fetching version for package ${name}: ${stderr}`
 		)
 	}
 
@@ -30,7 +31,7 @@ const getPackageVersion = async (name: string) => {
 
 const getDependencyVersions = async (dependencies: string[]) => {
 	const dependencyVersions = await Promise.all(
-		dependencies.map(getPackageVersion),
+		dependencies.map(getPackageVersion)
 	)
 
 	return dependencyVersions.reduce(
@@ -38,15 +39,22 @@ const getDependencyVersions = async (dependencies: string[]) => {
 			acc[curr.name] = curr.version
 			return acc
 		},
-		{} as Record<string, string>,
+		{} as Record<string, string>
 	)
 }
 
 export async function toolsGenerator(
 	tree: Tree,
-	options: AwesomeToolsGeneratorSchema,
+	options: AwesomeToolsGeneratorSchema
 ) {
-	const dependencies = ['@awesome-tools/ui', '@awesome-tools/ui-blocks']
+	const dependencies = [
+		'@awesome-tools/ui',
+		'@awesome-tools/ui-blocks',
+		'@awesome-tools/utils',
+		'tailwindcss',
+		'tailwind-merge',
+		'tailwind-variants'
+	]
 
 	const devDependencies = [
 		'@awesome-tools/biome',
@@ -58,7 +66,7 @@ export async function toolsGenerator(
 		'commitlint-config-gitmoji',
 		'husky',
 		'all-contributors-cli',
-		'@types/node',
+		'@types/node'
 	]
 
 	const __filename = fileURLToPath(import.meta.url)
@@ -77,10 +85,10 @@ export async function toolsGenerator(
 			'contributors:init': 'all-contributors init',
 			'contributors:add': 'all-contributors add',
 			'contributors:generate': 'all-contributors generate',
-			validate: 'nx run-many -t lint test build typecheck',
+			validate: 'nx run-many -t lint test typecheck build',
 			'validate:affected':
-				'nx affected -t lint test build typecheck --tui false',
-			release: 'nx release --first-release --skip-publish',
+				'nx affected -t lint test typecheck build --tui false',
+			release: 'nx release --first-release --skip-publish'
 		}
 
 		return pkgJson
@@ -96,12 +104,29 @@ export async function toolsGenerator(
 
 	const resolvedOptions = { ...options, pm, dlx }
 
+	const generateOptions = {
+		overwriteStrategy: options.force
+			? OverwriteStrategy.Overwrite
+			: OverwriteStrategy.ThrowIfExisting
+	}
+
 	generateFiles(
 		tree,
 		path.join(__dirname, 'files'),
 		projectRoot,
 		resolvedOptions,
+		generateOptions
 	)
+
+	if (pm === 'bun') {
+		generateFiles(
+			tree,
+			path.join(__dirname, 'bun-files'),
+			projectRoot,
+			resolvedOptions,
+			generateOptions
+		)
+	}
 
 	await formatFiles(tree)
 }
