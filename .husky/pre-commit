@@ -11,4 +11,9 @@ if ! [[ $BRANCH =~ $BRANCH_REGEX ]]; then
   exit 1
 fi
 
-bun validate:affected
+STAGED_PROJECTS=$(nx show projects --files=$(git diff --name-only --staged | paste -sd ',' -) --affected | tr '\n' ',')
+STAGED_PROJECTS="${STAGED_PROJECTS%,}"
+
+echo "STAGED PROJECTS: $STAGED_PROJECTS"
+
+bun validate --projects=$STAGED_PROJECTS --tui false

@@ -22,6 +22,9 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
+			"correctness": {
+				"noUnusedVariables": "error"
+			},
 			"nursery": {
 				"useSortedClasses": {
 					"options": {

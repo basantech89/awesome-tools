@@ -43,8 +43,13 @@ const packages = []
 for await (const workspace of glob(workspaces)) {
 	const packageJsonPath = path.join(__dirname, workspace, 'package.json')
 	const json = await readJsonFile(packageJsonPath)
-	if (json?.nx?.name) {
-		packages.push(json.nx.name)
+	let packageName = json?.nx?.name
+	if (!packageName) {
+		packageName = json?.name.split('/').pop()
+	}
+
+	if (packageName) {
+		packages.push(packageName)
 	}
 }
 
@@ -54,6 +59,9 @@ export const scopes = [
 	},
 	{
 		name: 'ci'
+	},
+	{
+		name: 'root'
 	},
 	{
 		name: 'test'

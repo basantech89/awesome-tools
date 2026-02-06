@@ -41,7 +41,7 @@ jobs:
         uses: nrwl/nx-set-shas@v4
 
       - name: Install dependencies
-        run: bun ci
+        run: bun ci --ignore-scripts
 
       # - run: bun nx-cloud record -- echo Hello World
       - name: Validate
