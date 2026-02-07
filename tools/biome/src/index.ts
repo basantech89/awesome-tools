@@ -7,6 +7,7 @@ import {
 
 type MyPluginOptions = Record<string, never>
 
+
 export const createNodesV2: CreateNodesV2<MyPluginOptions> = [
 	'**/package.json',
 	async (configFiles, options, context) => {

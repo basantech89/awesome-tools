@@ -7,8 +7,8 @@
 		"contributors:init": "all-contributors init",
 		"contributors:add": "all-contributors add",
 		"contributors:generate": "all-contributors generate",
-		"validate": "nx run-many -t build lint test typecheck",
-		"validate:affected": "nx affected -t build lint test typecheck --tui false",
+		"validate": "nx run-many -t lint test typecheck build",
+		"validate:affected": "nx affected -t lint test typecheck build --tui false",
 		"release": "nx release --skip-publish"
 	},
 	"private": true,
@@ -68,7 +68,6 @@
 		"cz-git": "^1.12.0",
 		"husky": "^9.1.7",
 		"jsdom": "~22.1.0",
-		"lint-staged": "^16.2.7",
 		"nx": "22.3.3",
 		"playwright": "^1.56.1",
 		"storybook": "10.1.11",

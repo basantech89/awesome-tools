@@ -3,5 +3,6 @@
   "tailwindCSS.experimental.configFile": {
     "packages/ui/src/index.css": "packages/ui/src/**",
     "packages/ui-blocks/src/index.css": "packages/ui-blocks/src/**"
-  }
+  },
+  "biome.lsp.bin": "/opt/homebrew/bin/biome"
 }

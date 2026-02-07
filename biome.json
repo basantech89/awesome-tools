@@ -1,3 +1,4 @@
 {
+	"root": true,
 	"extends": ["@awesome-tools/biome/config"]
 }
