@@ -4,5 +4,14 @@
     "packages/ui/src/index.css": "packages/ui/src/**",
     "packages/ui-blocks/src/index.css": "packages/ui-blocks/src/**"
   },
-  "biome.lsp.bin": "/opt/homebrew/bin/biome"
+  "biome.lsp.bin": "/opt/homebrew/bin/biome",
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "**/*.biome.json"
+      ],
+      "url": "https://biomejs.dev/schemas/2.3.13/schema.json"
+    }
+  ],
+  "biome.configurationPath": "./biome.json"
 }
