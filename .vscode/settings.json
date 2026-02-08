@@ -10,7 +10,7 @@
       "fileMatch": [
         "**/*.biome.json"
       ],
-      "url": "https://biomejs.dev/schemas/2.3.13/schema.json"
+      "url": "https://biomejs.dev/schemas/2.3.14/schema.json"
     }
   ],
   "biome.configurationPath": "./biome.json"
