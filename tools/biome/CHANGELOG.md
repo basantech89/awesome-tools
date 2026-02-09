@@ -1,3 +1,13 @@
+## 0.3.1 (2026-02-09)
+
+### 🚀 Features
+
+- **ui:** add empty, kbd, and spinner components ([#2](https://github.com/basantech89/awesome-tools/pull/2))
+
+### ❤️ Thank You
+
+- Basant Soni @basantech89
+
 ## 0.3.0 (2026-01-30)
 
 ### 🚀 Features

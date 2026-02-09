@@ -1,3 +1,7 @@
+## 1.4.1 (2026-02-09)
+
+This was a version bump only for commitizen to align it with other projects, there were no code changes.
+
 ## 1.4.0 (2026-01-30)
 
 ### 🚀 Features

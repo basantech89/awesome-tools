@@ -1,3 +1,13 @@
+## 0.2.0 (2026-02-09)
+
+### 🚀 Features
+
+- **scaffolder:** add bun support and fix templates ([#5](https://github.com/basantech89/awesome-tools/pull/5))
+
+### ❤️ Thank You
+
+- Basant Soni @basantech89
+
 ## 0.1.1 (2026-01-30)
 
 ### 🩹 Fixes
