@@ -28,7 +28,7 @@ const getInputEntries = () => {
 			acc[entryName] = file
 			return acc
 		},
-		{} as Record<string, string>,
+		{} as Record<string, string>
 	)
 }
 
@@ -37,9 +37,9 @@ export default defineConfig(({ command }) => {
 		react(),
 		dts({
 			entryRoot: 'src',
-			tsconfigPath: path.join(import.meta.dirname, 'tsconfig.lib.json'),
+			tsconfigPath: path.join(import.meta.dirname, 'tsconfig.lib.json')
 		}),
-		nxViteTsPaths(),
+		nxViteTsPaths()
 	]
 
 	if (command === 'serve') {
@@ -55,7 +55,7 @@ export default defineConfig(({ command }) => {
 			emptyOutDir: true,
 			reportCompressedSize: true,
 			commonjsOptions: {
-				transformMixedEsModules: true,
+				transformMixedEsModules: true
 			},
 			lib: {
 				// Could also be a dictionary or array of multiple entry points.
@@ -65,7 +65,7 @@ export default defineConfig(({ command }) => {
 				// Change this to the formats you want to support.
 				// Don't forget to update your package.json as well.
 				formats: ['es'],
-				cssFileName: 'styles',
+				cssFileName: 'styles'
 			},
 			rollupOptions: {
 				input: getInputEntries(),
@@ -79,16 +79,16 @@ export default defineConfig(({ command }) => {
 					'tailwindcss',
 					'tailwind-merge',
 					'@awesome-tools/ui',
-					'@awesome-tools/utils',
+					'@awesome-tools/utils'
 				],
 				output: {
 					// preserveModules: true,
 					// preserveModulesRoot: 'src',
-					entryFileNames: `[name].js`,
+					entryFileNames: `[name].js`
 					// chunkFileNames: `[name].[hash].[ext]`,
-				},
+				}
 			},
-			minify: false,
+			minify: false
 		},
 		test: {
 			name: 'ui-blocks',
@@ -99,8 +99,8 @@ export default defineConfig(({ command }) => {
 			reporters: ['default'],
 			coverage: {
 				reportsDirectory: './test-output/vitest/coverage',
-				provider: 'v8' as const,
-			},
-		},
+				provider: 'v8' as const
+			}
+		}
 	}
 })

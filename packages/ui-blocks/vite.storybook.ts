@@ -9,12 +9,19 @@ export default defineConfig({
 	root: import.meta.dirname,
 	cacheDir: '../../node_modules/.vite/packages/ui-blocks',
 	plugins: [react(), tailwindcss(), nxViteTsPaths()],
+	resolve: {
+		alias: {
+			'@awesome-tools/ui/styles.css': '../ui/src/styles.css',
+			'@awesome-tools/ui': '../ui/src/index.ts',
+			'@awesome-tools/utils': '../utils/src/index.ts'
+		}
+	},
 	build: {
 		outDir: './dist',
 		emptyOutDir: true,
 		reportCompressedSize: true,
 		commonjsOptions: {
-			transformMixedEsModules: true,
+			transformMixedEsModules: true
 		},
 		lib: {
 			// Could also be a dictionary or array of multiple entry points.
@@ -23,7 +30,7 @@ export default defineConfig({
 			fileName: 'index',
 			// Change this to the formats you want to support.
 			// Don't forget to update your package.json as well.
-			formats: ['es'],
-		},
-	},
+			formats: ['es']
+		}
+	}
 })

@@ -39,6 +39,7 @@
 		}
 	},
 	"dependencies": {
+		"react-day-picker": "^9.13.1",
 		"sonner": "^2.0.7"
 	},
 	"exports": {
@@ -70,5 +71,8 @@
 	},
 	"publishConfig": {
 		"access": "public"
+	},
+	"devDependencies": {
+		"date-fns": "^4.1.0"
 	}
 }

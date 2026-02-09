@@ -7,7 +7,7 @@ import {
 	CircleDotDashed,
 	Mail,
 	MessageCircle,
-	X,
+	X
 } from 'lucide-react'
 import type { VariantProps } from 'tailwind-variants'
 
@@ -22,7 +22,7 @@ const variants: NonNullable<BadgeVariants['variant']>[] = [
 	'outline',
 	'ghost',
 	'link',
-	'destructive',
+	'destructive'
 ]
 
 const meta = {
@@ -35,10 +35,10 @@ const meta = {
 			options: variants,
 			table: {
 				category: 'variants',
-				defaultValue: { summary: 'default' },
-			},
-		},
-	},
+				defaultValue: { summary: 'default' }
+			}
+		}
+	}
 } satisfies Meta<typeof Badge>
 
 export default meta
@@ -47,8 +47,8 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
 	args: {
-		children: 'Badge',
-	},
+		children: 'Badge'
+	}
 }
 
 export const Variants: Story = {
@@ -60,7 +60,7 @@ export const Variants: Story = {
 				</Badge>
 			))}
 		</div>
-	),
+	)
 }
 
 export const Status: Story = {
@@ -79,7 +79,7 @@ export const Status: Story = {
 				<X /> Cancelled
 			</Badge>
 		</div>
-	),
+	)
 }
 
 export const Image: Story = {
@@ -108,7 +108,7 @@ export const Image: Story = {
 				/>
 			</Badge>
 		</div>
-	),
+	)
 }
 
 export const Indicator: Story = {
@@ -122,7 +122,7 @@ export const Indicator: Story = {
 			>
 				<Bell />
 				<Badge
-					className="-translate-y-1/2 absolute top-0 right-0 h-5 min-w-5 translate-x-1/2 rounded-full p-0 px-0.5 empty:h-2.5 empty:min-w-2.5"
+					className="absolute top-0 right-0 h-5 min-w-5 translate-x-1/2 -translate-y-1/2 rounded-full p-0 px-0.5 empty:h-2.5 empty:min-w-2.5"
 					variant="destructive"
 				/>
 			</Button>
@@ -134,7 +134,7 @@ export const Indicator: Story = {
 			>
 				<Bell />
 				<Badge
-					className="-translate-y-1/2 absolute top-0 right-0 h-5 min-w-5 translate-x-1/2 rounded-full p-0 px-0.5 empty:h-2.5 empty:min-w-2.5"
+					className="absolute top-0 right-0 h-5 min-w-5 translate-x-1/2 -translate-y-1/2 rounded-full p-0 px-0.5 empty:h-2.5 empty:min-w-2.5"
 					variant="destructive"
 				>
 					5
@@ -148,7 +148,7 @@ export const Indicator: Story = {
 			>
 				<Mail />
 				<Badge
-					className="-translate-y-1/2 absolute top-0 right-0 h-5 min-w-5 translate-x-1/2 rounded-full p-0 px-0.5 empty:h-2.5 empty:min-w-2.5"
+					className="absolute top-0 right-0 h-5 min-w-5 translate-x-1/2 -translate-y-1/2 rounded-full p-0 px-0.5 empty:h-2.5 empty:min-w-2.5"
 					variant="destructive"
 				>
 					99+
@@ -162,12 +162,12 @@ export const Indicator: Story = {
 			>
 				<MessageCircle />
 				<Badge
-					className="-translate-y-1/2 absolute top-0 right-0 h-5 min-w-5 translate-x-1/2 rounded-full p-0 px-0.5 empty:h-2.5 empty:min-w-2.5"
+					className="absolute top-0 right-0 h-5 min-w-5 translate-x-1/2 -translate-y-1/2 rounded-full p-0 px-0.5 empty:h-2.5 empty:min-w-2.5"
 					variant="destructive"
 				>
 					<AtSign className="size-3" />
 				</Badge>
 			</Button>
 		</div>
-	),
+	)
 }
