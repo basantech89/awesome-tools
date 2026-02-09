@@ -1,6 +1,8 @@
 # Awesome UI Blocks Library for everyone ⚡️
 
-[![CI](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml/badge.svg)](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml)
+[![publish](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml/badge.svg)](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml)
+[![ci](https://github.com/basantech89/awesome-tools/actions/workflows/ci.yml/badge.svg?event=pull_request)](https://github.com/basantech89/awesome-tools/actions/workflows/ci.yml)
+[![publish-storybook-ui-blocks](https://github.com/basantech89/awesome-tools/actions/workflows/chromatic-ui-blocks.yml/badge.svg)](https://github.com/basantech89/awesome-tools/actions/workflows/chromatic-ui-blocks.yml)
 
 ## Table of Contents
 

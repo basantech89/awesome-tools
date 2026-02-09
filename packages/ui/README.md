@@ -1,6 +1,8 @@
 # Awesome UI Library for everyone 🎨
 
-[![CI](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml/badge.svg)](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml)
+[![publish](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml/badge.svg)](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml)
+[![ci](https://github.com/basantech89/awesome-tools/actions/workflows/ci.yml/badge.svg?event=pull_request)](https://github.com/basantech89/awesome-tools/actions/workflows/ci.yml)
+[![publish-storybook-ui](https://github.com/basantech89/awesome-tools/actions/workflows/chromatic-ui.yml/badge.svg)](https://github.com/basantech89/awesome-tools/actions/workflows/chromatic-ui.yml)
 
 ## Table of Contents
 
