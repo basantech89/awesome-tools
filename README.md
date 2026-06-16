@@ -1,7 +1,9 @@
 # Awesome Tools for everyone 🚀
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![publish](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml/badge.svg)](https://github.com/basantech89/awesome-tools/actions/workflows/publish.yml)
@@ -11,8 +13,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Code of Conduct](https://img.shields.io/badge/code-of%20conduct-green.svg)](https://publiclab.org/conduct)
 
-
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
 ## Details
 
@@ -25,7 +26,6 @@
 - Commit messages should follow the Conventional Commits specification. Use the Commitizen tool configured in the repository to commit changes. Execute `bun cz` to create a commit.
 
 - The monorepo contains multiple packages and tools located in the `packages` and `tools` directories respectively.
-
 
 ## Tools
 
@@ -65,7 +65,9 @@ To version and release the library use
 npx nx release
 ```
 
-Pass `--dry-run` to see what would happen without actually releasing the library.
+Pass `--dry-run` or `-d` to see what would happen without actually releasing the library.
+
+Pass `--first-release` to release the library for the first time.
 
 [Learn more about Nx release &raquo;](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
@@ -90,6 +92,7 @@ npx nx sync:check
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->

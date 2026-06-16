@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import React from 'react'
 
 import { Item, ItemContent, ItemDescription, ItemTitle } from '../display/item'
@@ -19,12 +20,12 @@ import {
 	ComboboxSeparator,
 	ComboboxTrigger,
 	ComboboxValue,
-	useComboboxAnchor,
+	useComboboxAnchor
 } from './combobox'
 
 const meta = {
 	title: 'Components/Forms/Combobox',
-	component: Combobox,
+	component: Combobox
 } satisfies Meta<typeof Combobox>
 
 export default meta
@@ -56,7 +57,7 @@ const fruits = [
 	'Pomegranate',
 	'Apricot',
 	'Grapefruit',
-	'Passionfruit',
+	'Passionfruit'
 ]
 
 export const Default: Story = {
@@ -78,7 +79,7 @@ export const Default: Story = {
 				</Combobox>
 			</div>
 		)
-	},
+	}
 }
 
 const frameworks = [
@@ -86,7 +87,7 @@ const frameworks = [
 	'SvelteKit',
 	'Nuxt.js',
 	'Remix',
-	'Astro',
+	'Astro'
 ] as const
 
 export const WithClearButton: Story = {
@@ -106,7 +107,7 @@ export const WithClearButton: Story = {
 				</ComboboxContent>
 			</Combobox>
 		)
-	},
+	}
 }
 
 const timezones = [
@@ -118,8 +119,8 @@ const timezones = [
 			'(GMT-6) Chicago',
 			'(GMT-5) Toronto',
 			'(GMT-8) Vancouver',
-			'(GMT-3) São Paulo',
-		],
+			'(GMT-3) São Paulo'
+		]
 	},
 	{
 		value: 'Europe',
@@ -129,8 +130,8 @@ const timezones = [
 			'(GMT+1) Berlin',
 			'(GMT+1) Rome',
 			'(GMT+1) Madrid',
-			'(GMT+1) Amsterdam',
-		],
+			'(GMT+1) Amsterdam'
+		]
 	},
 	{
 		value: 'Asia/Pacific',
@@ -140,9 +141,9 @@ const timezones = [
 			'(GMT+8) Singapore',
 			'(GMT+4) Dubai',
 			'(GMT+11) Sydney',
-			'(GMT+9) Seoul',
-		],
-	},
+			'(GMT+9) Seoul'
+		]
+	}
 ] as const
 
 export const WithGroupsAndSeparators: Story = {
@@ -170,7 +171,7 @@ export const WithGroupsAndSeparators: Story = {
 				</ComboboxContent>
 			</Combobox>
 		)
-	},
+	}
 }
 
 const countries = [
@@ -199,7 +200,7 @@ const countries = [
 	{ code: 'th', value: 'thailand', label: 'Thailand', continent: 'Asia' },
 	{ code: 'tl', value: 'timor-leste', label: 'Timor-Leste', continent: 'Asia' },
 	{ code: 'tg', value: 'togo', label: 'Togo', continent: 'Africa' },
-	{ code: 'to', value: 'tonga', label: 'Tonga', continent: 'Oceania' },
+	{ code: 'to', value: 'tonga', label: 'Tonga', continent: 'Oceania' }
 ]
 
 export const InPopup: Story = {
@@ -228,11 +229,11 @@ export const InPopup: Story = {
 				</ComboboxList>
 			</ComboboxContent>
 		</Combobox>
-	),
+	)
 }
 
 export const MultipleOptions: Story = {
-	render: () => {
+	render: function MultipleOptionsRender() {
 		const anchor = useComboboxAnchor()
 
 		return (
@@ -268,7 +269,7 @@ export const MultipleOptions: Story = {
 				</Combobox>
 			</div>
 		)
-	},
+	}
 }
 
 export const CustomItemRendering: Story = {
@@ -302,5 +303,5 @@ export const CustomItemRendering: Story = {
 				</ComboboxContent>
 			</Combobox>
 		)
-	},
+	}
 }

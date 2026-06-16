@@ -26,6 +26,18 @@ npm install --save @awesome-tools/ui
 
 ## Usage
 
+Import the styles.css file in your project:
+
+```css
+@import '@awesome-tools/ui/styles.css';
+```
+
+Source the `@awesome-tools/ui` package so that tailwind can find and include the styles to generate:
+
+```css
+@source '../../../../node_modules/@awesome-tools/ui/dist';
+```
+
 import the package in your module:
 
 ```typescript
@@ -40,7 +52,7 @@ label._ 😀
 ### 🐛 Bugs
 
 Please file an issue for bugs, missing documentation, or unexpected behavior.
-  
+
 [**See Bugs**](https://github.com/basantech89/awesome-tools/issues)
 
 ### 💡 Feature Requests
@@ -55,6 +67,11 @@ This library was generated with [Nx](https://nx.dev).
 This project wouldn't have been possible without the amazing work done by
 
 [Base UI](https://base-ui.com/)
+
 [Shadcn UI](https://ui.shadcn.com/)
+
 [Storybook](https://storybook.js.org/)
+
 [Chromatic](https://www.chromatic.com/)
+
+[TailwindCSS](https://tailwindcss.com/)

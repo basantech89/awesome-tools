@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import React from 'react'
 import { fn } from 'storybook/test'
 
@@ -16,7 +17,7 @@ import {
 	DropdownMenuSub,
 	DropdownMenuSubContent,
 	DropdownMenuSubTrigger,
-	DropdownMenuTrigger,
+	DropdownMenuTrigger
 } from './dropdown-menu'
 
 const meta = {
@@ -33,38 +34,38 @@ const meta = {
 		DropdownMenuSub,
 		DropdownMenuSubTrigger,
 		DropdownMenuSubContent,
-		DropdownMenuPortal,
+		DropdownMenuPortal
 	},
 	argTypes: {
 		defaultOpen: {
 			label: 'Default Open',
 			control: { type: 'boolean' },
 			description:
-				'The open state of the dropdown menu when it is initially rendered. Use when you do not need to control its open state.',
+				'The open state of the dropdown menu when it is initially rendered. Use when you do not need to control its open state.'
 		},
 		open: {
 			label: 'Open',
 			control: { type: 'boolean' },
 			description:
-				'The controlled open state of the dropdown menu. Must be used in conjunction with onOpenChange.',
+				'The controlled open state of the dropdown menu. Must be used in conjunction with onOpenChange.'
 		},
 		onOpenChange: {
 			label: 'On Open Change',
 			description:
-				'Event handler called when the open state of the dropdown menu changes.',
+				'Event handler called when the open state of the dropdown menu changes.'
 		},
 		modal: {
 			label: 'Modal',
 			control: { type: 'boolean' },
 			description:
-				'The modality of the dropdown menu. When set to true, interaction with outside elements will be disabled and only menu content will be visible to screen readers.',
-		},
+				'The modality of the dropdown menu. When set to true, interaction with outside elements will be disabled and only menu content will be visible to screen readers.'
+		}
 	},
 	args: {
 		onOpenChange: fn(),
 		modal: true,
-		defaultOpen: false,
-	},
+		defaultOpen: false
+	}
 } satisfies Meta<typeof DropdownMenu>
 
 export default meta
@@ -127,11 +128,11 @@ export const Default: Story = {
 				</DropdownMenuItem>
 			</DropdownMenuContent>
 		</DropdownMenu>
-	),
+	)
 }
 
 export const Checkboxes: Story = {
-	render: args => {
+	render: function CheckboxesRender(args) {
 		const [showStatusBar, setShowStatusBar] = React.useState<boolean>(true)
 		const [showActivityBar, setShowActivityBar] = React.useState<boolean>(false)
 		const [showPanel, setShowPanel] = React.useState<boolean>(false)
@@ -166,5 +167,5 @@ export const Checkboxes: Story = {
 				</DropdownMenuContent>
 			</DropdownMenu>
 		)
-	},
+	}
 }

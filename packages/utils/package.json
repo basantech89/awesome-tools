@@ -1,54 +1,57 @@
 {
-  "name": "@awesome-tools/utils",
-  "version": "0.3.1",
-  "author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/basantech89/awesome-tools.git"
-  },
-  "type": "module",
-  "main": "./dist/utils.js",
-  "module": "./dist/utils.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "@awesome-tools/source": "./src/index.ts",
-      "types": "./dist/index.d.ts",
-      "import": "./dist/utils.js",
-      "default": "./dist/utils.js"
-    }
-  },
-  "peerDependencies": {
-    "zod": ">=4.3.5"
-  },
-  "bugs": {
-    "url": "https://github.com/basantech89/awesome-tools/issues"
-  },
-  "description": "Common utilities for everyone 🚚",
-  "files": [
-    "dist",
-    "!**/*.tsbuildinfo"
-  ],
-  "homepage": "https://github.com/basantech89/awesome-tools#readme",
-  "keywords": [
-    "utils",
-    "awesome-utils",
-    "utilities",
-    "awesome-tools"
-  ],
-  "license": "ISC",
-  "nx": {
-    "name": "utils",
-    "tags": [
-      "utils",
-      "awesome-tools",
-      "awesome-utils",
-      "type:utils",
-      "scope:shared"
-    ]
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+	"name": "@awesome-tools/utils",
+	"version": "0.3.1",
+	"description": "Common utilities for everyone 🚚",
+	"keywords": [
+		"awesome-tools",
+		"awesome-utils",
+		"utilities",
+		"utils"
+	],
+	"homepage": "https://github.com/basantech89/awesome-tools#readme",
+	"bugs": {
+		"url": "https://github.com/basantech89/awesome-tools/issues"
+	},
+	"license": "ISC",
+	"author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/basantech89/awesome-tools.git"
+	},
+	"files": [
+		"dist",
+		"!**/*.tsbuildinfo"
+	],
+	"type": "module",
+	"main": "./dist/utils.js",
+	"module": "./dist/utils.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		"./package.json": "./package.json",
+		".": {
+			"@awesome-tools/source": "./src/index.ts",
+			"types": "./dist/index.d.ts",
+			"import": "./dist/utils.js",
+			"default": "./dist/utils.js"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"peerDependencies": {
+		"zod": "^4.4.3"
+	},
+	"nx": {
+		"name": "utils",
+		"tags": [
+			"utils",
+			"awesome-tools",
+			"awesome-utils",
+			"type:utils",
+			"scope:shared"
+		],
+		"targets": {
+			"lint": {}
+		}
+	}
 }

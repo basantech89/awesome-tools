@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import type { VariantProps } from 'tailwind-variants'
+
 import {
 	AtSign,
 	Bell,
@@ -9,7 +11,6 @@ import {
 	MessageCircle,
 	X
 } from 'lucide-react'
-import type { VariantProps } from 'tailwind-variants'
 
 import { Badge, type badgeVariants } from './badge'
 import { Button } from './button'
@@ -121,10 +122,7 @@ export const Indicator: Story = {
 				variant="outline"
 			>
 				<Bell />
-				<Badge
-					className="absolute top-0 right-0 h-5 min-w-5 translate-x-1/2 -translate-y-1/2 rounded-full p-0 px-0.5 empty:h-2.5 empty:min-w-2.5"
-					variant="destructive"
-				/>
+				<Badge indicator="outset" variant="destructive" />
 			</Button>
 			<Button
 				aria-label="notification indicator"
@@ -133,10 +131,7 @@ export const Indicator: Story = {
 				variant="outline"
 			>
 				<Bell />
-				<Badge
-					className="absolute top-0 right-0 h-5 min-w-5 translate-x-1/2 -translate-y-1/2 rounded-full p-0 px-0.5 empty:h-2.5 empty:min-w-2.5"
-					variant="destructive"
-				>
+				<Badge indicator="outset" variant="destructive">
 					5
 				</Badge>
 			</Button>
@@ -147,10 +142,7 @@ export const Indicator: Story = {
 				variant="outline"
 			>
 				<Mail />
-				<Badge
-					className="absolute top-0 right-0 h-5 min-w-5 translate-x-1/2 -translate-y-1/2 rounded-full p-0 px-0.5 empty:h-2.5 empty:min-w-2.5"
-					variant="destructive"
-				>
+				<Badge indicator="outset" variant="destructive">
 					99+
 				</Badge>
 			</Button>
@@ -161,10 +153,7 @@ export const Indicator: Story = {
 				variant="outline"
 			>
 				<MessageCircle />
-				<Badge
-					className="absolute top-0 right-0 h-5 min-w-5 translate-x-1/2 -translate-y-1/2 rounded-full p-0 px-0.5 empty:h-2.5 empty:min-w-2.5"
-					variant="destructive"
-				>
+				<Badge indicator="outset" variant="destructive">
 					<AtSign className="size-3" />
 				</Badge>
 			</Button>

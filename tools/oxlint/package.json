@@ -1,0 +1,79 @@
+{
+	"name": "@awesome-tools/oxlint",
+	"version": "0.1.0",
+	"description": "NX oxlint plugin for everyone 🚨",
+	"keywords": [
+		"awesome-tools",
+		"lint",
+		"oxlint"
+	],
+	"homepage": "https://github.com/basantech89/awesome-tools#readme",
+	"bugs": {
+		"url": "https://github.com/basantech89/awesome-tools/issues"
+	},
+	"license": "ISC",
+	"author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/basantech89/awesome-tools.git"
+	},
+	"files": [
+		"dist",
+		"!**/*.tsbuildinfo"
+	],
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		"./package.json": "./package.json",
+		".": {
+			"@awesome-tools/source": "./src/index.ts",
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"default": "./dist/index.js"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@swc/helpers": "~0.5.18"
+	},
+	"nx": {
+		"name": "oxlint",
+		"sourceRoot": "tools/oxlint/src",
+		"targets": {
+			"build": {
+				"executor": "@nx/js:swc",
+				"outputs": [
+					"{options.outputPath}"
+				],
+				"options": {
+					"outputPath": "tools/oxlint/dist",
+					"main": "tools/oxlint/src/index.ts",
+					"tsConfig": "tools/oxlint/tsconfig.lib.json",
+					"skipTypeCheck": true,
+					"stripLeadingPaths": true,
+					"assets": [
+						{
+							"input": "./tools/oxlint/src",
+							"glob": "**/!(*.ts)",
+							"output": "."
+						},
+						{
+							"input": "./tools/oxlint/src",
+							"glob": "**/*.d.ts",
+							"output": "."
+						}
+					]
+				}
+			}
+		},
+		"tags": [
+			"lint",
+			"oxlint",
+			"type:lint",
+			"scope:shared"
+		]
+	}
+}

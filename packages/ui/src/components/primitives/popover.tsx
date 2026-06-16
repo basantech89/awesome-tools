@@ -1,7 +1,8 @@
 'use client'
 
-import { Popover as PopoverPrimitive } from '@base-ui/react/popover'
 import type * as React from 'react'
+
+import { Popover as PopoverPrimitive } from '@base-ui/react/popover'
 
 import { cn } from '#ui/lib/utils'
 
@@ -9,8 +10,17 @@ function Popover({ ...props }: PopoverPrimitive.Root.Props) {
 	return <PopoverPrimitive.Root data-slot="popover" {...props} />
 }
 
-function PopoverTrigger({ ...props }: PopoverPrimitive.Trigger.Props) {
-	return <PopoverPrimitive.Trigger data-slot="popover-trigger" {...props} />
+function PopoverTrigger({
+	className,
+	...props
+}: PopoverPrimitive.Trigger.Props) {
+	return (
+		<PopoverPrimitive.Trigger
+			className={cn('cursor-pointer', className)}
+			data-slot="popover-trigger"
+			{...props}
+		/>
+	)
 }
 
 function PopoverContent({
@@ -36,8 +46,8 @@ function PopoverContent({
 			>
 				<PopoverPrimitive.Popup
 					className={cn(
-						'data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 flex w-72 origin-(--transform-origin) flex-col gap-4 rounded-md bg-popover p-4 text-popover-foreground text-sm shadow-md outline-hidden ring-1 ring-foreground/10 duration-100 data-closed:animate-out data-open:animate-in',
-						className,
+						'data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 bg-popover text-popover-foreground ring-foreground/10 data-closed:animate-out data-open:animate-in z-50 flex w-72 origin-(--transform-origin) flex-col gap-4 rounded-md p-4 text-sm shadow-md ring-1 outline-hidden duration-100',
+						className
 					)}
 					data-slot="popover-content"
 					{...props}
@@ -86,5 +96,5 @@ export {
 	PopoverDescription,
 	PopoverHeader,
 	PopoverTitle,
-	PopoverTrigger,
+	PopoverTrigger
 }

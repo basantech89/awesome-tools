@@ -1,20 +1,20 @@
-[07:19:00.439] [INFO] storybook v10.1.11
-[07:19:02.025] [DEBUG] Getting package.json info for /Users/basantsoni/Documents/data/repos/projects/awesome-tools/package.json...
-[07:19:02.540] [DEBUG] Serving static files from [36mnode_modules/.bun/@chromatic-com+storybook@5.0.0+1c227024f99e2cfe/node_modules/@chromatic-com/storybook/assets[39m at [36m/addon-visual-tests-assets[39m
-[07:19:02.540] [INFO] Starting...
-[07:19:02.670] [DEBUG] Starting preview..
-[07:19:02.870] [ERROR] Failed to build the preview
-[07:19:02.871] [ERROR] [38;2;241;97;97mError: Build failed with 1 error:
-error: Could not resolve "./vite.config.mts"[39m
-    at failureErrorWithLog (/Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/.bun/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
-    at /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/.bun/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
-    at runOnEndCallbacks (/Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/.bun/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1307:45)
-    at buildResponseToResult (/Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/.bun/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
-    at /Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/.bun/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
-    at responseCallbacks.<computed> (/Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/.bun/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
-    at handleIncomingPacket (/Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/.bun/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
-    at Socket.readFromStdout (/Users/basantsoni/Documents/data/repos/projects/awesome-tools/node_modules/.bun/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
-    at Socket.emit (node:events:508:28)
-    at addChunk (node:internal/streams/readable:559:12)
-[07:19:02.872] [WARN] Broken build, fix the error above.
+[21:12:33.321] [INFO] storybook v10.4.4
+[21:12:33.772] [DEBUG] Getting package.json info for /Users/basantsoni/data/repos/projects/awesome-tools/package.json...
+[21:12:34.341] [DEBUG] Serving static files from [36mnode_modules/.bun/@chromatic-com+storybook@5.2.1+57f3be55faa89fe8/node_modules/@chromatic-com/storybook/assets[39m at [36m/addon-visual-tests-assets[39m
+[21:12:34.341] [INFO] Starting...
+[21:12:34.433] [DEBUG] Starting preview..
+[21:12:34.590] [DEBUG] Using tsconfig paths for react-docgen
+[21:12:34.643] [ERROR] Failed to build the preview
+[21:12:34.646] [ERROR] [38;2;241;97;97mError: Failed to read tsconfig at "/Users/basantsoni/data/repos/projects/awesome-tools/packages/tsconfig.storybook.json": File does not exist[39m
+    at BasicMinimalPluginContext.configResolved (file:///Users/basantsoni/data/repos/projects/awesome-tools/node_modules/.bun/@joshwooding+vite-plugin-react-docgen-typescript@0.7.0+03c31a00e3777fad/node_modules/@joshwooding/vite-plugin-react-docgen-typescript/dist/index.mjs:1393:17)
+    at async Promise.all (index 7)
+    at async resolveConfig (file:///Users/basantsoni/data/repos/projects/awesome-tools/node_modules/.bun/vite@7.3.5+40c5f985ed86fdf2/node_modules/vite/dist/node/chunks/config.js:35762:2)
+    at async _createServer (file:///Users/basantsoni/data/repos/projects/awesome-tools/node_modules/.bun/vite@7.3.5+40c5f985ed86fdf2/node_modules/vite/dist/node/chunks/config.js:25441:67)
+    at async Module.start (file:///Users/basantsoni/data/repos/projects/awesome-tools/node_modules/.bun/@storybook+builder-vite@10.4.4+64602514ff84559d/node_modules/@storybook/builder-vite/dist/index.js:1606:17)
+    at async storybookDevServer (file:///Users/basantsoni/data/repos/projects/awesome-tools/node_modules/.bun/storybook@10.4.4+7caf12cde7ad8140/node_modules/storybook/dist/core-server/index.js:11496:158)
+    at async buildOrThrow (file:///Users/basantsoni/data/repos/projects/awesome-tools/node_modules/.bun/storybook@10.4.4+7caf12cde7ad8140/node_modules/storybook/dist/core-server/index.js:8205:12)
+    at async buildDevStandalone (file:///Users/basantsoni/data/repos/projects/awesome-tools/node_modules/.bun/storybook@10.4.4+7caf12cde7ad8140/node_modules/storybook/dist/core-server/index.js:12057:41)
+    at async withTelemetry (file:///Users/basantsoni/data/repos/projects/awesome-tools/node_modules/.bun/storybook@10.4.4+7caf12cde7ad8140/node_modules/storybook/dist/_node-chunks/chunk-TQLYOGGH.js:655:12)
+    at async dev (file:///Users/basantsoni/data/repos/projects/awesome-tools/node_modules/.bun/storybook@10.4.4+7caf12cde7ad8140/node_modules/storybook/dist/bin/core.js:2735:3)
+[21:12:34.648] [WARN] Broken build, fix the error above.
 You may need to refresh the browser.

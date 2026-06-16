@@ -1,3 +1,5 @@
+import type React from 'react'
+
 import {
 	Button,
 	Card,
@@ -5,17 +7,18 @@ import {
 	CardContent,
 	CardFooter,
 	CardHeader,
-	cn,
 	Field,
 	type FieldGroup,
-	FieldSeparator,
+	FieldSeparator
 } from '@awesome-tools/ui'
-import type React from 'react'
+
+import type { FormValue } from '#blocks/hooks/use-form'
+import type { Provider } from '#blocks/types'
+
+import { FormBuilder, type FormBuilderProps } from '#blocks/components'
+import { cn } from '#blocks/lib/utils'
 
 import { icons } from './icons'
-import { FormBuilder } from '#blocks/components'
-import type { FormValue, UseFormProps } from '#blocks/hooks/use-form'
-import type { Provider } from '#blocks/types'
 
 function Auth({ className, ...props }: React.ComponentProps<typeof Card>) {
 	return (
@@ -45,10 +48,12 @@ function AuthFooter({
 	return <CardFooter {...props} className={cn('justify-center', className)} />
 }
 
+const defaultProviders: Provider[] = []
+
 function AuthAction({
 	children,
 	className,
-	providers = [],
+	providers = defaultProviders,
 	...rest
 }: React.ComponentProps<typeof CardFooter> & {
 	providers?: Provider[]
@@ -59,7 +64,7 @@ function AuthAction({
 				className={cn(
 					'flex w-full flex-col gap-8 px-6',
 					{ hidden: !providers.length },
-					className,
+					className
 				)}
 				{...rest}
 			>
@@ -86,10 +91,7 @@ function AuthAction({
 function AuthContent<K extends string, V extends FormValue, T>({
 	className,
 	...props
-}: React.ComponentProps<typeof FieldGroup> &
-	UseFormProps<K, V, T> & {
-		children: React.ReactElement<React.ComponentProps<'form'>>
-	}) {
+}: React.ComponentProps<typeof FieldGroup> & FormBuilderProps<K, V, T>) {
 	return (
 		<CardContent className={className}>
 			<FormBuilder {...props} />

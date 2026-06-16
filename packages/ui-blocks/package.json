@@ -1,78 +1,83 @@
 {
-  "name": "@awesome-tools/ui-blocks",
-  "version": "0.3.3",
-  "description": "Awesome UI Blocks library for everyone ⚡️",
-  "author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/basantech89/awesome-tools.git"
-  },
-  "keywords": [
-    "ui-blocks",
-    "awesome-ui",
-    "awesome-ui-blocks",
-    "ui-blocks-library",
-    "awesome-tools"
-  ],
-  "bugs": {
-    "url": "https://github.com/basantech89/awesome-tools/issues"
-  },
-  "license": "ISC",
-  "homepage": "https://github.com/basantech89/awesome-tools#readme",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "type": "module",
-  "types": "./dist/index.d.ts",
-  "peerDependencies": {
-    "react": ">=19.0.0",
-    "react-dom": ">=19.0.0",
-    "tailwind-merge": ">=3.4.0",
-    "tailwindcss": ">=4",
-    "@awesome-tools/ui": "*",
-    "@awesome-tools/utils": "*",
-    "@tanstack/react-table": ">=8.21.3",
-    "zod": ">=4.3.5"
-  },
-  "peerDependenciesMeta": {
-    "tailwind-merge": {
-      "optional": true
-    }
-  },
-  "dependencies": {
-    "react-day-picker": "^9.13.1",
-    "sonner": "^2.0.7"
-  },
-  "exports": {
-    "./package.json": "./package.json",
-    "./styles.css": "./dist/styles.css",
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
-  },
-  "files": [
-    "dist",
-    "!**/*.tsbuildinfo"
-  ],
-  "imports": {
-    "#blocks": "./src/index.ts",
-    "#blocks/*": "./src/*"
-  },
-  "nx": {
-    "name": "ui-blocks",
-    "tags": [
-      "awesome-tools",
-      "ui-blocks",
-      "awesome-ui",
-      "react",
-      "ui-library"
-    ]
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "devDependencies": {
-    "date-fns": "^4.1.0"
-  }
+	"name": "@awesome-tools/ui-blocks",
+	"version": "0.3.3",
+	"description": "Awesome UI Blocks library for everyone ⚡️",
+	"keywords": [
+		"awesome-tools",
+		"awesome-ui",
+		"awesome-ui-blocks",
+		"ui-blocks",
+		"ui-blocks-library"
+	],
+	"homepage": "https://github.com/basantech89/awesome-tools#readme",
+	"bugs": {
+		"url": "https://github.com/basantech89/awesome-tools/issues"
+	},
+	"license": "ISC",
+	"author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/basantech89/awesome-tools.git"
+	},
+	"files": [
+		"dist",
+		"!**/*.tsbuildinfo"
+	],
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"imports": {
+		"#blocks": "./src/index.ts",
+		"#blocks/*": "./src/*"
+	},
+	"exports": {
+		"./package.json": "./package.json",
+		"./styles.css": "./dist/styles.css",
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"default": "./dist/index.js"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"@rolldown/plugins-monorepo": "rolldown/plugins",
+		"next": "^16.1.6",
+		"rolldown": "^1.1.0",
+		"vite-plugin-ignore-dynamic-imports": "^1.0.2"
+	},
+	"peerDependencies": {
+		"@awesome-tools/ui": "*",
+		"@awesome-tools/utils": "*",
+		"@dnd-kit/abstract": ">=0.3.2",
+		"@dnd-kit/dom": ">=0.3.2",
+		"@dnd-kit/helpers": ">=0.3.2",
+		"@dnd-kit/react": ">=0.3.2",
+		"@tanstack/react-table": ">=8.21.3",
+		"date-fns": ">=4.1.0",
+		"react": ">=19.0.0",
+		"react-day-picker": ">=9.13.1",
+		"react-dom": ">=19.0.0",
+		"sonner": ">=2.0.7",
+		"tailwind-merge": ">=3.4.0",
+		"tailwind-variants": ">=3.2.2",
+		"tailwindcss": ">=4",
+		"zod": ">=4.3.5"
+	},
+	"nx": {
+		"name": "ui-blocks",
+		"tags": [
+			"awesome-tools",
+			"ui-blocks",
+			"awesome-ui",
+			"react",
+			"ui-library"
+		],
+		"targets": {
+			"lint": {}
+		}
+	}
 }

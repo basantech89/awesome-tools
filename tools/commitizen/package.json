@@ -1,38 +1,41 @@
 {
-  "name": "@awesome-tools/commitizen",
-  "bin": {
-    "cz": "./index.js"
-  },
-  "type": "module",
-  "version": "1.4.1",
-  "description": "Commitizen for multi or mono repo projects 🔥",
-  "main": "index.js",
-  "module": "index.js",
-  "author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/basantech89/awesome-tools.git"
-  },
-  "keywords": [
-    "commitizen",
-    "javascript",
-    "cz-conventional-changelog",
-    "conventional-commits",
-    "awesome-tools"
-  ],
-  "bugs": {
-    "url": "https://github.com/basantech89/awesome-tools/issues"
-  },
-  "homepage": "https://github.com/basantech89/awesome-tools#readme",
-  "publishConfig": {
-    "access": "public"
-  },
-  "license": "ISC",
-  "dependencies": {
-    "commitizen": "^4.3.1",
-    "cz-git": "^1.12.0"
-  },
-  "nx": {
-    "name": "commitizen"
-  }
+	"name": "@awesome-tools/commitizen",
+	"version": "1.4.1",
+	"description": "Commitizen for multi or mono repo projects 🔥",
+	"keywords": [
+		"awesome-tools",
+		"commitizen",
+		"conventional-commits",
+		"cz-conventional-changelog",
+		"javascript"
+	],
+	"homepage": "https://github.com/basantech89/awesome-tools#readme",
+	"bugs": {
+		"url": "https://github.com/basantech89/awesome-tools/issues"
+	},
+	"license": "ISC",
+	"author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/basantech89/awesome-tools.git"
+	},
+	"bin": {
+		"cz": "./index.js"
+	},
+	"type": "module",
+	"main": "index.js",
+	"module": "index.js",
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"commitizen": "^4.3.1",
+		"cz-git": "^1.12.0"
+	},
+	"nx": {
+		"name": "commitizen",
+		"targets": {
+			"lint": {}
+		}
+	}
 }

@@ -4,7 +4,7 @@ import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
-	DropdownMenuTrigger,
+	DropdownMenuTrigger
 } from '../forms/dropdown-menu'
 import { Button } from '../primitives/button'
 import {
@@ -14,12 +14,12 @@ import {
 	BreadcrumbLink,
 	BreadcrumbList,
 	BreadcrumbPage,
-	BreadcrumbSeparator,
+	BreadcrumbSeparator
 } from './breadcrumb'
 
 const meta = {
 	title: 'Components/Display/Breadcrumb',
-	component: Breadcrumb,
+	component: Breadcrumb
 } satisfies Meta<typeof Breadcrumb>
 
 export default meta
@@ -43,7 +43,7 @@ export const Default: Story = {
 				</BreadcrumbItem>
 			</BreadcrumbList>
 		</Breadcrumb>
-	),
+	)
 }
 
 export const WithDrodown: Story = {
@@ -81,7 +81,7 @@ export const WithDrodown: Story = {
 				</BreadcrumbItem>
 			</BreadcrumbList>
 		</Breadcrumb>
-	),
+	)
 }
 
 export const WithLinks: Story = {
@@ -105,5 +105,5 @@ export const WithLinks: Story = {
 				</BreadcrumbItem>
 			</BreadcrumbList>
 		</Breadcrumb>
-	),
+	)
 }

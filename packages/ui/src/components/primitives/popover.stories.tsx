@@ -14,18 +14,18 @@ const meta = {
 			label: 'Default Open',
 			control: { type: 'boolean' },
 			description:
-				'Whether the popover is initially open. To render a controlled popover, use the open prop instead.',
+				'Whether the popover is initially open. To render a controlled popover, use the open prop instead.'
 		},
 		open: {
 			label: 'Open',
 			control: { type: 'boolean' },
 			description:
-				'The controlled open state of the popover. Must be used in conjunction with onOpenChange to render a controlled popover.',
+				'The controlled open state of the popover. Must be used in conjunction with onOpenChange to render a controlled popover.'
 		},
 		onOpenChange: {
 			label: 'On Open Change',
 			description:
-				'Event handler called when the open state of the popover changes.',
+				'Event handler called when the open state of the popover changes.'
 		},
 		modal: {
 			label: 'Modal',
@@ -33,10 +33,10 @@ const meta = {
 			options: [true, false, 'trap-focus'],
 			description:
 				'The modality of the popover. When set to true, interaction with outside elements will be disabled and only popover content will be visible to screen readers.',
-			table: { defaultValue: { summary: 'false' } },
-		},
+			table: { defaultValue: { summary: 'false' } }
+		}
 	},
-	args: { defaultOpen: false, modal: false },
+	args: { defaultOpen: false, modal: false }
 } satisfies Meta<typeof Popover>
 
 export default meta
@@ -52,7 +52,7 @@ export const Default: Story = {
 			<PopoverContent>
 				<div className="grid gap-4">
 					<div className="space-y-2">
-						<h4 className="font-medium leading-none">Dimensions</h4>
+						<h4 className="leading-none font-medium">Dimensions</h4>
 						<p className="text-muted-foreground text-sm">
 							Set the dimensions for the layer.
 						</p>
@@ -94,5 +94,5 @@ export const Default: Story = {
 				</div>
 			</PopoverContent>
 		</Popover>
-	),
+	)
 }

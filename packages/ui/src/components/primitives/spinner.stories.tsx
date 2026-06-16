@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import { ArrowRightIcon } from 'lucide-react'
 
-import { Spinner } from './spinner'
 import {
 	Badge,
 	Button,
@@ -17,6 +17,8 @@ import {
 	InputGroupAddon,
 	InputGroupInput
 } from '#ui'
+
+import { Spinner } from './spinner'
 
 const meta = {
 	title: 'Components/Primitives/Spinner',

@@ -1,13 +1,15 @@
-import { Button, Field, FieldGroup } from '@awesome-tools/ui'
-import type { Dict } from '@awesome-tools/utils'
 import type React from 'react'
-import z from 'zod'
+
+import { Button, Field, FieldGroup } from '@awesome-tools/ui'
+import { type Dict, z } from '@awesome-tools/utils'
+
+import type { FormValue, UseFormProps } from '#blocks/hooks/use-form'
+
+import { FormBuilder, type FormBuilderChildren } from '#blocks/components'
 
 import { PasswordField } from '../forms/password-field'
 import { TextField } from '../forms/text-field'
 import { AuthContent } from './auth'
-import { FormBuilder } from '#blocks/components'
-import type { FormValue, UseFormProps } from '#blocks/hooks/use-form'
 
 const signupDataSchema: z.ZodObject<Dict<string, z.ZodType<FormValue>>> = z
 	.object({
@@ -31,7 +33,7 @@ const signupDataSchema: z.ZodObject<Dict<string, z.ZodType<FormValue>>> = z
 		confirmPassword: z
 			.string()
 			.min(1, 'Passwords do not match')
-			.meta({ dependOn: ['password'] }),
+			.meta({ dependOn: ['password'] })
 	})
 	.refine(
 		values =>
@@ -40,8 +42,8 @@ const signupDataSchema: z.ZodObject<Dict<string, z.ZodType<FormValue>>> = z
 			values.password === values.confirmPassword,
 		{
 			message: 'Passwords do not match',
-			path: ['password', 'confirmPassword'],
-		},
+			path: ['password', 'confirmPassword']
+		}
 	)
 
 const defaultSignupValues: Dict<string, FormValue> = {
@@ -49,14 +51,14 @@ const defaultSignupValues: Dict<string, FormValue> = {
 	lastName: '',
 	email: '',
 	password: '',
-	confirmPassword: '',
+	confirmPassword: ''
 }
 
 function SignupContent<K extends string, V extends FormValue, T>(
 	props: Omit<React.ComponentProps<typeof FieldGroup>, 'onError'> &
-		Pick<UseFormProps<K, V, T>, 'action'> & {
-			children: React.ReactElement<React.ComponentProps<'form'>>
-		},
+		Partial<Pick<UseFormProps<K, V, T>, 'action'>> & {
+			children: FormBuilderChildren
+		}
 ) {
 	return (
 		<AuthContent
@@ -73,7 +75,7 @@ function SignupForm({
 }: React.ComponentProps<typeof FieldGroup>) {
 	return (
 		children ?? (
-			<FieldGroup {...rest}>
+			<FieldGroup {...rest} className="gap-3">
 				<Field className="grid grid-cols-2">
 					<TextField
 						id="firstName"

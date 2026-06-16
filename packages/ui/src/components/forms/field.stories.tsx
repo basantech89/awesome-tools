@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import { useState } from 'react'
 
 import { Badge } from '../primitives/badge'
@@ -11,7 +12,7 @@ import {
 	FieldLabel,
 	FieldLegend,
 	FieldSet,
-	FieldTitle,
+	FieldTitle
 } from './field'
 import { Input } from './input'
 import { RadioGroup, RadioGroupItem } from './radio'
@@ -26,8 +27,8 @@ const meta = {
 			<div className="w-95">
 				<Story />
 			</div>
-		),
-	],
+		)
+	]
 } satisfies Meta<typeof Field>
 
 export default meta
@@ -103,7 +104,7 @@ export const Inputs: Story = {
 				<FieldDescription>This field is currently disabled.</FieldDescription>
 			</Field>
 		</FieldGroup>
-	),
+	)
 }
 
 export const Checkboxes: Story = {
@@ -200,7 +201,7 @@ export const Checkboxes: Story = {
 				</FieldLabel>
 			</Field>
 		</FieldGroup>
-	),
+	)
 }
 
 export const Radios: Story = {
@@ -338,7 +339,7 @@ export const Radios: Story = {
 				</RadioGroup>
 			</FieldSet>
 		</FieldGroup>
-	),
+	)
 }
 
 export const Switches: Story = {
@@ -415,11 +416,11 @@ export const Switches: Story = {
 				/>
 			</Field>
 		</FieldGroup>
-	),
+	)
 }
 
 export const Sliders: Story = {
-	render: () => {
+	render: function SlidersRender() {
 		const [volume, setVolume] = useState([50])
 		const [brightness, setBrightness] = useState([75])
 		const [temperature, setTemperature] = useState([0.3, 0.7])
@@ -535,5 +536,5 @@ export const Sliders: Story = {
 				</Field>
 			</FieldGroup>
 		)
-	},
+	}
 }

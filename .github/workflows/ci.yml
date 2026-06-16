@@ -27,7 +27,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-      
+
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: bunx nx record -- bunx nx format:check  --base="remotes/origin/main"
 
@@ -36,12 +36,12 @@ jobs:
       # Learn more at https://nx.dev/ci/reference/nx-cloud-cli#npx-nxcloud-startcirun
       - name: Distribute tasks with Nx Cloud
         run: bunx nx start-ci-run --distribute-on="3 linux-medium-js-bun" --stop-agents-after="lint,test,build,typecheck"
-            
+
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v4
 
       - name: Install dependencies
-        run: bun ci --ignore-scripts
+        run: bun install
 
       # - run: bun nx-cloud record -- echo Hello World
       - name: Validate

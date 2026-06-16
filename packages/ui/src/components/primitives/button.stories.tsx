@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import { MapPin } from 'lucide-react'
 import React from 'react'
 import { fn } from 'storybook/test'
@@ -11,20 +12,20 @@ const buttonVariants: NonNullable<ButtonVariants['variant']>[] = [
 	'outline',
 	'ghost',
 	'link',
-	'destructive',
+	'destructive'
 ]
 
 const buttonSizes: NonNullable<ButtonVariants['size']>[] = [
 	'xs',
 	'sm',
 	'default',
-	'lg',
+	'lg'
 ]
 const iconButtonSizes: NonNullable<ButtonVariants['size']>[] = [
 	'icon-xs',
 	'icon-sm',
 	'icon',
-	'icon-lg',
+	'icon-lg'
 ]
 
 const meta = {
@@ -37,8 +38,8 @@ const meta = {
 			options: buttonVariants,
 			table: {
 				category: 'variants',
-				defaultValue: { summary: 'default' },
-			},
+				defaultValue: { summary: 'default' }
+			}
 		},
 		size: {
 			control: { type: 'select' },
@@ -46,11 +47,11 @@ const meta = {
 			options: [...buttonSizes, ...iconButtonSizes],
 			table: {
 				category: 'variants',
-				defaultValue: { summary: 'md' },
-			},
-		},
+				defaultValue: { summary: 'md' }
+			}
+		}
 	},
-	args: { onClick: fn(), variant: 'default', size: 'default' },
+	args: { onClick: fn(), variant: 'default', size: 'default' }
 } satisfies Meta<typeof Button>
 
 export default meta
@@ -61,13 +62,13 @@ const Icon = () => <MapPin />
 
 export const Default: Story = {
 	args: {
-		children: 'Button',
-	},
+		children: 'Button'
+	}
 }
 
 export const Variants: Story = {
 	args: {
-		size: 'default',
+		size: 'default'
 	},
 	render: args => (
 		<div className="flex flex-col gap-5">
@@ -92,12 +93,12 @@ export const Variants: Story = {
 				</div>
 			</div>
 		</div>
-	),
+	)
 }
 
 export const Sizes: Story = {
 	args: {
-		variant: 'default',
+		variant: 'default'
 	},
 	render: args => (
 		<div className="flex flex-col gap-5">
@@ -110,13 +111,13 @@ export const Sizes: Story = {
 				))}
 			</div>
 		</div>
-	),
+	)
 }
 
 export const ButtonWithIcons: Story = {
 	args: {
 		variant: 'default',
-		size: 'default',
+		size: 'default'
 	},
 	render: args => (
 		<div className="flex flex-col gap-4">
@@ -129,12 +130,12 @@ export const ButtonWithIcons: Story = {
 				))}
 			</div>
 		</div>
-	),
+	)
 }
 
 export const IconButtons: Story = {
 	args: {
-		variant: 'default',
+		variant: 'default'
 	},
 	render: args => (
 		<div className="flex flex-col gap-4">
@@ -155,5 +156,5 @@ export const IconButtons: Story = {
 				))}
 			</div>
 		</div>
-	),
+	)
 }

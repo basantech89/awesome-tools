@@ -468,5 +468,5 @@ export const icons: Record<AuthProvider, React.ReactNode> = {
 	google: <GoogleIcon />,
 	meta: <MetaIcon />,
 	apple: <AppleIcon />,
-	github: <GithubIcon />,
+	github: <GithubIcon />
 }

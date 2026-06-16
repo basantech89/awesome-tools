@@ -1,14 +1,17 @@
+import type React from 'react'
+
 import { Button, FieldGroup, FieldLabel } from '@awesome-tools/ui'
 import { type Dict, z } from '@awesome-tools/utils'
-import type React from 'react'
+
+import type { FormValue, UseFormProps } from '#blocks/hooks'
 
 import {
 	AuthContent,
 	FormBuilder,
+	type FormBuilderChildren,
 	PasswordField,
-	TextField,
+	TextField
 } from '#blocks/components'
-import type { FormValue, UseFormProps } from '#blocks/hooks'
 
 const signinDataSchema: z.ZodObject<Dict<string, z.ZodType<FormValue>>> =
 	z.object({
@@ -19,19 +22,19 @@ const signinDataSchema: z.ZodObject<Dict<string, z.ZodType<FormValue>>> =
 			.minLower(1, 'Password must contain at least 1 lowercase letter')
 			.minNumber(1, 'Password must contain at least 1 number')
 			.minSymbol(1, 'Password must contain at least 1 special character')
-			.minUpper(1, 'Password must contain at least 1 uppercase letter'),
+			.minUpper(1, 'Password must contain at least 1 uppercase letter')
 	})
 
 const defaultSigninValues: Dict<string, FormValue> = {
 	email: '',
-	password: '',
+	password: ''
 }
 
 function SigninContent<K extends string, V extends FormValue, T>(
 	props: Omit<React.ComponentProps<typeof FieldGroup>, 'onError'> &
-		Pick<UseFormProps<K, V, T>, 'action'> & {
-			children: React.ReactElement<React.ComponentProps<'form'>>
-		},
+		Partial<Pick<UseFormProps<K, V, T>, 'action'>> & {
+			children: FormBuilderChildren
+		}
 ) {
 	return (
 		<AuthContent
@@ -51,7 +54,7 @@ function SigninForm({
 }) {
 	return (
 		children ?? (
-			<FieldGroup {...rest}>
+			<FieldGroup {...rest} className="gap-3">
 				<TextField
 					label="Email"
 					name="email"

@@ -40,7 +40,7 @@ label._ 😀
 ### 🐛 Bugs
 
 Please file an issue for bugs, missing documentation, or unexpected behavior.
-  
+
 [**See Bugs**](https://github.com/basantech89/awesome-tools/issues)
 
 ### 💡 Feature Requests

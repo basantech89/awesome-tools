@@ -29,11 +29,11 @@ jobs:
           bun-version: latest
 
       - name: Install dependencies
-        run: bun ci --ignore-scripts
-            
+        run: bun install
+
       - name: Build Storybook
         run: bun nx build-storybook ui
-      
+
       - uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

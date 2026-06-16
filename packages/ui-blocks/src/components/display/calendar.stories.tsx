@@ -1,3 +1,6 @@
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import type { DateRange, DayButtonProps } from 'react-day-picker'
+
 import {
 	Button,
 	Card,
@@ -13,11 +16,9 @@ import {
 	PopoverContent,
 	PopoverTrigger
 } from '@awesome-tools/ui'
-import type { Meta, StoryObj } from '@storybook/react-vite'
 import { addDays, format } from 'date-fns'
 import { CalendarIcon, ChevronDownIcon, Clock2Icon } from 'lucide-react'
 import React from 'react'
-import type { DateRange } from 'react-day-picker'
 import { es } from 'react-day-picker/locale'
 
 import { Calendar, CalendarDayButton } from './calendar'
@@ -32,7 +33,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-	render: () => {
+	render: function DefaultRender() {
 		const [date, setDate] = React.useState<Date | undefined>(
 			new Date(new Date().getFullYear(), new Date().getMonth(), 12)
 		)
@@ -53,17 +54,19 @@ export const Default: Story = {
 }
 
 export const Multiple: Story = {
-	render: () => (
-		<Card className="mx-auto w-fit p-0">
-			<CardContent className="p-0">
-				<Calendar mode="multiple" />
-			</CardContent>
-		</Card>
-	)
+	render: function MultipleRender() {
+		return (
+			<Card className="mx-auto w-fit p-0">
+				<CardContent className="p-0">
+					<Calendar mode="multiple" />
+				</CardContent>
+			</Card>
+		)
+	}
 }
 
 export const WeekNumbers: Story = {
-	render: () => {
+	render: function WeekNumbersRender() {
 		const [date, setDate] = React.useState<Date | undefined>(
 			new Date(new Date().getFullYear(), 1, 3)
 		)
@@ -85,7 +88,7 @@ export const WeekNumbers: Story = {
 }
 
 export const BookedDates: Story = {
-	render: () => {
+	render: function BookedDatesRender() {
 		const [date, setDate] = React.useState<Date | undefined>(
 			new Date(new Date().getFullYear(), 1, 3)
 		)
@@ -117,7 +120,7 @@ export const BookedDates: Story = {
 }
 
 export const Range: Story = {
-	render: () => {
+	render: function RangeRender() {
 		const [dateRange, setDateRange] = React.useState<DateRange | undefined>({
 			from: new Date(new Date().getFullYear(), 0, 12),
 			to: addDays(new Date(new Date().getFullYear(), 0, 12), 30)
@@ -143,7 +146,7 @@ export const Range: Story = {
 }
 
 export const RangeMultipleMonths: Story = {
-	render: () => {
+	render: function RangeMultipleMonthsRender() {
 		const [range, setRange] = React.useState<DateRange | undefined>({
 			from: new Date(new Date().getFullYear(), 3, 12),
 			to: addDays(new Date(new Date().getFullYear(), 3, 12), 60)
@@ -168,13 +171,13 @@ export const RangeMultipleMonths: Story = {
 }
 
 export const Time: Story = {
-	render: () => {
+	render: function TimeRender() {
 		const [date, setDate] = React.useState<Date | undefined>(
 			new Date(new Date().getFullYear(), new Date().getMonth(), 12)
 		)
 
 		return (
-			<Card className="mx-auto w-fit" size="sm">
+			<Card className="mx-auto w-fit">
 				<CardContent>
 					<Calendar
 						className="p-0"
@@ -183,7 +186,7 @@ export const Time: Story = {
 						selected={date}
 					/>
 				</CardContent>
-				<CardFooter className="border-t bg-card">
+				<CardFooter className="bg-card border-t">
 					<FieldGroup>
 						<Field>
 							<FieldLabel htmlFor="time-from">Start Time</FieldLabel>
@@ -223,7 +226,7 @@ export const Time: Story = {
 }
 
 export const Presets: Story = {
-	render: () => {
+	render: function PresetsRender() {
 		const [date, setDate] = React.useState<Date | undefined>(
 			new Date(new Date().getFullYear(), 1, 12)
 		)
@@ -232,7 +235,7 @@ export const Presets: Story = {
 		)
 
 		return (
-			<Card className="mx-auto w-fit max-w-[300px]" size="sm">
+			<Card className="mx-auto w-fit max-w-75">
 				<CardContent>
 					<Calendar
 						className="p-0 [--cell-size:--spacing(9.5)]"
@@ -262,7 +265,6 @@ export const Presets: Story = {
 									new Date(newDate.getFullYear(), newDate.getMonth(), 1)
 								)
 							}}
-							size="sm"
 							variant="outline"
 						>
 							{preset.label}
@@ -274,8 +276,19 @@ export const Presets: Story = {
 	}
 }
 
+const DayButton = ({ children, modifiers, day, ...props }: DayButtonProps) => {
+	const isWeekend = day.date.getDay() === 0 || day.date.getDay() === 6
+
+	return (
+		<CalendarDayButton day={day} modifiers={modifiers} {...props}>
+			{children}
+			{!modifiers.outside && <span>{isWeekend ? '$120' : '$100'}</span>}
+		</CalendarDayButton>
+	)
+}
+
 export const CustomDays: Story = {
-	render: () => {
+	render: function CustomDaysRender() {
 		const [range, setRange] = React.useState<DateRange | undefined>({
 			from: new Date(new Date().getFullYear(), 11, 8),
 			to: addDays(new Date(new Date().getFullYear(), 11, 8), 10)
@@ -287,21 +300,7 @@ export const CustomDays: Story = {
 					<Calendar
 						captionLayout="dropdown"
 						className="[--cell-size:--spacing(10)] md:[--cell-size:--spacing(12)]"
-						components={{
-							DayButton: ({ children, modifiers, day, ...props }) => {
-								const isWeekend =
-									day.date.getDay() === 0 || day.date.getDay() === 6
-
-								return (
-									<CalendarDayButton day={day} modifiers={modifiers} {...props}>
-										{children}
-										{!modifiers.outside && (
-											<span>{isWeekend ? '$120' : '$100'}</span>
-										)}
-									</CalendarDayButton>
-								)
-							}
-						}}
+						components={{ DayButton }}
 						defaultMonth={range?.from}
 						formatters={{
 							formatMonthDropdown: date => {
@@ -320,7 +319,7 @@ export const CustomDays: Story = {
 }
 
 export const DatePicker: Story = {
-	render: () => {
+	render: function DatePickerRender() {
 		const [date, setDate] = React.useState<Date>()
 
 		return (
@@ -349,7 +348,7 @@ export const DatePicker: Story = {
 }
 
 export const DatePickerWithDropdowns: Story = {
-	render: () => {
+	render: function DatePickerWithDropdownsRender() {
 		const [date, setDate] = React.useState<Date>()
 		const [open, setOpen] = React.useState(false)
 
@@ -382,7 +381,6 @@ export const DatePickerWithDropdowns: Story = {
 							<Button
 								className="w-full"
 								onClick={() => setOpen(false)}
-								size="sm"
 								variant="outline"
 							>
 								Done
@@ -396,7 +394,7 @@ export const DatePickerWithDropdowns: Story = {
 }
 
 export const DatePickerWithRange: Story = {
-	render: () => {
+	render: function DatePickerWithRangeRender() {
 		const [date, setDate] = React.useState<DateRange | undefined>({
 			from: new Date(new Date().getFullYear(), 0, 20),
 			to: addDays(new Date(new Date().getFullYear(), 0, 20), 20)

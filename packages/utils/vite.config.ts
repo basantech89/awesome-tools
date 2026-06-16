@@ -9,25 +9,25 @@ export default defineConfig({
 	plugins: [
 		dts({
 			entryRoot: 'src',
-			tsconfigPath: path.join(import.meta.dirname, 'tsconfig.lib.json'),
-		}),
+			tsconfigPath: path.join(import.meta.dirname, 'tsconfig.lib.json')
+		})
 	],
 	build: {
 		outDir: './dist',
 		emptyOutDir: true,
 		reportCompressedSize: true,
 		commonjsOptions: {
-			transformMixedEsModules: true,
+			transformMixedEsModules: true
 		},
 		lib: {
 			entry: 'src/index.ts',
 			name: 'utils',
-			formats: ['es'],
+			formats: ['es']
 		},
 		rollupOptions: {
-			external: ['zod/v4'],
+			external: ['zod/v4']
 		},
-		minify: false,
+		minify: false
 	},
 	// Uncomment this if you are using workers.
 	// worker: {
@@ -40,12 +40,12 @@ export default defineConfig({
 		environment: 'node',
 		include: [
 			'{src/__tests__}/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-			'src/__tests__/**/*.test-d.ts',
+			'src/__tests__/**/*.test-d.ts'
 		],
 		reporters: ['default'],
 		coverage: {
 			reportsDirectory: './test-output/vitest/coverage',
-			provider: 'v8' as const,
-		},
-	},
+			provider: 'v8' as const
+		}
+	}
 })

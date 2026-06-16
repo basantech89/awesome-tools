@@ -13,19 +13,19 @@ function Slider({
 	max = 100,
 	...props
 }: SliderPrimitive.Root.Props) {
-	const _values = React.useMemo(
+	const values = React.useMemo(
 		() =>
 			Array.isArray(value)
 				? value
 				: Array.isArray(defaultValue)
 					? defaultValue
 					: [min, max],
-		[value, defaultValue, min, max],
+		[value, defaultValue, min, max]
 	)
 
 	return (
 		<SliderPrimitive.Root
-			className="data-vertical:h-full data-horizontal:w-full"
+			className="data-horizontal:w-full data-vertical:h-full"
 			data-slot="slider"
 			defaultValue={defaultValue}
 			max={max}
@@ -36,23 +36,23 @@ function Slider({
 		>
 			<SliderPrimitive.Control
 				className={cn(
-					'relative flex w-full touch-none select-none items-center data-vertical:h-full data-vertical:min-h-40 data-vertical:w-auto data-vertical:flex-col data-disabled:opacity-50',
-					className,
+					'relative flex w-full touch-none items-center select-none data-disabled:opacity-50 data-vertical:h-full data-vertical:min-h-40 data-vertical:w-auto data-vertical:flex-col',
+					className
 				)}
 			>
 				<SliderPrimitive.Track
-					className="relative select-none overflow-hidden rounded-full bg-muted data-horizontal:h-1.5 data-vertical:h-full data-horizontal:w-full data-vertical:w-1.5"
+					className="bg-muted relative overflow-hidden rounded-full select-none data-horizontal:h-1.5 data-horizontal:w-full data-vertical:h-full data-vertical:w-1.5"
 					data-slot="slider-track"
 				>
 					<SliderPrimitive.Indicator
-						className="select-none bg-primary data-horizontal:h-full data-vertical:w-full"
+						className="bg-primary select-none data-horizontal:h-full data-vertical:w-full"
 						data-slot="slider-range"
 					/>
 				</SliderPrimitive.Track>
-				{Array.from({ length: _values.length }, (_, index) => (
+				{Array.from({ length: values.length }, (_, index) => (
 					<SliderPrimitive.Thumb
 						aria-label={`slider thumb ${index + 1}`}
-						className="block size-4 shrink-0 cursor-pointer select-none rounded-full border border-primary bg-white shadow-sm ring-ring/50 transition-[color,box-shadow] hover:ring-4 focus-visible:outline-hidden focus-visible:ring-4 disabled:pointer-events-none disabled:opacity-50"
+						className="border-primary ring-ring/50 block size-4 shrink-0 cursor-pointer rounded-full border bg-white shadow-sm transition-[color,box-shadow] select-none hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
 						data-slot="slider-thumb"
 						// biome-ignore lint/suspicious/noArrayIndexKey: this is a static array
 						key={index}

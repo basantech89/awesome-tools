@@ -12,8 +12,8 @@ const meta = {
 			<div className="w-85">
 				<Story />
 			</div>
-		),
-	],
+		)
+	]
 } satisfies Meta<typeof Skeleton>
 
 export default meta
@@ -29,7 +29,7 @@ export const SkeletonAvatar: Story = {
 				<Skeleton className="h-4 w-25" />
 			</div>
 		</div>
-	),
+	)
 }
 
 export const SkeletonCard: Story = {
@@ -43,7 +43,7 @@ export const SkeletonCard: Story = {
 				<Skeleton className="aspect-square w-full" />
 			</CardContent>
 		</Card>
-	),
+	)
 }
 
 export const SkeletonText: Story = {
@@ -53,7 +53,7 @@ export const SkeletonText: Story = {
 			<Skeleton className="h-4 w-full" />
 			<Skeleton className="h-4 w-3/4" />
 		</div>
-	),
+	)
 }
 
 export const SkeletonForm: Story = {
@@ -69,7 +69,7 @@ export const SkeletonForm: Story = {
 			</div>
 			<Skeleton className="h-9 w-24" />
 		</div>
-	),
+	)
 }
 
 export const SkeletonTable: Story = {
@@ -91,5 +91,5 @@ export const SkeletonTable: Story = {
 				<Skeleton className="h-4 w-20" />
 			</div>
 		</div>
-	),
+	)
 }

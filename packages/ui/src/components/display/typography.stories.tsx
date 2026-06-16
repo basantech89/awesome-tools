@@ -6,12 +6,12 @@ import {
 	TypographyH2,
 	TypographyH3,
 	TypographyLead,
-	TypographyP,
+	TypographyP
 } from './typography'
 
 const meta = {
 	title: 'Components/Display/Typography',
-	component: TypographyH1,
+	component: TypographyH1
 } satisfies Meta<typeof TypographyH1>
 
 export default meta
@@ -72,5 +72,5 @@ export const Default: Story = {
 				</TypographyP>
 			</div>
 		</div>
-	),
+	)
 }

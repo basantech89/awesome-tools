@@ -1,1 +1,3 @@
+#!/bin/sh
+
 bun commitlint --edit $1

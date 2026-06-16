@@ -1,42 +1,23 @@
-import { exec } from 'node:child_process'
-import * as path from 'node:path'
-import { fileURLToPath } from 'node:url'
-import * as util from 'node:util'
 import {
 	addDependenciesToPackageJson,
 	formatFiles,
 	generateFiles,
 	getPackageManagerCommand,
 	OverwriteStrategy,
+	readJson,
 	removeDependenciesFromPackageJson,
 	type Tree,
 	updateJson
 } from '@nx/devkit'
+import * as path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 import type { AwesomeToolsGeneratorSchema } from './schema.ts'
 
-const asyncExec = util.promisify(exec)
-
-const getPackageVersion = async (name: string) => {
-	const { stdout, stderr } = await asyncExec(`npm view ${name} version`)
-
-	if (stderr) {
-		throw new Error(
-			`Stderr while fetching version for package ${name}: ${stderr}`
-		)
-	}
-
-	return { name, version: stdout.trim() }
-}
-
 const getDependencyVersions = async (dependencies: string[]) => {
-	const dependencyVersions = await Promise.all(
-		dependencies.map(getPackageVersion)
-	)
-
-	return dependencyVersions.reduce(
-		(acc, curr) => {
-			acc[curr.name] = curr.version
+	return dependencies.reduce(
+		(acc, dep) => {
+			acc[dep] = 'latest'
 			return acc
 		},
 		{} as Record<string, string>
@@ -53,11 +34,20 @@ export async function toolsGenerator(
 		'@awesome-tools/utils',
 		'tailwindcss',
 		'tailwind-merge',
-		'tailwind-variants'
+		'tailwind-variants',
+		'@dnd-kit/abstract',
+		'@dnd-kit/dom',
+		'@dnd-kit/helpers',
+		'@dnd-kit/react',
+		'@tanstack/react-table',
+		'date-fns',
+		'react-day-picker',
+		'sonner',
+		'zod'
 	]
 
 	const devDependencies = [
-		'@awesome-tools/biome',
+		'@awesome-tools/oxlint',
 		'@awesome-tools/commitizen',
 		'cz-git',
 		'@commitlint/cli',
@@ -66,17 +56,22 @@ export async function toolsGenerator(
 		'commitlint-config-gitmoji',
 		'husky',
 		'all-contributors-cli',
+		'oxlint',
+		'oxfmt',
 		'@types/node'
 	]
 
-	const __filename = fileURLToPath(import.meta.url)
-	const __dirname = path.dirname(__filename)
+	const filename = fileURLToPath(import.meta.url)
+	const dirname = path.dirname(filename)
 
 	const depVersions = await getDependencyVersions(dependencies)
 	const devDepVersions = await getDependencyVersions(devDependencies)
 
 	removeDependenciesFromPackageJson(tree, [], ['@types/node'])
 	addDependenciesToPackageJson(tree, depVersions, devDepVersions)
+
+	const pkgJson = readJson(tree, 'package.json')
+	const rootPackage = pkgJson?.nx?.name || pkgJson.name
 
 	updateJson(tree, 'package.json', pkgJson => {
 		pkgJson.scripts = {
@@ -85,9 +80,10 @@ export async function toolsGenerator(
 			'contributors:init': 'all-contributors init',
 			'contributors:add': 'all-contributors add',
 			'contributors:generate': 'all-contributors generate',
-			validate: 'nx run-many -t lint test typecheck build',
-			'validate:affected':
-				'nx affected -t lint test typecheck build --tui false',
+			format: 'bun oxfmt',
+			'format:check': 'bun oxfmt --check',
+			validate: `nx run-many -t format lint test typecheck build --exclude=${rootPackage}`,
+			'validate:affected': `nx affected -t format lint test typecheck build --tui false --exclude=${rootPackage}`,
 			release: 'nx release --first-release --skip-publish'
 		}
 
@@ -112,7 +108,7 @@ export async function toolsGenerator(
 
 	generateFiles(
 		tree,
-		path.join(__dirname, 'files'),
+		path.join(dirname, 'files'),
 		projectRoot,
 		resolvedOptions,
 		generateOptions
@@ -121,7 +117,7 @@ export async function toolsGenerator(
 	if (pm === 'bun') {
 		generateFiles(
 			tree,
-			path.join(__dirname, 'bun-files'),
+			path.join(dirname, 'bun-files'),
 			projectRoot,
 			resolvedOptions,
 			generateOptions

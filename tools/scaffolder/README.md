@@ -44,12 +44,15 @@ npx nx g @awesome-tools/scaffolder:tools -f
 ```
 
 This will add the following files to your NX workspace root:
+
 - `.github/workflows/ci.yml`
   - The CI workflow to validate affected projects with nx by running targets lint, test, build, and typecheck.
 - `.vscode/launch.json`
   - Attach debugger to your already running process by its pid or attach to the debugging server running on port 9229 on your local machine or in a docker container.
-- `biome.json`
-  - Biome configuration file to lint and format your projects across the codebase.
+- `.oxlintrc.json`
+  - Oxlint configuration file to lint your projects across the codebase with oxc.
+- `.oxfmtrc.json`
+  - Oxfmt configuration file to format your projects across the codebase with oxc.
 - `cz.config.ts`
   - Commitizen configuration file to standardize commit messages with [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
   - For examples, look at [this repo](https://github.com/basantech89/awesome-tools/)
@@ -62,23 +65,27 @@ This will add the following files to your NX workspace root:
 - `.husky/pre-push`
   - Pre push git hook to make sure that the commits being pushed are signed.
 
-Also, it make below updates to root package.json file 
+Also, it make below updates to root package.json file
 
 - Add below scripts
+
   ```json
   "prepare": "husky",
   "contributors:init": "all-contributors init",
   "contributors:add": "all-contributors add",
   "contributors:generate": "all-contributors generate",
-  "validate": "nx run-many -t lint test typecheck build",
+  "format": "bun oxfmt",
+  "format:check": "bun oxfmt --check",
+  "validate": "nx run-many -t format lint test typecheck build",
   "validate:affected":
-    "nx affected -t lint test typecheck build --tui false",
+    "nx affected -t format lint test typecheck build --tui false",
   "release": "nx release --first-release --skip-publish"
   ```
 
 - Add latest versions of below dev dependencies
+
   ```text
-  @awesome-tools/biome
+  @awesome-tools/oxlint
   @awesome-tools/commitizen
   cz-git
   @commitlint/cli
@@ -87,16 +94,35 @@ Also, it make below updates to root package.json file
   commitlint-config-gitmoji
   husky
   all-contributors-cli
+  oxlint
+  oxfmt
   @types/node
   ```
-
 
 - Add latest versions of below prod dependencies
   ```text
   @awesome-tools/ui
   @awesome-tools/ui-blocks
   @awesome-tools/utils
+  tailwindcss
+  tailwind-merge
+  tailwind-variants
+  @dnd-kit/abstract
+  @dnd-kit/dom
+  @dnd-kit/helpers
+  @dnd-kit/react
+  @tanstack/react-table
+  date-fns
+  react-day-picker
+  sonner
+  zod
   ```
+
+Install dependencies
+
+```bash
+npm install
+```
 
 ## Issues
 
@@ -106,7 +132,7 @@ label._ 😀
 ### 🐛 Bugs
 
 Please file an issue for bugs, missing documentation, or unexpected behavior.
-  
+
 [**See Bugs**](https://github.com/basantech89/awesome-tools/issues)
 
 ### 💡 Feature Requests

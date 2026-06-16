@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import {
 	ArrowUpRightIcon,
 	CircleDashedIcon,
 	FolderIcon,
 	PlusIcon
 } from 'lucide-react'
+
+import { Button, InputGroup, InputGroupAddon, InputGroupInput, Kbd } from '#ui'
 
 import {
 	Empty,
@@ -14,7 +17,6 @@ import {
 	EmptyMedia,
 	EmptyTitle
 } from './empty'
-import { Button, InputGroup, InputGroupAddon, InputGroupInput, Kbd } from '#ui'
 
 const meta = {
 	title: 'Components/Display/Empty',

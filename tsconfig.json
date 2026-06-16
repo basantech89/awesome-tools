@@ -1,25 +1,31 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compileOnSave": false,
-  "files": [],
-  "references": [
-    {
-      "path": "./tools/biome"
-    },
-    {
-      "path": "./tools/commitizen"
-    },
-    {
-      "path": "./packages/ui"
-    },
-    {
-      "path": "./packages/utils"
-    },
-    {
-      "path": "./packages/ui-blocks"
-    },
-    {
-      "path": "./tools/scaffolder"
-    }
-  ]
+	"extends": "./tsconfig.base.json",
+	"compileOnSave": false,
+	"files": [],
+	"references": [
+		{
+			"path": "./tools/biome"
+		},
+		{
+			"path": "./tools/commitizen"
+		},
+		{
+			"path": "./packages/ui"
+		},
+		{
+			"path": "./packages/utils"
+		},
+		{
+			"path": "./packages/ui-blocks"
+		},
+		{
+			"path": "./tools/scaffolder"
+		},
+		{
+			"path": "./packages/test-app"
+		},
+		{
+			"path": "./tools/oxlint"
+		}
+	]
 }

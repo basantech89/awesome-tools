@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import {
 	ArrowUpIcon,
 	CheckIcon,
@@ -7,7 +8,7 @@ import {
 	MailIcon,
 	PlusIcon,
 	SearchIcon,
-	StarIcon,
+	StarIcon
 } from 'lucide-react'
 import React from 'react'
 
@@ -18,7 +19,7 @@ import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
-	DropdownMenuTrigger,
+	DropdownMenuTrigger
 } from './dropdown-menu'
 import {
 	InputGroup,
@@ -26,7 +27,7 @@ import {
 	InputGroupButton,
 	InputGroupInput,
 	InputGroupText,
-	InputGroupTextarea,
+	InputGroupTextarea
 } from './input-group'
 
 const meta = {
@@ -36,8 +37,8 @@ const meta = {
 		InputGroupAddon,
 		InputGroupButton,
 		InputGroupInput,
-		InputGroupText,
-	},
+		InputGroupText
+	}
 } satisfies Meta<typeof InputGroup>
 
 export default meta
@@ -113,13 +114,13 @@ export const Default: Story = {
 			<InputGroup>
 				<InputGroupInput placeholder="@shadcn" />
 				<InputGroupAddon align="inline-end">
-					<div className="flex size-rem-4 items-center justify-center rounded-full bg-primary text-primary-foreground">
+					<div className="size-rem-4 bg-primary text-primary-foreground flex items-center justify-center rounded-full">
 						<CheckIcon className="size-rem-3" />
 					</div>
 				</InputGroupAddon>
 			</InputGroup>
 		</div>
-	),
+	)
 }
 
 export const Icon: Story = {
@@ -154,7 +155,7 @@ export const Icon: Story = {
 				</InputGroupAddon>
 			</InputGroup>
 		</div>
-	),
+	)
 }
 
 export const Text: Story = {
@@ -193,11 +194,11 @@ export const Text: Story = {
 				</InputGroupAddon>
 			</InputGroup>
 		</div>
-	),
+	)
 }
 
 export const Button: Story = {
-	render: () => {
+	render: function ButtonRender() {
 		const [isFavorite, setIsFavorite] = React.useState(false)
 
 		return (
@@ -235,7 +236,7 @@ export const Button: Story = {
 							</PopoverContent>
 						</Popover>
 					</InputGroupAddon>{' '}
-					<InputGroupAddon className="ps-1.5 text-muted-foreground">
+					<InputGroupAddon className="text-muted-foreground ps-1.5">
 						https://
 					</InputGroupAddon>
 					<InputGroupInput aria-label="url input" id="input-secure-19" />
@@ -260,5 +261,5 @@ export const Button: Story = {
 				</InputGroup>
 			</div>
 		)
-	},
+	}
 }

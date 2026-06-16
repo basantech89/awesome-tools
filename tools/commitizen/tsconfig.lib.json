@@ -1,12 +1,8 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "types": [
-      "node"
-    ]
-  },
-  "include": [
-    "index.js"
-  ],
-  "references": []
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"types": ["node"]
+	},
+	"include": ["index.js"],
+	"references": []
 }

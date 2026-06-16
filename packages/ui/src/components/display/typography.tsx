@@ -4,13 +4,13 @@ import { cn } from '#ui/lib/utils'
 
 export function TypographyH1({
 	children,
-	className,
+	className
 }: React.ComponentProps<'h1'>) {
 	return (
 		<h1
 			className={cn(
-				'scroll-m-20 text-balance py-[2ch] text-center font-extrabold text-4xl tracking-tight',
-				className,
+				'scroll-m-20 py-[2ch] text-center text-4xl font-extrabold tracking-tight text-balance',
+				className
 			)}
 		>
 			{children}
@@ -20,13 +20,13 @@ export function TypographyH1({
 
 export function TypographyH2({
 	children,
-	className,
+	className
 }: React.ComponentProps<'h2'>) {
 	return (
 		<h2
 			className={cn(
-				'scroll-m-20 border-b pt-[2ch] pb-[1ch] font-semibold text-3xl tracking-tight first:mt-0',
-				className,
+				'scroll-m-20 pt-[2ch] pb-[1ch] text-3xl font-semibold tracking-tight first:mt-0',
+				className
 			)}
 		>
 			{children}
@@ -36,13 +36,13 @@ export function TypographyH2({
 
 export function TypographyH3({
 	children,
-	className,
+	className
 }: React.ComponentProps<'h3'>) {
 	return (
 		<h3
 			className={cn(
-				'mt-[2ch] scroll-m-20 font-semibold text-2xl tracking-tight',
-				className,
+				'mt-[2ch] scroll-m-20 text-2xl font-semibold tracking-tight',
+				className
 			)}
 		>
 			{children}
@@ -52,13 +52,13 @@ export function TypographyH3({
 
 export function TypographyH4({
 	children,
-	className,
+	className
 }: React.ComponentProps<'h4'>) {
 	return (
 		<h4
 			className={cn(
-				'scroll-m-20 font-semibold text-xl tracking-tight',
-				className,
+				'scroll-m-20 text-xl font-semibold tracking-tight',
+				className
 			)}
 		>
 			{children}
@@ -66,16 +66,27 @@ export function TypographyH4({
 	)
 }
 
+export function TypographyH5({
+	children,
+	className
+}: React.ComponentProps<'h5'>) {
+	return (
+		<h4 className={cn('scroll-m-20 text-[1rem] font-semibold', className)}>
+			{children}
+		</h4>
+	)
+}
+
 export function TypographyP({
 	children,
-	className,
+	className
 }: React.ComponentProps<'p'>) {
-	return <p className={cn('not-first:mt-6 leading-7', className)}>{children}</p>
+	return <p className={cn('leading-7 not-first:mt-6', className)}>{children}</p>
 }
 
 export function TypographyBlockquote({
 	children,
-	className,
+	className
 }: React.ComponentProps<'blockquote'>) {
 	return (
 		<blockquote className={cn('mt-6 border-l-2 pl-6 italic', className)}>
@@ -86,13 +97,13 @@ export function TypographyBlockquote({
 
 export function TypographyInlineCode({
 	children,
-	className,
+	className
 }: React.ComponentProps<'code'>) {
 	return (
 		<code
 			className={cn(
-				'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono font-semibold text-sm',
-				className,
+				'bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold',
+				className
 			)}
 		>
 			{children}
@@ -102,7 +113,7 @@ export function TypographyInlineCode({
 
 export function TypographyLead({
 	children,
-	className,
+	className
 }: React.ComponentProps<'p'>) {
 	return (
 		<p className={cn('text-muted-foreground text-xl', className)}>{children}</p>
@@ -111,19 +122,19 @@ export function TypographyLead({
 
 export function TypographyLarge({
 	children,
-	className,
+	className
 }: React.ComponentProps<'div'>) {
 	return (
-		<div className={cn('font-semibold text-lg', className)}>{children}</div>
+		<div className={cn('text-lg font-semibold', className)}>{children}</div>
 	)
 }
 
 export function TypographySmall({
 	children,
-	className,
+	className
 }: React.ComponentProps<'small'>) {
 	return (
-		<small className={cn('font-medium text-sm leading-none', className)}>
+		<small className={cn('text-sm leading-none font-medium', className)}>
 			{children}
 		</small>
 	)
@@ -131,7 +142,7 @@ export function TypographySmall({
 
 export function TypographyMuted({
 	children,
-	className,
+	className
 }: React.ComponentProps<'p'>) {
 	return (
 		<p className={cn('text-muted-foreground text-sm', className)}>{children}</p>

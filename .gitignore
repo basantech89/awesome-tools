@@ -55,3 +55,9 @@ vitest.config.*.timestamp*
 # Next.js
 .next
 out
+.vercel
+
+.nx/polygraph
+.claude/worktrees
+.claude/settings.local.json
+.nx/self-healing

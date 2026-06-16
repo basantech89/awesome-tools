@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import { MoreHorizontalIcon } from 'lucide-react'
 
 import {
@@ -6,7 +7,7 @@ import {
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuSeparator,
-	DropdownMenuTrigger,
+	DropdownMenuTrigger
 } from '../forms/dropdown-menu'
 import {
 	Select,
@@ -14,7 +15,7 @@ import {
 	SelectGroup,
 	SelectItem,
 	SelectTrigger,
-	SelectValue,
+	SelectValue
 } from '../forms/select'
 import { Button } from './button'
 import {
@@ -25,13 +26,13 @@ import {
 	TableFooter,
 	TableHead,
 	TableHeader,
-	TableRow,
+	TableRow
 } from './table'
 
 const meta = {
 	title: 'Components/Primitives/Table',
 	component: Table,
-	argTypes: {},
+	argTypes: {}
 } satisfies Meta<typeof Table>
 
 export default meta
@@ -43,44 +44,44 @@ const invoices = [
 		invoice: 'INV001',
 		paymentStatus: 'Paid',
 		totalAmount: '$250.00',
-		paymentMethod: 'Credit Card',
+		paymentMethod: 'Credit Card'
 	},
 	{
 		invoice: 'INV002',
 		paymentStatus: 'Pending',
 		totalAmount: '$150.00',
-		paymentMethod: 'PayPal',
+		paymentMethod: 'PayPal'
 	},
 	{
 		invoice: 'INV003',
 		paymentStatus: 'Unpaid',
 		totalAmount: '$350.00',
-		paymentMethod: 'Bank Transfer',
+		paymentMethod: 'Bank Transfer'
 	},
 	{
 		invoice: 'INV004',
 		paymentStatus: 'Paid',
 		totalAmount: '$450.00',
-		paymentMethod: 'Credit Card',
+		paymentMethod: 'Credit Card'
 	},
 	{
 		invoice: 'INV005',
 		paymentStatus: 'Paid',
 		totalAmount: '$550.00',
-		paymentMethod: 'PayPal',
+		paymentMethod: 'PayPal'
 	},
 	{
 		invoice: 'INV006',
 		paymentStatus: 'Pending',
 		totalAmount: '$200.00',
-		paymentMethod: 'Bank Transfer',
+		paymentMethod: 'Bank Transfer'
 	},
 	{
 		invoice: 'INV007',
 		paymentStatus: 'Unpaid',
 		totalAmount: '$300.00',
-		paymentMethod: 'Credit Card',
-	},
+		paymentMethod: 'Credit Card'
+	}
 ]
 
 export const Default: Story = {
@@ -112,7 +113,7 @@ export const Default: Story = {
 			</TableFooter>
 			<TableCaption>A list of your recent invoices.</TableCaption>
 		</Table>
-	),
+	)
 }
 
 export const WithBadges: Story = {
@@ -129,12 +130,12 @@ export const WithBadges: Story = {
 				<TableRow>
 					<TableCell className="font-medium">Design homepage</TableCell>
 					<TableCell>
-						<span className="inline-flex items-center rounded-full bg-green-500/10 px-2 py-1 font-medium text-green-700 text-xs dark:text-green-400">
+						<span className="inline-flex items-center rounded-full bg-green-500/10 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-400">
 							Completed
 						</span>
 					</TableCell>
 					<TableCell className="text-right">
-						<span className="inline-flex items-center rounded-full bg-blue-500/10 px-2 py-1 font-medium text-blue-700 text-xs dark:text-blue-400">
+						<span className="inline-flex items-center rounded-full bg-blue-500/10 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-400">
 							High
 						</span>
 					</TableCell>
@@ -142,12 +143,12 @@ export const WithBadges: Story = {
 				<TableRow>
 					<TableCell className="font-medium">Implement API</TableCell>
 					<TableCell>
-						<span className="inline-flex items-center rounded-full bg-yellow-500/10 px-2 py-1 font-medium text-xs text-yellow-700 dark:text-yellow-400">
+						<span className="inline-flex items-center rounded-full bg-yellow-500/10 px-2 py-1 text-xs font-medium text-yellow-700 dark:text-yellow-400">
 							In Progress
 						</span>
 					</TableCell>
 					<TableCell className="text-right">
-						<span className="inline-flex items-center rounded-full bg-gray-500/10 px-2 py-1 font-medium text-gray-700 text-xs dark:text-gray-400">
+						<span className="inline-flex items-center rounded-full bg-gray-500/10 px-2 py-1 text-xs font-medium text-gray-700 dark:text-gray-400">
 							Medium
 						</span>
 					</TableCell>
@@ -155,19 +156,19 @@ export const WithBadges: Story = {
 				<TableRow>
 					<TableCell className="font-medium">Write tests</TableCell>
 					<TableCell>
-						<span className="inline-flex items-center rounded-full bg-gray-500/10 px-2 py-1 font-medium text-gray-700 text-xs dark:text-gray-400">
+						<span className="inline-flex items-center rounded-full bg-gray-500/10 px-2 py-1 text-xs font-medium text-gray-700 dark:text-gray-400">
 							Pending
 						</span>
 					</TableCell>
 					<TableCell className="text-right">
-						<span className="inline-flex items-center rounded-full bg-gray-500/10 px-2 py-1 font-medium text-gray-700 text-xs dark:text-gray-400">
+						<span className="inline-flex items-center rounded-full bg-gray-500/10 px-2 py-1 text-xs font-medium text-gray-700 dark:text-gray-400">
 							Low
 						</span>
 					</TableCell>
 				</TableRow>
 			</TableBody>
 		</Table>
-	),
+	)
 }
 
 export const WithActions: Story = {
@@ -255,32 +256,32 @@ export const WithActions: Story = {
 				</TableRow>
 			</TableBody>
 		</Table>
-	),
+	)
 }
 
 const people = [
 	{ value: 'sarah', label: 'Sarah Chen' },
 	{ value: 'marcus', label: 'Marc Rodriguez' },
 	{ value: 'emily', label: 'Emily Watson' },
-	{ value: 'david', label: 'David Kim' },
+	{ value: 'david', label: 'David Kim' }
 ]
 
 const tasks = [
 	{
 		task: 'Design homepage',
 		assignee: 'sarah',
-		status: 'In Progress',
+		status: 'In Progress'
 	},
 	{
 		task: 'Implement API',
 		assignee: 'marcus',
-		status: 'Pending',
+		status: 'Pending'
 	},
 	{
 		task: 'Write tests',
 		assignee: 'emily',
-		status: 'Not Started',
-	},
+		status: 'Not Started'
+	}
 ]
 
 export const WithSelect: Story = {
@@ -300,7 +301,7 @@ export const WithSelect: Story = {
 						<TableCell>
 							<Select
 								defaultValue={people.find(
-									person => person.value === item.assignee,
+									person => person.value === item.assignee
 								)}
 								items={people}
 								itemToStringValue={item => {
@@ -310,7 +311,6 @@ export const WithSelect: Story = {
 								<SelectTrigger
 									aria-label="select assignee trigger"
 									className="w-40"
-									size="sm"
 								>
 									<SelectValue />
 								</SelectTrigger>
@@ -330,5 +330,5 @@ export const WithSelect: Story = {
 				))}
 			</TableBody>
 		</Table>
-	),
+	)
 }

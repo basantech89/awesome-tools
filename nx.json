@@ -18,7 +18,7 @@
 	},
 	"nxCloudId": "697dbe0150a93610cdea1716",
 	"plugins": [
-		"@awesome-tools/biome",
+		"@awesome-tools/oxlint",
 		{
 			"plugin": "@nx/js/typescript",
 			"options": {
@@ -88,13 +88,13 @@
 		"typecheck": {
 			"dependsOn": ["^build"]
 		},
-		"lint": {
-			"dependsOn": [
-				{
-					"projects": ["biome"],
-					"target": "build"
-				}
-			]
+		"build": {
+			"cache": true
+		},
+		"@nx/js:swc": {
+			"cache": true,
+			"dependsOn": ["^build"],
+			"inputs": ["production", "^production"]
 		}
 	},
 	"release": {
@@ -151,5 +151,6 @@
 				"linter": "none"
 			}
 		}
-	}
+	},
+	"analytics": true
 }

@@ -1,12 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import { ArrowUpRightIcon } from 'lucide-react'
 
-import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger
-} from './accordion'
 import {
 	Button,
 	Card,
@@ -15,6 +10,13 @@ import {
 	CardHeader,
 	CardTitle
 } from '#ui'
+
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger
+} from './accordion'
 
 const meta = {
 	title: 'Components/Primitives/Accordion',
@@ -132,10 +134,10 @@ export const Border: Story = {
 						key={item.value}
 						value={item.value}
 					>
-						<AccordionTrigger className="px-4 font-medium text-sm">
+						<AccordionTrigger className="px-4 text-sm font-medium">
 							{item.trigger}
 						</AccordionTrigger>
-						<AccordionContent className="px-4 text-muted-foreground text-sm">
+						<AccordionContent className="text-muted-foreground px-4 text-sm">
 							{item.content}
 						</AccordionContent>
 					</AccordionItem>
@@ -164,7 +166,7 @@ export const InCard: Story = {
 							All plans include a 14-day free trial with no credit card
 							required.
 						</p>
-						<Button size="sm">
+						<Button>
 							View plans
 							<ArrowUpRightIcon />
 						</Button>
@@ -301,7 +303,7 @@ export const Disabled: Story = {
 			<Accordion className="mx-auto w-lg overflow-hidden rounded-lg border">
 				{items.map(item => (
 					<AccordionItem
-						className="p-1 data-open:bg-muted/50"
+						className="data-open:bg-muted/50 p-1"
 						disabled={item.disabled}
 						key={item.value}
 						value={item.value}

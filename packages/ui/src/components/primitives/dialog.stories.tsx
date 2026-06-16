@@ -11,7 +11,7 @@ import {
 	DialogFooter,
 	DialogHeader,
 	DialogTitle,
-	DialogTrigger,
+	DialogTrigger
 } from './dialog'
 
 const meta = {
@@ -22,27 +22,27 @@ const meta = {
 			label: 'Default Open',
 			control: { type: 'boolean' },
 			description:
-				'The open state of the dialog when it is initially rendered. Use when you do not need to control its open state.',
+				'The open state of the dialog when it is initially rendered. Use when you do not need to control its open state.'
 		},
 		open: {
 			label: 'Open',
 			control: { type: 'boolean' },
 			description:
-				'The controlled open state of the dialog. Must be used in conjunction with onOpenChange.',
+				'The controlled open state of the dialog. Must be used in conjunction with onOpenChange.'
 		},
 		onOpenChange: {
 			label: 'On Open Change',
 			description:
-				'Event handler called when the open state of the dialog changes.',
+				'Event handler called when the open state of the dialog changes.'
 		},
 		modal: {
 			label: 'Modal',
 			control: { type: 'boolean' },
 			description:
 				'The modality of the dialog. When set to true, interaction with outside elements will be disabled and only dialog content will be visible to screen readers.',
-			table: { defaultValue: { summary: 'true' } },
-		},
-	},
+			table: { defaultValue: { summary: 'true' } }
+		}
+	}
 } satisfies Meta<typeof Dialog>
 
 export default meta
@@ -81,7 +81,7 @@ export const Default: Story = {
 				</DialogContent>
 			</form>
 		</Dialog>
-	),
+	)
 }
 
 export const CustomCloseButton: Story = {
@@ -112,5 +112,5 @@ export const CustomCloseButton: Story = {
 				</DialogFooter>
 			</DialogContent>
 		</Dialog>
-	),
+	)
 }
