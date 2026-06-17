@@ -13,7 +13,7 @@
   - [Issues](#issues)
     - [🐛 Bugs](#-bugs)
     - [💡 Feature Requests](#-feature-requests)
-  - [NX Biome Plugin](#nx-biome-plugin)
+  - [NX](#nx)
     - [Credits](#credits)
 
 ## Installation
@@ -26,6 +26,24 @@ npm install --save @awesome-tools/ui-blocks
 ```
 
 ## Usage
+
+Import the styles.css file in your project:
+
+```css
+@import '@awesome-tools/ui-blocks/styles.css';
+```
+
+You don't need to import the styles.css file from `@awesome-tools/ui` package as the styles from `@awesome-tools/ui-blocks` package already include the styles from `@awesome-tools/ui` package.
+
+Source the `@awesome-tools/ui` and `@awesome-tools/ui-blocks` packages so that tailwind can find and include the styles to generate:
+
+```css
+@source '../../../../node_modules/@awesome-tools/ui/dist';
+@source '../../../../node_modules/@awesome-tools/ui-blocks/dist';
+```
+
+> [!NOTE]
+> You'll have to source the `@awesome-tools/ui` package even if you're not directly using it in your project since the `@awesome-tools/ui-blocks` package depends on the `@awesome-tools/ui` package.
 
 import the package in your module:
 
@@ -41,7 +59,7 @@ label._ 😀
 ### 🐛 Bugs
 
 Please file an issue for bugs, missing documentation, or unexpected behavior.
-  
+
 [**See Bugs**](https://github.com/basantech89/awesome-tools/issues)
 
 ### 💡 Feature Requests
@@ -49,7 +67,7 @@ Please file an issue for bugs, missing documentation, or unexpected behavior.
 Please file an issue to suggest new features. Vote on feature requests by adding
 a 👍. This helps maintainers prioritize what to work on.
 
-## NX Biome Plugin
+## NX
 
 This library was generated with [Nx](https://nx.dev).
 
@@ -58,6 +76,13 @@ This library was generated with [Nx](https://nx.dev).
 This project wouldn't have been possible without the amazing work done by
 
 [Base UI](https://base-ui.com/)
+
 [Shadcn UI](https://ui.shadcn.com/)
+
 [Storybook](https://storybook.js.org/)
+
 [Chromatic](https://www.chromatic.com/)
+
+[TailwindCSS](https://tailwindcss.com/)
+
+[Tanstack React Table](https://tanstack.com/table/latest)

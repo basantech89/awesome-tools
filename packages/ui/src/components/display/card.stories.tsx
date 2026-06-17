@@ -1,5 +1,6 @@
 /** biome-ignore-all lint/performance/noImgElement: all images are used only for demoing */
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import { CaptionsIcon, PlusIcon } from 'lucide-react'
 
 import { Field, FieldGroup, FieldLabel } from '../forms/field'
@@ -9,7 +10,7 @@ import {
 	AvatarFallback,
 	AvatarGroup,
 	AvatarGroupCount,
-	AvatarImage,
+	AvatarImage
 } from '../primitives/avatar'
 import { Button } from '../primitives/button'
 import {
@@ -19,7 +20,7 @@ import {
 	CardDescription,
 	CardFooter,
 	CardHeader,
-	CardTitle,
+	CardTitle
 } from './card'
 
 const meta = {
@@ -29,10 +30,10 @@ const meta = {
 		size: {
 			control: { type: 'select' },
 			description: 'The size of the card',
-			options: ['sm', 'default'],
-		},
+			options: ['sm', 'default']
+		}
 	},
-	args: { size: 'default' },
+	args: { size: 'default' }
 } satisfies Meta<typeof Card>
 
 export default meta
@@ -92,7 +93,7 @@ export const Default: Story = {
 				</CardFooter>
 			</Card>
 		</div>
-	),
+	)
 }
 
 export const Sizes: Story = {
@@ -118,7 +119,7 @@ export const Sizes: Story = {
 				</CardFooter>
 			</Card>
 
-			<Card className="mx-auto w-full max-w-sm" size="sm">
+			<Card className="mx-auto w-full max-w-sm">
 				<CardHeader>
 					<CardTitle>Small Card</CardTitle>
 					<CardDescription>
@@ -138,7 +139,7 @@ export const Sizes: Story = {
 				</CardFooter>
 			</Card>
 		</div>
-	),
+	)
 }
 
 export const Border: Story = {
@@ -173,13 +174,13 @@ export const Border: Story = {
 				</CardFooter>
 			</Card>
 		</div>
-	),
+	)
 }
 
 export const Image: Story = {
 	render: () => (
 		<Card className="relative mx-auto w-full max-w-sm pt-0" size="default">
-			<div className="absolute inset-0 z-30 aspect-video bg-primary opacity-50 mix-blend-color" />
+			<div className="bg-primary absolute inset-0 z-30 aspect-video opacity-50 mix-blend-color" />
 			<img
 				alt="By mymind on Unsplash"
 				className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale"
@@ -199,7 +200,7 @@ export const Image: Story = {
 				</Button>
 			</CardFooter>
 		</Card>
-	),
+	)
 }
 
 export const MeetingNotes: Story = {
@@ -211,7 +212,7 @@ export const MeetingNotes: Story = {
 					Transcript from the meeting with the client.
 				</CardDescription>
 				<CardAction>
-					<Button size="sm" variant="outline">
+					<Button variant="outline">
 						<CaptionsIcon data-icon="inline-start" />
 						Transcribe
 					</Button>
@@ -254,5 +255,5 @@ export const MeetingNotes: Story = {
 				</AvatarGroup>
 			</CardFooter>
 		</Card>
-	),
+	)
 }

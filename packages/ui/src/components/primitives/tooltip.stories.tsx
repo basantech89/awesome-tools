@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import { fn } from 'storybook/test'
 
 import { Button } from './button'
@@ -13,30 +14,30 @@ const meta = {
 			label: 'Default Open',
 			control: { type: 'boolean' },
 			description:
-				'The open state of the tooltip when it is initially rendered. Use when you do not need to control its open state.',
+				'The open state of the tooltip when it is initially rendered. Use when you do not need to control its open state.'
 		},
 		open: {
 			label: 'Open',
 			control: { type: 'boolean' },
 			description:
-				'The controlled open state of the tooltip. Must be used in conjunction with onOpenChange.',
+				'The controlled open state of the tooltip. Must be used in conjunction with onOpenChange.'
 		},
 		onOpenChange: {
 			label: 'On Open Change',
 			description:
-				'Event handler called when the open state of the tooltip changes.',
+				'Event handler called when the open state of the tooltip changes.'
 		},
 		disableHoverablePopup: {
 			label: 'Disable Hoverable Popup',
 			control: { type: 'boolean' },
 			description:
 				'Prevents Tooltip.Content from remaining open when hovering. Disabling this has accessibility consequences. Inherits from Tooltip.Provider.',
-			table: { defaultValue: { summary: 'false' } },
-		},
+			table: { defaultValue: { summary: 'false' } }
+		}
 	},
 	args: {
-		onOpenChange: fn(),
-	},
+		onOpenChange: fn()
+	}
 } satisfies Meta<typeof Tooltip>
 
 export default meta
@@ -53,7 +54,7 @@ export const Default: Story = {
 				<p>Add to library</p>
 			</TooltipContent>
 		</Tooltip>
-	),
+	)
 }
 
 export const States: Story = {
@@ -77,5 +78,5 @@ export const States: Story = {
 				</TooltipContent>
 			</Tooltip>
 		</div>
-	),
+	)
 }

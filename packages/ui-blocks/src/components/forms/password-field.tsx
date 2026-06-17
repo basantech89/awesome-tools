@@ -7,13 +7,14 @@ import {
 	InputGroupInput,
 	Tooltip,
 	TooltipContent,
-	TooltipTrigger,
+	TooltipTrigger
 } from '@awesome-tools/ui'
 import { Eye, EyeClosed, InfoIcon } from 'lucide-react'
 import React from 'react'
 
-import type { TextFieldProps } from './text-field'
 import { useField } from '#blocks/hooks/use-form'
+
+import type { TextFieldProps } from './text-field'
 
 const PasswordField = React.memo(function InnerPasswordField({
 	label,

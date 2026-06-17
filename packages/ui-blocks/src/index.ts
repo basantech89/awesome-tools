@@ -1,7 +1,3 @@
-import './styles.css'
-
-export * from './components/auth'
-export * from './components/display'
-export * from './components/forms'
+export * from './components'
 export * from './hooks'
 export * from './types'

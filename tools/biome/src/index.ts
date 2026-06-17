@@ -1,12 +1,11 @@
-import { dirname } from 'node:path'
 import {
 	type CreateNodesResult,
 	type CreateNodesV2,
-	createNodesFromFiles,
+	createNodesFromFiles
 } from '@nx/devkit'
+import { dirname } from 'node:path'
 
 type MyPluginOptions = Record<string, never>
-
 
 export const createNodesV2: CreateNodesV2<MyPluginOptions> = [
 	'**/package.json',
@@ -15,13 +14,13 @@ export const createNodesV2: CreateNodesV2<MyPluginOptions> = [
 			createNodesInternal,
 			configFiles,
 			options,
-			context,
+			context
 		)
-	},
+	}
 ]
 
 async function createNodesInternal(
-	configFilePath: string,
+	configFilePath: string
 ): Promise<CreateNodesResult> {
 	const root = dirname(configFilePath)
 	if (root === '.') {
@@ -33,7 +32,7 @@ async function createNodesInternal(
 		projects: {
 			[root]: {
 				metadata: {
-					description: 'NX plugin for Biome',
+					description: 'NX plugin for Biome'
 				},
 				targets: {
 					lint: {
@@ -45,12 +44,12 @@ async function createNodesInternal(
 							'^default',
 							'{workspaceRoot}/biome.json',
 							{
-								externalDependencies: ['@biomejs/biome'],
-							},
-						],
-					},
-				},
-			},
-		},
+								externalDependencies: ['@biomejs/biome']
+							}
+						]
+					}
+				}
+			}
+		}
 	}
 }

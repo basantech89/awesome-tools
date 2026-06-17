@@ -1,4 +1,7 @@
+'use client'
+
 import type { Button } from '@awesome-tools/ui'
+
 import React from 'react'
 
 import {
@@ -6,8 +9,23 @@ import {
 	type FormValue,
 	type UseFormProps,
 	useForm,
-	useFormContext,
+	useFormContext
 } from '#blocks/hooks/use-form'
+
+export type FormBuilderChildren = React.ReactElement<
+	Omit<React.ComponentProps<'form'>, 'action'> & {
+		action?: Exclude<React.ComponentProps<'form'>['action'], string | undefined>
+	}
+>
+
+export type FormBuilderProps<
+	K extends string,
+	V extends FormValue,
+	T
+> = Partial<Pick<UseFormProps<K, V, T>, 'action'>> &
+	Omit<UseFormProps<K, V, T>, 'action'> & {
+		children: FormBuilderChildren
+	}
 
 function FormBuilder<K extends string, V extends FormValue, T>({
 	children,
@@ -17,23 +35,30 @@ function FormBuilder<K extends string, V extends FormValue, T>({
 	onError,
 	onSuccess,
 	...rest
-}: UseFormProps<K, V, T> & {
-	children: React.ReactElement<React.ComponentProps<'form'>>
-}) {
+}: FormBuilderProps<K, V, T>) {
+	const child = React.Children.only(children)
+
+	const givenAction = action ?? child.props.action
+	if (!givenAction) {
+		throw new Error(
+			'SigninContent/SignupContent/AuthContent or its child requires an action prop.'
+		)
+	}
+
 	const { contextValue, formAction } = useForm({
-		action,
+		action: givenAction,
 		schema,
 		defaultValues,
 		onError,
-		onSuccess,
+		onSuccess
 	})
 
-	const child = React.cloneElement(children, {
+	const clonedChild = React.cloneElement(children, {
 		...rest,
-		action: formAction,
+		action: formAction
 	})
 
-	return <FormProvider value={contextValue}>{child}</FormProvider>
+	return <FormProvider value={contextValue}>{clonedChild}</FormProvider>
 }
 
 function Submit({
@@ -47,7 +72,7 @@ function Submit({
 	return React.cloneElement(children, {
 		type: 'submit',
 		disabled: !isValid || isPending,
-		...rest,
+		...rest
 	})
 }
 

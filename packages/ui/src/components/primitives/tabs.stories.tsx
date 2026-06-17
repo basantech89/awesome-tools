@@ -1,17 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import {
 	AppWindowIcon,
 	CodeIcon,
 	HomeIcon,
 	SearchIcon,
-	SettingsIcon,
+	SettingsIcon
 } from 'lucide-react'
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './tabs'
 
 const meta = {
 	title: 'Components/Primitives/Tabs',
-	component: Tabs,
+	component: Tabs
 } satisfies Meta<typeof Tabs>
 
 export default meta
@@ -30,7 +31,7 @@ export const Default: Story = {
 				</TabsTrigger>
 			</TabsList>
 		</Tabs>
-	),
+	)
 }
 
 export const TabsLine: Story = {
@@ -48,7 +49,7 @@ export const TabsLine: Story = {
 				</TabsTrigger>
 			</TabsList>
 		</Tabs>
-	),
+	)
 }
 
 export const Disabled: Story = {
@@ -67,7 +68,7 @@ export const Disabled: Story = {
 				</TabsTrigger>
 			</TabsList>
 		</Tabs>
-	),
+	)
 }
 
 export const WithIcons: Story = {
@@ -84,7 +85,7 @@ export const WithIcons: Story = {
 				</TabsTrigger>
 			</TabsList>
 		</Tabs>
-	),
+	)
 }
 
 export const IconsOnly: Story = {
@@ -102,7 +103,7 @@ export const IconsOnly: Story = {
 				</TabsTrigger>
 			</TabsList>
 		</Tabs>
-	),
+	)
 }
 
 export const WithContent: Story = {
@@ -122,7 +123,7 @@ export const WithContent: Story = {
 					Notifications
 				</TabsTrigger>
 			</TabsList>
-			<div className="style-lyra:rounded-none style-maia:rounded-xl style-mira:rounded-md style-nova:rounded-lg style-vega:rounded-lg border style-lyra:p-4 style-maia:p-6 style-mira:p-4 style-nova:p-4 style-vega:p-6">
+			<div className="style-lyra:rounded-none style-maia:rounded-xl style-mira:rounded-md style-nova:rounded-lg style-vega:rounded-lg style-lyra:p-4 style-maia:p-6 style-mira:p-4 style-nova:p-4 style-vega:p-6 border">
 				<TabsContent value="account">
 					Manage your account preferences and profile information.
 				</TabsContent>
@@ -134,7 +135,7 @@ export const WithContent: Story = {
 				</TabsContent>
 			</div>
 		</Tabs>
-	),
+	)
 }
 
 export const VerticalTabs: Story = {
@@ -154,7 +155,7 @@ export const VerticalTabs: Story = {
 					Notifications
 				</TabsTrigger>
 			</TabsList>
-			<div className="style-lyra:rounded-none style-maia:rounded-xl style-mira:rounded-md style-nova:rounded-lg style-vega:rounded-lg border style-lyra:p-4 style-maia:p-6 style-mira:p-4 style-nova:p-4 style-vega:p-6">
+			<div className="style-lyra:rounded-none style-maia:rounded-xl style-mira:rounded-md style-nova:rounded-lg style-vega:rounded-lg style-lyra:p-4 style-maia:p-6 style-mira:p-4 style-nova:p-4 style-vega:p-6 border">
 				<TabsContent value="account">
 					Manage your account preferences and profile information.
 				</TabsContent>
@@ -168,5 +169,5 @@ export const VerticalTabs: Story = {
 				</TabsContent>
 			</div>
 		</Tabs>
-	),
+	)
 }

@@ -1,6 +1,7 @@
+import type { StorybookConfig } from '@storybook/react-vite'
+
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import type { StorybookConfig } from '@storybook/react-vite'
 
 const config: StorybookConfig = {
 	stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
@@ -8,22 +9,22 @@ const config: StorybookConfig = {
 		getAbsolutePath('@storybook/addon-docs'),
 		getAbsolutePath('@storybook/addon-vitest'),
 		getAbsolutePath('@storybook/addon-a11y'),
-		getAbsolutePath('@chromatic-com/storybook'),
+		getAbsolutePath('@chromatic-com/storybook')
 	],
 	features: {
-		developmentModeForBuild: true,
+		developmentModeForBuild: true
 	},
 	framework: {
 		name: getAbsolutePath('@storybook/react-vite'),
 		options: {
 			builder: {
-				viteConfigPath: 'vite.storybook.ts',
-			},
-		},
+				viteConfigPath: 'vite.storybook.ts'
+			}
+		}
 	},
 	typescript: {
-		reactDocgen: 'react-docgen-typescript',
-	},
+		reactDocgen: 'react-docgen-typescript'
+	}
 }
 
 function getAbsolutePath(value: string) {

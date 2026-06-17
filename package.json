@@ -1,89 +1,99 @@
 {
 	"name": "@awesome-tools/source",
 	"version": "0.0.0",
-	"license": "MIT",
-	"scripts": {
-		"prepare": "husky",
-		"contributors:init": "all-contributors init",
-		"contributors:add": "all-contributors add",
-		"contributors:generate": "all-contributors generate",
-		"validate": "nx run-many -t lint test typecheck build",
-		"format": "bun biome lint --write",
-		"validate:affected": "nx affected -t lint test typecheck build --tui false",
-		"release": "nx release --skip-publish"
-	},
 	"private": true,
-	"type": "module",
 	"description": "Awesome tools for everyone 🚀",
+	"keywords": [
+		"awesome-tools"
+	],
+	"homepage": "https://github.com/basantech89/awesome-tools#readme",
+	"bugs": {
+		"url": "https://github.com/basantech89/awesome-tools/issues"
+	},
+	"license": "MIT",
 	"author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/basantech89/awesome-tools.git"
 	},
-	"keywords": [
-		"awesome-tools"
-	],
-	"bugs": {
-		"url": "https://github.com/basantech89/awesome-tools/issues"
-	},
-	"homepage": "https://github.com/basantech89/awesome-tools#readme",
-	"dependencies": {
-		"@nx/devkit": "22.3.3",
-		"lucide-react": "^0.562.0",
-		"react": "^19.2.0",
-		"react-aria": "^3.45.0",
-		"react-dom": "^19.2.0"
-	},
-	"devDependencies": {
-		"@awesome-tools/biome": "workspace:*",
-		"@awesome-tools/commitizen": "workspace:*",
-		"@biomejs/biome": "^2.3.14",
-		"@chromatic-com/storybook": "^5.0.0",
-		"@commitlint/cli": "^20.1.0",
-		"@commitlint/config-conventional": "^20.0.0",
-		"@commitlint/types": "^20.0.0",
-		"@nx/jest": "22.3.3",
-		"@nx/js": "22.3.3",
-		"@nx/next": "22.3.3",
-		"@nx/plugin": "22.3.3",
-		"@nx/react": "22.3.3",
-		"@nx/storybook": "22.3.3",
-		"@nx/vite": "22.3.3",
-		"@nx/vitest": "22.3.3",
-		"@nx/web": "22.3.3",
-		"@storybook/addon-a11y": "10.2.7",
-		"@storybook/addon-docs": "10.2.7",
-		"@storybook/addon-vitest": "10.2.7",
-		"@storybook/react-vite": "10.2.7",
-		"@tailwindcss/vite": "^4.1.18",
-		"@types/node": "^25.0.10",
-		"@types/react": "^19.2.0",
-		"@types/react-dom": "^19.2.0",
-		"@vitejs/plugin-react": "^5.1.2",
-		"@vitest/browser-playwright": "^4.0.17",
-		"@vitest/coverage-v8": "^4.0.17",
-		"@vitest/ui": "^4.0.17",
-		"all-contributors-cli": "^6.26.1",
-		"chromatic": "^15.0.0",
-		"commitlint-config-gitmoji": "^2.3.1",
-		"cz-git": "^1.12.0",
-		"husky": "^9.1.7",
-		"jsdom": "~22.1.0",
-		"nx": "22.3.3",
-		"playwright": "^1.56.1",
-		"storybook": "10.2.7",
-		"tailwindcss": "^4",
-		"tslib": "^2.3.0",
-		"typescript": "~5.9.3",
-		"verdaccio": "^6.0.5",
-		"vite": "^7.0.0",
-		"vite-plugin-dts": "~4.5.0",
-		"vitest": "^4.0.17"
-	},
 	"workspaces": [
 		"packages/*",
 		"tools/*"
 	],
+	"type": "module",
+	"scripts": {
+		"prepare": "husky",
+		"contributors:init": "all-contributors init",
+		"contributors:add": "all-contributors add",
+		"contributors:generate": "all-contributors generate",
+		"format": "bun oxfmt",
+		"format:check": "bun oxfmt --check",
+		"validate": "nx run-many -t format lint test typecheck build --exclude=@awesome-tools/source",
+		"validate:affected": "nx affected -t format lint test typecheck build --exclude=@awesome-tools/source --tui false",
+		"release": "nx release --skip-publish"
+	},
+	"dependencies": {
+		"@nx/devkit": "22.7.5",
+		"lucide-react": "^1.17.0",
+		"react": "^19.2.6",
+		"react-dom": "^19.2.6"
+	},
+	"devDependencies": {
+		"@awesome-tools/commitizen": "workspace:*",
+		"@awesome-tools/oxlint": "workspace:*",
+		"@awesome-tools/ui": "workspace:*",
+		"@awesome-tools/ui-blocks": "workspace:*",
+		"@chromatic-com/storybook": "^5.2.1",
+		"@commitlint/cli": "^21.0.2",
+		"@commitlint/config-conventional": "^21.0.2",
+		"@commitlint/types": "^21.0.1",
+		"@faker-js/faker": "^10.4.0",
+		"@nx/jest": "22.7.5",
+		"@nx/js": "22.7.5",
+		"@nx/next": "22.7.5",
+		"@nx/plugin": "22.7.5",
+		"@nx/react": "22.7.5",
+		"@nx/storybook": "22.7.5",
+		"@nx/vite": "22.7.5",
+		"@nx/vitest": "22.7.5",
+		"@nx/web": "22.7.5",
+		"@storybook/addon-a11y": "10.4.4",
+		"@storybook/addon-docs": "10.4.4",
+		"@storybook/addon-vitest": "10.4.4",
+		"@storybook/react-vite": "10.4.4",
+		"@swc-node/register": "~1.11.1",
+		"@swc/cli": "~0.8.0",
+		"@swc/core": "~1.15.5",
+		"@swc/helpers": "~0.5.18",
+		"@tailwindcss/vite": "^4.1.18",
+		"@tanstack/react-query": "^5.100.14",
+		"@types/node": "^25.9.1",
+		"@types/react": "^19.2.15",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^5.2.0",
+		"@vitest/browser-playwright": "^4.1.8",
+		"@vitest/coverage-v8": "^4.1.8",
+		"@vitest/ui": "^4.1.8",
+		"all-contributors-cli": "^6.26.1",
+		"chromatic": "^17.1.0",
+		"commitlint-config-gitmoji": "^2.3.1",
+		"cz-git": "^1.13.1",
+		"husky": "^9.1.7",
+		"jsdom": "~29.1.1",
+		"nx": "22.7.5",
+		"oxfmt": "^0.54.0",
+		"oxlint": "^1.69.0",
+		"playwright": "^1.60.0",
+		"rollup-preserve-directives": "^1.1.3",
+		"storybook": "10.4.4",
+		"tailwindcss": "^4.3.0",
+		"tslib": "^2.8.1",
+		"typescript": "~6.0.3",
+		"verdaccio": "6.7.2",
+		"vite": "^7.0.0",
+		"vite-plugin-dts": "~4.5.0",
+		"vitest": "^4.1.8"
+	},
 	"nx": {
 		"includedScripts": [],
 		"targets": {
@@ -94,7 +104,9 @@
 					"config": ".verdaccio/config.yml",
 					"storage": "tmp/local-registry/storage"
 				}
-			}
+			},
+			"lint": {}
 		}
-	}
+	},
+	"packageManager": "yarn@4.9.4+sha512.7b1cb0b62abba6a537b3a2ce00811a843bea02bcf53138581a6ae5b1bf563f734872bd47de49ce32a9ca9dcaff995aa789577ffb16811da7c603dcf69e73750b"
 }

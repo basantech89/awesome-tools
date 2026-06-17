@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import { expect, fn } from 'storybook/test'
 
 import { Input } from './input'
@@ -11,20 +12,20 @@ const meta = {
 		placeholder: {
 			label: 'Placeholder',
 			control: { type: 'text' },
-			description: 'The placeholder text for the input',
+			description: 'The placeholder text for the input'
 		},
 		type: {
 			label: 'Type',
 			control: { type: 'text' },
-			description: 'The type of the input',
+			description: 'The type of the input'
 		},
 		disabled: {
 			label: 'Disabled',
 			control: { type: 'boolean' },
-			description: 'Whether the input is disabled',
-		},
+			description: 'Whether the input is disabled'
+		}
 	},
-	args: { type: 'text', placeholder: 'Enter text here', onChange: fn() },
+	args: { type: 'text', placeholder: 'Enter text here', onChange: fn() }
 } satisfies Meta<typeof Input>
 
 export default meta
@@ -36,13 +37,13 @@ export const Default: Story = {
 		const input = canvas.getByRole('textbox')
 		await userEvent.type(input, 'Hello, World!')
 		expect(input).toHaveValue('Hello, World!')
-	},
+	}
 }
 
 export const States: Story = {
 	args: {
 		type: 'email',
-		placeholder: 'Enter your email',
+		placeholder: 'Enter your email'
 	},
 	render: args => (
 		<div className="flex flex-col items-end gap-4">
@@ -65,12 +66,12 @@ export const States: Story = {
 				/>
 			</div>
 		</div>
-	),
+	)
 }
 
 export const Types: Story = {
 	args: {
-		placeholder: 'Enter value',
+		placeholder: 'Enter value'
 	},
 	render: args => (
 		<div className="flex flex-col gap-4">
@@ -116,5 +117,5 @@ export const Types: Story = {
 				<Input {...args} id="file-input" name="file-input" type="file" />
 			</div>
 		</div>
-	),
+	)
 }

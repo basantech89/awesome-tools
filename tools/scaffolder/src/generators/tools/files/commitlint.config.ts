@@ -1,5 +1,4 @@
-import type { UserConfig } from '@commitlint/types'
-import { RuleConfigSeverity } from '@commitlint/types'
+import { type UserConfig, RuleConfigSeverity } from '@commitlint/types'
 
 import { scopes, types } from './cz.config.ts'
 

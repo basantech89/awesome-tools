@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import { fn } from 'storybook/test'
 
 import { Label } from './label'
@@ -11,18 +12,18 @@ const meta = {
 		placeholder: {
 			label: 'Placeholder',
 			control: { type: 'text' },
-			description: 'The placeholder text for the textarea',
+			description: 'The placeholder text for the textarea'
 		},
 		disabled: {
 			label: 'Disabled',
 			control: { type: 'boolean' },
-			description: 'Whether the textarea is disabled',
-		},
+			description: 'Whether the textarea is disabled'
+		}
 	},
 	args: {
 		placeholder: 'Enter message here',
-		onChange: fn(),
-	},
+		onChange: fn()
+	}
 } satisfies Meta<typeof Textarea>
 
 export default meta
@@ -33,7 +34,7 @@ export const Default: Story = {}
 
 export const States: Story = {
 	args: {
-		placeholder: 'Enter your message',
+		placeholder: 'Enter your message'
 	},
 	render: args => (
 		<div className="flex flex-col items-end gap-4">
@@ -56,5 +57,5 @@ export const States: Story = {
 				/>
 			</div>
 		</div>
-	),
+	)
 }

@@ -1,7 +1,8 @@
 import type { Preview } from '@storybook/react-vite'
+
 import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from 'storybook/viewport'
 
-import { Toaster } from '#blocks'
+import { Toaster } from '../src/components/display/sonner'
 import './storybook-styles.css'
 
 const preview: Preview = {

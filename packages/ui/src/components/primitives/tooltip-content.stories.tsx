@@ -14,16 +14,16 @@ const meta = {
 			description:
 				'The preferred side of the trigger to render against when open. Will be reversed when collisions occur and avoidCollisions is enabled.',
 			table: {
-				defaultValue: { summary: 'top' },
-			},
+				defaultValue: { summary: 'top' }
+			}
 		},
 		sideOffset: {
 			label: 'Side Offset',
 			control: { type: 'number' },
 			table: {
-				defaultValue: { summary: '0' },
+				defaultValue: { summary: '0' }
 			},
-			description: 'The distance in pixels from the trigger.',
+			description: 'The distance in pixels from the trigger.'
 		},
 		align: {
 			label: 'Align',
@@ -32,8 +32,8 @@ const meta = {
 				'The preferred alignment against the trigger. May change when collisions occur.',
 			options: ['start', 'center', 'end'],
 			table: {
-				defaultValue: { summary: 'center' },
-			},
+				defaultValue: { summary: 'center' }
+			}
 		},
 		alignOffset: {
 			label: 'Align Offset',
@@ -41,10 +41,10 @@ const meta = {
 			description:
 				'An offset in pixels from the "start" or "end" alignment options.',
 			table: {
-				defaultValue: { summary: '0' },
-			},
-		},
-	},
+				defaultValue: { summary: '0' }
+			}
+		}
+	}
 } satisfies Meta<typeof TooltipContent>
 
 export default meta
@@ -59,7 +59,7 @@ export const Default: Story = {
 				<p>Add to library</p>
 			</TooltipContent>
 		</Tooltip>
-	),
+	)
 }
 
 export const Sides: Story = {
@@ -83,7 +83,7 @@ export const Sides: Story = {
 				</Tooltip>
 			))}
 		</div>
-	),
+	)
 }
 
 export const States: Story = {
@@ -107,5 +107,5 @@ export const States: Story = {
 				</TooltipContent>
 			</Tooltip>
 		</div>
-	),
+	)
 }

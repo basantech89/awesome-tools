@@ -1,9 +1,10 @@
-import { cn, Field, FieldError, FieldLabel, Input } from '@awesome-tools/ui'
+import { Field, FieldError, FieldLabel, Input } from '@awesome-tools/ui'
 import React, { useId } from 'react'
 
 import { useField } from '#blocks/hooks'
+import { cn } from '#blocks/lib/utils'
 
-export type TextFieldProps = React.ComponentProps<'input'> & {
+export type TextFieldProps = React.ComponentProps<typeof Input> & {
 	id?: string
 	label?: string
 	name: string
@@ -18,7 +19,8 @@ const TextField = React.memo(function InnerTextField({
 }: TextFieldProps & React.ComponentProps<typeof Field>) {
 	const { errors, ...field } = useField(name)
 
-	id ??= useId()
+	const generatedId = useId()
+	id ??= generatedId
 
 	return (
 		<Field

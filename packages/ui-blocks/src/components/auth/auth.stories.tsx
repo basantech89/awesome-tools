@@ -1,14 +1,17 @@
+import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import {
 	Button,
 	CardDescription,
 	CardTitle,
 	FieldDescription,
 	FieldGroup,
-	FieldLabel,
+	FieldLabel
 } from '@awesome-tools/ui'
-import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, fn } from 'storybook/test'
 import z from 'zod'
+
+import type { Provider } from '#blocks/types'
 
 import { FormBuilder } from '../forms/form-builder'
 import { PasswordField } from '../forms/password-field'
@@ -16,11 +19,10 @@ import { TextField } from '../forms/text-field'
 import { Auth, AuthAction, AuthContent, AuthFooter, AuthHeader } from './auth'
 import { SigninContent, SigninForm } from './sign-in'
 import { SignupContent, SignupForm } from './sign-up'
-import type { Provider } from '#blocks/types'
 
 const meta = {
 	title: 'Components/Auth/Authentication',
-	component: Auth,
+	component: Auth
 } satisfies Meta<typeof Auth>
 
 export default meta
@@ -32,20 +34,20 @@ const action = fn()
 const providers: Provider[] = [
 	{
 		name: 'google',
-		action: fn(),
+		action: fn()
 	},
 	{
 		name: 'meta',
-		action: fn(),
+		action: fn()
 	},
 	{
 		name: 'apple',
-		action: fn(),
+		action: fn()
 	},
 	{
 		name: 'github',
-		action: fn(),
-	},
+		action: fn()
+	}
 ]
 
 export const Default: Story = {
@@ -92,7 +94,7 @@ export const Default: Story = {
 		await userEvent.click(submitButton)
 
 		expect(action).toHaveBeenCalled()
-	},
+	}
 }
 
 export const ManyProviders: Story = {
@@ -124,7 +126,7 @@ export const ManyProviders: Story = {
 				</a>
 			</AuthFooter>
 		</Auth>
-	),
+	)
 }
 
 export const OneProvider: Story = {
@@ -156,7 +158,7 @@ export const OneProvider: Story = {
 				</a>
 			</AuthFooter>
 		</Auth>
-	),
+	)
 }
 
 export const TwoProviders: Story = {
@@ -188,7 +190,7 @@ export const TwoProviders: Story = {
 				</a>
 			</AuthFooter>
 		</Auth>
-	),
+	)
 }
 
 export const ThreeProviders: Story = {
@@ -220,7 +222,7 @@ export const ThreeProviders: Story = {
 				</a>
 			</AuthFooter>
 		</Auth>
-	),
+	)
 }
 
 export const CustomContent: Story = {
@@ -235,7 +237,7 @@ export const CustomContent: Story = {
 				defaultValues={{ username: '', password: '' }}
 				schema={z.object({
 					username: z.string().min(1, 'Username is required'),
-					password: z.string().min(1, 'Password is required'),
+					password: z.string().min(1, 'Password is required')
 				})}
 			>
 				<form>
@@ -276,7 +278,7 @@ export const CustomContent: Story = {
 				</a>
 			</AuthFooter>
 		</Auth>
-	),
+	)
 }
 
 export const Signup: Story = {
@@ -299,5 +301,5 @@ export const Signup: Story = {
 				</FieldDescription>
 			</AuthFooter>
 		</Auth>
-	),
+	)
 }

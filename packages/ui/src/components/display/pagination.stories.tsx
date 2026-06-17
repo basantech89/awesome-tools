@@ -1,15 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import {
-	Pagination,
-	PaginationContent,
-	PaginationEllipsis,
-	PaginationItem,
-	PaginationLink,
-	PaginationNext,
-	PaginationPrevious,
-} from './pagination'
-import {
 	Field,
 	FieldLabel,
 	Select,
@@ -17,12 +8,21 @@ import {
 	SelectGroup,
 	SelectItem,
 	SelectTrigger,
-	SelectValue,
+	SelectValue
 } from '#ui'
+
+import {
+	Pagination,
+	PaginationButton,
+	PaginationContent,
+	PaginationEllipsis,
+	PaginationNext,
+	PaginationPrevious
+} from './pagination'
 
 const meta = {
 	title: 'Components/Display/Pagination',
-	component: Pagination,
+	component: Pagination
 } satisfies Meta<typeof Pagination>
 
 export default meta
@@ -33,29 +33,15 @@ export const Default: Story = {
 	render: () => (
 		<Pagination>
 			<PaginationContent>
-				<PaginationItem>
-					<PaginationPrevious href="#" />
-				</PaginationItem>
-				<PaginationItem>
-					<PaginationLink href="#">1</PaginationLink>
-				</PaginationItem>
-				<PaginationItem>
-					<PaginationLink href="#" isActive>
-						2
-					</PaginationLink>
-				</PaginationItem>
-				<PaginationItem>
-					<PaginationLink href="#">3</PaginationLink>
-				</PaginationItem>
-				<PaginationItem>
-					<PaginationEllipsis />
-				</PaginationItem>
-				<PaginationItem>
-					<PaginationNext href="#" />
-				</PaginationItem>
+				<PaginationPrevious />
+				<PaginationButton>1</PaginationButton>
+				<PaginationButton isActive>2</PaginationButton>
+				<PaginationButton>3</PaginationButton>
+				<PaginationEllipsis />
+				<PaginationNext />
 			</PaginationContent>
 		</Pagination>
-	),
+	)
 }
 
 export const WithSelect: Story = {
@@ -79,14 +65,10 @@ export const WithSelect: Story = {
 			</Field>
 			<Pagination className="mx-0 w-auto">
 				<PaginationContent>
-					<PaginationItem>
-						<PaginationPrevious href="#" />
-					</PaginationItem>
-					<PaginationItem>
-						<PaginationNext href="#" />
-					</PaginationItem>
+					<PaginationPrevious />
+					<PaginationNext />
 				</PaginationContent>
 			</Pagination>
 		</div>
-	),
+	)
 }

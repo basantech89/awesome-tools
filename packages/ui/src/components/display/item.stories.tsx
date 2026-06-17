@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import { InboxIcon } from 'lucide-react'
 
 import { Button } from '../primitives/button'
@@ -8,12 +9,12 @@ import {
 	ItemContent,
 	ItemDescription,
 	ItemMedia,
-	ItemTitle,
+	ItemTitle
 } from './item'
 
 const meta = {
 	title: 'Components/Display/Item',
-	component: Item,
+	component: Item
 } satisfies Meta<typeof Item>
 
 export default meta
@@ -22,7 +23,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
 	render: () => (
-		<div className="flex min-w-0 flex-1 flex-col items-start gap-6 bg-background p-4 text-foreground sm:p-6 *:[div:not([class*='w-'])]:w-full">
+		<div className="bg-background text-foreground flex min-w-0 flex-1 flex-col items-start gap-6 p-4 sm:p-6 *:[div:not([class*='w-'])]:w-full">
 			<Item variant="outline">
 				<ItemContent>
 					<ItemTitle>Title Only</ItemTitle>
@@ -71,7 +72,7 @@ export const Default: Story = {
 					<ItemTitle>Media + Title + Button</ItemTitle>
 				</ItemContent>
 				<ItemActions>
-					<Button size="sm">Action</Button>
+					<Button>Action</Button>
 				</ItemActions>
 			</Item>
 			<Item variant="outline">
@@ -97,7 +98,7 @@ export const Default: Story = {
 					</ItemDescription>
 				</ItemContent>
 				<ItemActions>
-					<Button size="sm">Action</Button>
+					<Button>Action</Button>
 				</ItemActions>
 			</Item>
 			<Item variant="outline">
@@ -108,12 +109,10 @@ export const Default: Story = {
 					</ItemDescription>
 				</ItemContent>
 				<ItemActions>
-					<Button size="sm" variant="outline">
-						Cancel
-					</Button>
-					<Button size="sm">Confirm</Button>
+					<Button variant="outline">Cancel</Button>
+					<Button>Confirm</Button>
 				</ItemActions>
 			</Item>
 		</div>
-	),
+	)
 }

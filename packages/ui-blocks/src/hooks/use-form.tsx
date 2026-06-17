@@ -1,6 +1,9 @@
+'use client'
+
+import type { z } from 'zod'
+
 import { type Dict, keys, values as objValues } from '@awesome-tools/utils'
 import React, { useActionState } from 'react'
-import type { z } from 'zod'
 
 import type { StandardSchemaV1 } from '#blocks/types/standard-schema'
 
@@ -14,7 +17,7 @@ const notify = (notifyListener: Listener) => {
 
 function createFormStore<K extends string, V extends FormValue>(
 	initialValues: Dict<K, V>,
-	schema?: z.ZodObject<Dict<K, z.ZodType<V>>>,
+	schema?: z.ZodObject<Dict<K, z.ZodType<V>>>
 ) {
 	const values = { ...initialValues }
 
@@ -28,7 +31,7 @@ function createFormStore<K extends string, V extends FormValue>(
 			acc[key] = { value: values[key], errors: errors[key] }
 			return acc
 		},
-		{} as { [key in K]: { value: V; errors?: { message: string }[] } },
+		{} as { [key in K]: { value: V; errors?: { message: string }[] } }
 	)
 
 	const subscribe = (name: K, listener: Listener) => {
@@ -208,7 +211,7 @@ function createFormStore<K extends string, V extends FormValue>(
 		getValues,
 		resetForm,
 		validate,
-		errors,
+		errors
 	}
 }
 
@@ -217,7 +220,7 @@ const FormContext = React.createContext<unknown>(null)
 
 export function FormProvider({
 	children,
-	value,
+	value
 }: {
 	children: React.ReactNode
 	value: unknown
@@ -249,23 +252,23 @@ export function useField(name: string) {
 
 	const getValueSnapshot = React.useCallback(
 		() => form.getValue(name),
-		[name, form],
+		[name, form]
 	)
 
 	const { value, errors } = React.useSyncExternalStore(
 		React.useCallback(cb => form.subscribe(name, cb), [name, form]),
 		getValueSnapshot,
-		getValueSnapshot,
+		getValueSnapshot
 	)
 
 	const onChange = React.useCallback(
 		(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 			form.setValue(
 				name,
-				(event.target as EventTarget & { value: string }).value,
+				(event.target as EventTarget & { value: string }).value
 			)
 		},
-		[name, form],
+		[name, form]
 	)
 
 	const onBlur = React.useCallback(() => {
@@ -280,8 +283,8 @@ export type ActionResult<T> =
 	| { success: true; data?: T }
 
 export type ServerAction<T> = (
-	formData: FormData,
-) => Promise<void> | Promise<ActionResult<T>>
+	formData: FormData
+) => void | Promise<void> | Promise<ActionResult<T>>
 
 type FormState = {
 	success: boolean
@@ -301,18 +304,18 @@ export function useForm<K extends string, V extends FormValue, T>({
 	schema,
 	action,
 	onSuccess,
-	onError,
+	onError
 }: UseFormProps<K, V, T>) {
 	const formRef = React.useRef(createFormStore(defaultValues, schema))
 
 	const initialFormState: FormState = {
 		success: false,
-		submitError: '',
+		submitError: ''
 	}
 
 	const handleSubmit = async (
 		state: Awaited<FormState>,
-		formData: FormData,
+		formData: FormData
 	): Promise<FormState> => {
 		try {
 			const result = await action(formData)
@@ -322,44 +325,43 @@ export function useForm<K extends string, V extends FormValue, T>({
 				await onError?.(error)
 				return {
 					...state,
-					submitError: error,
+					submitError: error
 				}
 			}
 
 			await onSuccess?.(result.data as T)
 			return {
 				...state,
-				success: true,
+				success: true
 			}
 		} catch (error) {
 			return {
 				...state,
 				submitError:
-					(error as Error)?.message ||
-					'Something went wrong. Please try again.',
+					(error as Error)?.message || 'Something went wrong. Please try again.'
 			}
 		}
 	}
 
 	const [state, formAction, isPending] = useActionState(
 		handleSubmit,
-		initialFormState,
+		initialFormState
 	)
 
 	const getValuesSnapshot = React.useCallback(
 		() => formRef.current.getValues(),
-		[],
+		[]
 	)
 
 	const subscribeValues = React.useCallback(
 		(cb: Listener) => formRef.current.subscribeAll(cb),
-		[],
+		[]
 	)
 
 	const { values, errors, isValid } = React.useSyncExternalStore(
 		subscribeValues,
 		getValuesSnapshot,
-		getValuesSnapshot,
+		getValuesSnapshot
 	)
 
 	const value = React.useMemo(
@@ -367,9 +369,9 @@ export function useForm<K extends string, V extends FormValue, T>({
 			...formRef.current,
 			state,
 			isPending,
-			isValid,
+			isValid
 		}),
-		[isPending, state, isValid],
+		[isPending, state, isValid]
 	)
 
 	return {
@@ -380,6 +382,6 @@ export function useForm<K extends string, V extends FormValue, T>({
 		isPending,
 		formAction,
 		resetForm: formRef.current.resetForm,
-		state,
+		state
 	}
 }

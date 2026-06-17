@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import React from 'react'
 
 import { Label } from './label'
@@ -12,8 +13,8 @@ const meta: Meta<typeof Slider> = {
 			<div className="min-w-80 p-10">
 				<Story />
 			</div>
-		),
-	],
+		)
+	]
 }
 
 export default meta
@@ -21,15 +22,15 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-	render: () => <Slider defaultValue={50} max={100} step={1} />,
+	render: () => <Slider defaultValue={50} max={100} step={1} />
 }
 
 export const Range: Story = {
-	render: () => <Slider defaultValue={[25, 50]} max={100} step={5} />,
+	render: () => <Slider defaultValue={[25, 50]} max={100} step={5} />
 }
 
 export const Multiple: Story = {
-	render: () => <Slider defaultValue={[10, 20, 70]} max={100} step={10} />,
+	render: () => <Slider defaultValue={[10, 20, 70]} max={100} step={10} />
 }
 
 export const Vertical: Story = {
@@ -50,11 +51,11 @@ export const Vertical: Story = {
 				step={1}
 			/>
 		</div>
-	),
+	)
 }
 
 export const Controlled: Story = {
-	render: () => {
+	render: function ControlledRender() {
 		const [value, setValue] = React.useState([0.3, 0.7])
 
 		return (
@@ -75,9 +76,9 @@ export const Controlled: Story = {
 				/>
 			</div>
 		)
-	},
+	}
 }
 
 export const Disabled: Story = {
-	render: () => <Slider defaultValue={[50]} disabled max={100} step={1} />,
+	render: () => <Slider defaultValue={[50]} disabled max={100} step={1} />
 }

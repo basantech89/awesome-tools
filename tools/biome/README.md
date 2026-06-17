@@ -32,7 +32,7 @@ Add a biome.json to your project root with the following content:
 
 ```json5
 {
-	"extends": ["@awesome-tools/biome/config"]
+	extends: ['@awesome-tools/biome/config']
 }
 ```
 
@@ -40,14 +40,15 @@ Optionally, if you're using NX, prepend this plugin to your `nx.json`:
 
 ```json5
 {
-  "plugins": [
-    "@awesome-tools/biome",
-    // other plugins...
-  ]
+	plugins: [
+		'@awesome-tools/biome'
+		// other plugins...
+	]
 }
 ```
 
 You can now lint your projects with biome using Nx:
+
 ```shell
 nx lint <project-name>
 ```
@@ -64,7 +65,7 @@ label._ 😀
 ### 🐛 Bugs
 
 Please file an issue for bugs, missing documentation, or unexpected behavior.
-  
+
 [**See Bugs**](https://github.com/basantech89/awesome-tools/issues)
 
 ### 💡 Feature Requests
@@ -86,4 +87,3 @@ This project wouldn't have been possible without the amazing work done by
 
 [Biome](https://biomejs.dev/)
 [NX](https://nx.dev/)
-

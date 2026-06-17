@@ -1,36 +1,27 @@
 {
-  "compilerOptions": {
-    "composite": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "importHelpers": true,
-    "isolatedModules": true,
-    "lib": [
-      "es2022"
-    ],
-    "paths": {
-      "@awesome-tools/ui": [
-        "./packages/ui/src/index.ts"
-      ],
-      "@awesome-tools/ui-blocks": [
-        "./packages/ui-blocks/src/index.ts"
-      ],
-      "@awesome-tools/utils": [
-        "./packages/utils/src/index.ts"
-      ]
-    },
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "es2022",
-    "customConditions": [
-      "@awesome-tools/source"
-    ]
-  }
+	"compilerOptions": {
+		"composite": true,
+		"declarationMap": true,
+		"emitDeclarationOnly": true,
+		"importHelpers": true,
+		"isolatedModules": true,
+		"lib": ["es2022"],
+		"paths": {
+			"@awesome-tools/ui": ["./packages/ui/src/index.ts"],
+			"@awesome-tools/ui-blocks": ["./packages/ui-blocks/src/index.ts"],
+			"@awesome-tools/utils": ["./packages/utils/src/index.ts"]
+		},
+		"ignoreDeprecations": "6.0",
+		"module": "nodenext",
+		"moduleResolution": "nodenext",
+		"noEmitOnError": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "es2022",
+		"customConditions": ["@awesome-tools/source"]
+	}
 }

@@ -1,10 +1,11 @@
 'use client'
 
-import { Dialog as DialogPrimitive } from '@base-ui/react/dialog'
-import { XIcon } from 'lucide-react'
 import type * as React from 'react'
 
-import { Button } from '#ui/components/primitives/button.js'
+import { Dialog as DialogPrimitive } from '@base-ui/react/dialog'
+import { XIcon } from 'lucide-react'
+
+import { Button } from '#ui/components/primitives/button'
 import { cn } from '#ui/lib/utils'
 
 function Dialog({ ...props }: DialogPrimitive.Root.Props) {
@@ -30,8 +31,8 @@ function DialogOverlay({
 	return (
 		<DialogPrimitive.Backdrop
 			className={cn(
-				'data-closed:fade-out-0 data-open:fade-in-0 fixed inset-0 isolate z-50 bg-black/10 duration-100 data-closed:animate-out data-open:animate-in supports-backdrop-filter:backdrop-blur-xs',
-				className,
+				'data-closed:fade-out-0 data-open:fade-in-0 data-closed:animate-out data-open:animate-in fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs',
+				className
 			)}
 			data-slot="dialog-overlay"
 			{...props}
@@ -52,8 +53,8 @@ function DialogContent({
 			<DialogOverlay />
 			<DialogPrimitive.Popup
 				className={cn(
-					'data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl bg-background p-6 text-sm outline-none ring-1 ring-foreground/10 duration-100 data-closed:animate-out data-open:animate-in sm:max-w-md',
-					className,
+					'data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 bg-background ring-foreground/10 data-closed:animate-out data-open:animate-in fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl p-6 text-sm ring-1 duration-100 outline-none sm:max-w-md',
+					className
 				)}
 				data-slot="dialog-content"
 				{...props}
@@ -101,7 +102,7 @@ function DialogFooter({
 		<div
 			className={cn(
 				'flex flex-col-reverse gap-2 sm:flex-row sm:justify-end',
-				className,
+				className
 			)}
 			data-slot="dialog-footer"
 			{...props}
@@ -119,7 +120,7 @@ function DialogFooter({
 function DialogTitle({ className, ...props }: DialogPrimitive.Title.Props) {
 	return (
 		<DialogPrimitive.Title
-			className={cn('font-medium leading-none', className)}
+			className={cn('leading-none font-medium', className)}
 			data-slot="dialog-title"
 			{...props}
 		/>
@@ -133,8 +134,8 @@ function DialogDescription({
 	return (
 		<DialogPrimitive.Description
 			className={cn(
-				'text-muted-foreground text-sm *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground',
-				className,
+				'text-muted-foreground *:[a]:hover:text-foreground text-sm *:[a]:underline *:[a]:underline-offset-3',
+				className
 			)}
 			data-slot="dialog-description"
 			{...props}
@@ -152,5 +153,5 @@ export {
 	DialogOverlay,
 	DialogPortal,
 	DialogTitle,
-	DialogTrigger,
+	DialogTrigger
 }

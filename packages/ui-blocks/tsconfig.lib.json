@@ -1,68 +1,71 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "outDir": "dist",
-    "lib": [
-      "DOM"
-    ],
-    "types": [
-      "node",
-      "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts",
-      "vite/client"
-    ],
-    "rootDir": "src",
-    "jsx": "react-jsx",
-    "module": "esnext",
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
-    "paths": {
-      "#blocks/*": [
-        "./src/*"
-      ]
-    }
-  },
-  "exclude": [
-    "out-tsc",
-    "dist",
-    "**/*.spec.ts",
-    "**/*.test.ts",
-    "**/*.spec.tsx",
-    "**/*.test.tsx",
-    "**/*.spec.js",
-    "**/*.test.js",
-    "**/*.spec.jsx",
-    "**/*.test.jsx",
-    "vite.config.mts",
-    "vite.config.mts",
-    "vitest.config.ts",
-    "vitest.config.mts",
-    "src/**/*.test.ts",
-    "src/**/*.spec.ts",
-    "src/**/*.test.tsx",
-    "src/**/*.spec.tsx",
-    "src/**/*.test.js",
-    "src/**/*.spec.js",
-    "src/**/*.test.jsx",
-    "src/**/*.spec.jsx",
-    "**/*.stories.ts",
-    "**/*.stories.js",
-    "**/*.stories.jsx",
-    "**/*.stories.tsx"
-  ],
-  "include": [
-    "src/**/*.js",
-    "src/**/*.jsx",
-    "src/**/*.ts",
-    "src/**/*.tsx"
-  ],
-  "references": [
-    {
-      "path": "../utils/tsconfig.lib.json"
-    },
-    {
-      "path": "../ui/tsconfig.lib.json"
-    }
-  ]
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"outDir": "dist",
+		"lib": [
+			"DOM",
+			"ESNext"
+		],
+		"types": [
+			"node",
+			"@nx/react/typings/cssmodule.d.ts",
+			"@nx/react/typings/image.d.ts",
+			"vite/client"
+		],
+		"composite": true,
+		"incremental": true,
+		"rootDir": "src",
+		"jsx": "react-jsx",
+		"module": "esnext",
+		"skipLibCheck": true,
+		"moduleResolution": "bundler",
+		"tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
+		"paths": {
+			"#blocks/*": [
+				"./src/*"
+			]
+		}
+	},
+	"exclude": [
+		"out-tsc",
+		"dist",
+		"**/*.spec.ts",
+		"**/*.test.ts",
+		"**/*.spec.tsx",
+		"**/*.test.tsx",
+		"**/*.spec.js",
+		"**/*.test.js",
+		"**/*.spec.jsx",
+		"**/*.test.jsx",
+		"vite.config.mts",
+		"vite.config.mts",
+		"vitest.config.ts",
+		"vitest.config.mts",
+		"src/**/*.test.ts",
+		"src/**/*.spec.ts",
+		"src/**/*.test.tsx",
+		"src/**/*.spec.tsx",
+		"src/**/*.test.js",
+		"src/**/*.spec.js",
+		"src/**/*.test.jsx",
+		"src/**/*.spec.jsx",
+		"**/*.stories.ts",
+		"**/*.stories.js",
+		"**/*.stories.jsx",
+		"**/*.stories.tsx"
+	],
+	"include": [
+		"src/**/*.js",
+		"src/**/*.jsx",
+		"src/**/*.ts",
+		"src/**/*.tsx"
+	],
+	"references": [
+		{
+			"path": "../utils/tsconfig.lib.json"
+		},
+		{
+			"path": "../ui/tsconfig.lib.json"
+		}
+	]
 }

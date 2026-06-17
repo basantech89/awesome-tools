@@ -7,12 +7,12 @@ import {
 	FieldDescription,
 	FieldGroup,
 	FieldLabel,
-	FieldTitle,
+	FieldTitle
 } from './field'
 
 const meta = {
 	title: 'Components/Forms/Checkbox',
-	component: Checkbox,
+	component: Checkbox
 } satisfies Meta<typeof Checkbox>
 
 export default meta
@@ -30,7 +30,7 @@ export const Default: Story = {
 				</FieldDescription>
 			</FieldContent>
 		</Field>
-	),
+	)
 }
 
 export const Invalid: Story = {
@@ -39,7 +39,7 @@ export const Invalid: Story = {
 			<Checkbox aria-invalid aria-label="terms and conditions" id="terms-3" />
 			<FieldLabel htmlFor="terms-3">Accept terms and conditions</FieldLabel>
 		</Field>
-	),
+	)
 }
 
 export const Title: Story = {
@@ -78,5 +78,5 @@ export const Title: Story = {
 				</FieldLabel>
 			</FieldGroup>
 		</div>
-	),
+	)
 }

@@ -19,9 +19,9 @@ test('deep require keys work as expected', () => {
 		b: {
 			c: 42,
 			d: {
-				e: true,
-			},
-		},
+				e: true
+			}
+		}
 	}
 
 	expectTypeOf(requiredObj).branded.toEqualTypeOf<{

@@ -50,12 +50,14 @@ export interface StandardSchemaV1<Input = unknown, Output = Input> {
 
 export declare namespace StandardSchemaV1 {
 	/** The Standard Schema properties interface. */
-	export interface Props<Input = unknown, Output = Input>
-		extends StandardTypedV1.Props<Input, Output> {
+	export interface Props<
+		Input = unknown,
+		Output = Input
+	> extends StandardTypedV1.Props<Input, Output> {
 		/** Validates unknown input values. */
 		readonly validate: (
 			value: unknown,
-			options?: StandardSchemaV1.Options | undefined,
+			options?: StandardSchemaV1.Options | undefined
 		) => Result<Output> | Promise<Result<Output>>
 	}
 
@@ -96,8 +98,10 @@ export declare namespace StandardSchemaV1 {
 	}
 
 	/** The Standard types interface. */
-	export interface Types<Input = unknown, Output = Input>
-		extends StandardTypedV1.Types<Input, Output> {}
+	export interface Types<
+		Input = unknown,
+		Output = Input
+	> extends StandardTypedV1.Types<Input, Output> {}
 
 	/** Infers the input type of a Standard. */
 	export type InferInput<Schema extends StandardTypedV1> =
@@ -120,8 +124,10 @@ export interface StandardJSONSchemaV1<Input = unknown, Output = Input> {
 
 export declare namespace StandardJSONSchemaV1 {
 	/** The Standard JSON Schema properties interface. */
-	export interface Props<Input = unknown, Output = Input>
-		extends StandardTypedV1.Props<Input, Output> {
+	export interface Props<
+		Input = unknown,
+		Output = Input
+	> extends StandardTypedV1.Props<Input, Output> {
 		/** Methods for generating the input/output JSON Schema. */
 		readonly jsonSchema: StandardJSONSchemaV1.Converter
 	}
@@ -130,11 +136,11 @@ export declare namespace StandardJSONSchemaV1 {
 	export interface Converter {
 		/** Converts the input type to JSON Schema. May throw if conversion is not supported. */
 		readonly input: (
-			options: StandardJSONSchemaV1.Options,
+			options: StandardJSONSchemaV1.Options
 		) => Record<string, unknown>
 		/** Converts the output type to JSON Schema. May throw if conversion is not supported. */
 		readonly output: (
-			options: StandardJSONSchemaV1.Options,
+			options: StandardJSONSchemaV1.Options
 		) => Record<string, unknown>
 	}
 
@@ -162,8 +168,10 @@ export declare namespace StandardJSONSchemaV1 {
 	}
 
 	/** The Standard types interface. */
-	export interface Types<Input = unknown, Output = Input>
-		extends StandardTypedV1.Types<Input, Output> {}
+	export interface Types<
+		Input = unknown,
+		Output = Input
+	> extends StandardTypedV1.Types<Input, Output> {}
 
 	/** Infers the input type of a Standard. */
 	export type InferInput<Schema extends StandardTypedV1> =

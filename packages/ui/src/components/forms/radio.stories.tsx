@@ -6,7 +6,7 @@ import {
 	FieldDescription,
 	FieldLabel,
 	FieldLegend,
-	FieldSet,
+	FieldSet
 } from './field'
 import { RadioGroup, RadioGroupItem } from './radio'
 
@@ -18,8 +18,8 @@ const meta: Meta<typeof RadioGroup> = {
 			<div className="w-95">
 				<Story />
 			</div>
-		),
-	],
+		)
+	]
 }
 
 export default meta
@@ -48,7 +48,7 @@ export const Default: Story = {
 				</FieldLabel>
 			</Field>
 		</RadioGroup>
-	),
+	)
 }
 
 export const Description: Story = {
@@ -82,7 +82,7 @@ export const Description: Story = {
 				</Field>
 			</FieldLabel>
 		</RadioGroup>
-	),
+	)
 }
 
 export const Disabled: Story = {
@@ -107,7 +107,7 @@ export const Disabled: Story = {
 				</FieldLabel>
 			</Field>
 		</RadioGroup>
-	),
+	)
 }
 
 export const Invalid: Story = {
@@ -138,5 +138,5 @@ export const Invalid: Story = {
 				</Field>
 			</RadioGroup>
 		</FieldSet>
-	),
+	)
 }

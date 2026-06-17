@@ -1,8 +1,10 @@
+/// <reference types="node" />
+
+import { definePrompt } from 'cz-git'
 import { execSync } from 'node:child_process'
 import { glob, readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { definePrompt } from 'cz-git'
 
 function addSignedOffByTrailer(commitMessage: string) {
 	try {
@@ -28,20 +30,20 @@ function addSignedOffByTrailer(commitMessage: string) {
 	}
 }
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const filename = fileURLToPath(import.meta.url)
+const dirname = path.dirname(filename)
 
 async function readJsonFile(filePath: string) {
 	const data = await readFile(filePath, 'utf-8')
 	return JSON.parse(data)
 }
 
-const rootPkgJson = await readJsonFile(path.join(__dirname, './package.json'))
+const rootPkgJson = await readJsonFile(path.join(dirname, './package.json'))
 const workspaces: string[] = rootPkgJson.workspaces || []
 const packages = []
 
 for await (const workspace of glob(workspaces)) {
-	const packageJsonPath = path.join(__dirname, workspace, 'package.json')
+	const packageJsonPath = path.join(dirname, workspace, 'package.json')
 	const json = await readJsonFile(packageJsonPath)
 	let packageName = json?.nx?.name
 	if (!packageName) {

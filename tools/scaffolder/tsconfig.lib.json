@@ -1,24 +1,18 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "rootDir": "src",
-    "outDir": "dist",
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
-    "emitDeclarationOnly": false,
-    "types": [
-      "node"
-    ]
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.json"
-  ],
-  "exclude": [
-    "src/generators/**/files/**/*.*",
-    "src/generators/**/bun-files/**/*.*"
-  ],
-  "references": []
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"rootDir": "src",
+		"outDir": "dist",
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
+		"emitDeclarationOnly": false,
+		"types": ["node"]
+	},
+	"include": ["src/**/*.ts", "src/**/*.json"],
+	"exclude": [
+		"src/generators/**/files/**/*.*",
+		"src/generators/**/bun-files/**/*.*"
+	],
+	"references": []
 }
