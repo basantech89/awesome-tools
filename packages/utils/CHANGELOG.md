@@ -1,3 +1,13 @@
+## 0.4.0 (2026-06-17)
+
+### 🚀 Features
+
+- **root,test,core,tools,biome,commitizen,oxlint,scaffolder,ui,ui-blocks,utils:** add new components for ui and ui-blocks, upgrade all packages, and replace biome with oxlint ([#7](https://github.com/basantech89/awesome-tools/pull/7))
+
+### ❤️ Thank You
+
+- Basant Soni @basantech89
+
 ## 0.3.1 (2026-02-09)
 
 This was a version bump only for utils to align it with other projects, there were no code changes.

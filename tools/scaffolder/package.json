@@ -1,88 +1,88 @@
 {
-	"name": "@awesome-tools/scaffolder",
-	"version": "0.2.0",
-	"description": "Install Awesome Tools in your NX project root with Scaffolder 🚀",
-	"keywords": [
-		"awesome-tools",
-		"nx",
-		"nx-generator",
-		"nx-plugin",
-		"scaffolder"
-	],
-	"homepage": "https://github.com/basantech89/awesome-tools#readme",
-	"bugs": {
-		"url": "https://github.com/basantech89/awesome-tools/issues"
-	},
-	"license": "ISC",
-	"author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/basantech89/awesome-tools.git"
-	},
-	"files": [
-		"dist",
-		"!**/*.tsbuildinfo",
-		"generators.json"
-	],
-	"type": "module",
-	"main": "./dist/index.js",
-	"module": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"exports": {
-		"./package.json": "./package.json",
-		".": {
-			"@awesome-tools/source": "./src/index.ts",
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js",
-			"default": "./dist/index.js"
-		}
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"dependencies": {
-		"@nx/devkit": "22.3.3",
-		"tslib": "^2.3.0"
-	},
-	"generators": "./generators.json",
-	"nx": {
-		"name": "scaffolder",
-		"targets": {
-			"build": {
-				"executor": "@nx/js:tsc",
-				"outputs": [
-					"{options.outputPath}"
-				],
-				"options": {
-					"outputPath": "tools/scaffolder/dist",
-					"main": "tools/scaffolder/src/index.ts",
-					"tsConfig": "tools/scaffolder/tsconfig.lib.json",
-					"rootDir": "tools/scaffolder/src",
-					"generatePackageJson": false,
-					"assets": [
-						{
-							"input": "{projectRoot}/src/generators/tools/files",
-							"glob": "**/*.*",
-							"output": "./generators/tools/files"
-						},
-						{
-							"input": "{projectRoot}/src/generators/tools/bun-files",
-							"glob": "**/*.*",
-							"output": "./generators/tools/bun-files"
-						}
-					]
-				}
-			},
-			"lint": {}
-		},
-		"tags": [
-			"nx-plugin",
-			"nx-generator",
-			"nx",
-			"awesome-tools",
-			"scaffolder",
-			"type:utils",
-			"scope:shared"
-		]
-	}
+  "name": "@awesome-tools/scaffolder",
+  "version": "0.3.0",
+  "description": "Install Awesome Tools in your NX project root with Scaffolder 🚀",
+  "keywords": [
+    "awesome-tools",
+    "nx",
+    "nx-generator",
+    "nx-plugin",
+    "scaffolder"
+  ],
+  "homepage": "https://github.com/basantech89/awesome-tools#readme",
+  "bugs": {
+    "url": "https://github.com/basantech89/awesome-tools/issues"
+  },
+  "license": "ISC",
+  "author": "Basant Soni <basantech89@gmail.com> (https://basant.netlify.app/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/basantech89/awesome-tools.git"
+  },
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo",
+    "generators.json"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "@awesome-tools/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@nx/devkit": "22.3.3",
+    "tslib": "^2.3.0"
+  },
+  "generators": "./generators.json",
+  "nx": {
+    "name": "scaffolder",
+    "targets": {
+      "build": {
+        "executor": "@nx/js:tsc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "tools/scaffolder/dist",
+          "main": "tools/scaffolder/src/index.ts",
+          "tsConfig": "tools/scaffolder/tsconfig.lib.json",
+          "rootDir": "tools/scaffolder/src",
+          "generatePackageJson": false,
+          "assets": [
+            {
+              "input": "{projectRoot}/src/generators/tools/files",
+              "glob": "**/*.*",
+              "output": "./generators/tools/files"
+            },
+            {
+              "input": "{projectRoot}/src/generators/tools/bun-files",
+              "glob": "**/*.*",
+              "output": "./generators/tools/bun-files"
+            }
+          ]
+        }
+      },
+      "lint": {}
+    },
+    "tags": [
+      "nx-plugin",
+      "nx-generator",
+      "nx",
+      "awesome-tools",
+      "scaffolder",
+      "type:utils",
+      "scope:shared"
+    ]
+  }
 }
