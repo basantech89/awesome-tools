@@ -103,7 +103,7 @@
     },
     "packages/ui": {
       "name": "@awesome-tools/ui",
-      "version": "0.5.0",
+      "version": "0.5.1",
       "dependencies": {
         "@base-ui/react": "^1.0.0",
         "cmdk-base": "^1.0.0",
@@ -123,7 +123,7 @@
     },
     "packages/ui-blocks": {
       "name": "@awesome-tools/ui-blocks",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "devDependencies": {
         "@rolldown/plugins-monorepo": "rolldown/plugins",
         "next": "^16.1.6",
@@ -151,14 +151,14 @@
     },
     "packages/utils": {
       "name": "@awesome-tools/utils",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "peerDependencies": {
         "zod": "^4.4.3",
       },
     },
     "tools/biome": {
       "name": "@awesome-tools/biome",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "dependencies": {
         "@biomejs/biome": "^2.3.13",
         "tslib": "^2.8.1",
@@ -166,7 +166,7 @@
     },
     "tools/commitizen": {
       "name": "@awesome-tools/commitizen",
-      "version": "1.5.0",
+      "version": "1.5.1",
       "bin": {
         "cz": "./index.js",
       },
@@ -177,14 +177,14 @@
     },
     "tools/oxlint": {
       "name": "@awesome-tools/oxlint",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@swc/helpers": "~0.5.18",
       },
     },
     "tools/scaffolder": {
       "name": "@awesome-tools/scaffolder",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "dependencies": {
         "@nx/devkit": "22.3.3",
         "tslib": "^2.3.0",

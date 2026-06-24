@@ -1,3 +1,17 @@
+## 0.5.1 (2026-06-24)
+
+### 🩹 Fixes
+
+- **release,ci,biome,commitizen,oxlint,scaffolder,ui,ui-blocks,utils:** fix publish workflow by building projects before publishing ([94ddc98](https://github.com/basantech89/awesome-tools/commit/94ddc98))
+
+### 🧱 Updated Dependencies
+
+- Updated utils to 0.4.1
+
+### ❤️ Thank You
+
+- Basant Soni
+
 ## 0.5.0 (2026-06-17)
 
 ### 🚀 Features

@@ -1,6 +1,6 @@
 {
   "name": "@awesome-tools/scaffolder",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Install Awesome Tools in your NX project root with Scaffolder 🚀",
   "keywords": [
     "awesome-tools",
