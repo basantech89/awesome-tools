@@ -9,15 +9,35 @@ import {
 	type Tree,
 	updateJson
 } from '@nx/devkit'
+import { exec } from 'node:child_process'
 import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { promisify } from 'node:util'
 
 import type { AwesomeToolsGeneratorSchema } from './schema.ts'
 
+const asyncExec = promisify(exec)
+
+const getPackageVersion = async (name: string) => {
+	const { stdout, stderr } = await asyncExec(`npm view ${name} version`)
+
+	if (stderr) {
+		throw new Error(
+			`Stderr while fetching version for package ${name}: ${stderr}`
+		)
+	}
+
+	return { name, version: stdout.trim() }
+}
+
 const getDependencyVersions = async (dependencies: string[]) => {
-	return dependencies.reduce(
-		(acc, dep) => {
-			acc[dep] = 'latest'
+	const dependencyVersions = await Promise.all(
+		dependencies.map(getPackageVersion)
+	)
+
+	return dependencyVersions.reduce(
+		(acc, curr) => {
+			acc[curr.name] = `^${curr.version}`
 			return acc
 		},
 		{} as Record<string, string>
