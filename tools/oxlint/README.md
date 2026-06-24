@@ -81,4 +81,6 @@ This project wouldn't have been possible without the amazing work done by
 
 [Oxlint](https://oxc.rs/docs/guide/usage/linter.html)
 
+[Eslint](https://eslint.org/)
+
 [NX](https://nx.dev/)

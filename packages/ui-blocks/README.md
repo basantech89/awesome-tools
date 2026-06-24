@@ -14,6 +14,7 @@
     - [🐛 Bugs](#-bugs)
     - [💡 Feature Requests](#-feature-requests)
   - [NX](#nx)
+  - [Building](#building)
     - [Credits](#credits)
 
 ## Installation
@@ -70,6 +71,10 @@ a 👍. This helps maintainers prioritize what to work on.
 ## NX
 
 This library was generated with [Nx](https://nx.dev).
+
+## Building
+
+Run `nx build ui-blocks` to build the library.
 
 ### Credits
 

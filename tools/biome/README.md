@@ -86,4 +86,5 @@ Run `nx build biome` to build the library.
 This project wouldn't have been possible without the amazing work done by
 
 [Biome](https://biomejs.dev/)
+
 [NX](https://nx.dev/)

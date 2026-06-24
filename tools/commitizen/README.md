@@ -14,6 +14,8 @@
   - [Issues](#issues)
     - [🐛 Bugs](#-bugs)
     - [💡 Feature Requests](#-feature-requests)
+  - [NX](#nx)
+  - [Building](#building)
   - [Credits](#credits)
 
 ## Installation
@@ -230,6 +232,14 @@ Please file an issue for bugs, missing documentation, or unexpected behavior.
 
 Please file an issue to suggest new features. Vote on feature requests by adding
 a 👍. This helps maintainers prioritize what to work on.
+
+## NX
+
+This library was generated with [Nx](https://nx.dev).
+
+## Building
+
+Run `nx build commitizen` to build the library.
 
 ## Credits
 

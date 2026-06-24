@@ -37,7 +37,7 @@ Execute below command in the root of your NX workspace to install awesome tools
 npx nx g @awesome-tools/scaffolder:tools
 ```
 
-By default, it will not overwrite existing files. To force overwriting, use the `-f` flag:
+By default, it will not overwrite existing files. To force overwriting, use the `-f` flag like below:
 
 ```bash
 npx nx g @awesome-tools/scaffolder:tools -f

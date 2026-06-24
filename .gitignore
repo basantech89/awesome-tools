@@ -61,3 +61,5 @@ out
 .claude/worktrees
 .claude/settings.local.json
 .nx/self-healing
+
+packages/test-app/*

@@ -29,7 +29,7 @@ npm install --save @awesome-tools/utils
 import the utils as below
 
 ```typescript
-import { something } from '@awesome-tools/utils'
+import { keys } from '@awesome-tools/utils'
 ```
 
 ## Issues
