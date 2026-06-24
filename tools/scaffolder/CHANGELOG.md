@@ -1,3 +1,13 @@
+## 0.3.1 (2026-06-24)
+
+### 🩹 Fixes
+
+- **scaffolder:** enhance dependency version fetching in tools generator and fix the build ([883b2da](https://github.com/basantech89/awesome-tools/commit/883b2da))
+
+### ❤️ Thank You
+
+- Basant Soni
+
 ## 0.3.0 (2026-06-17)
 
 ### 🚀 Features

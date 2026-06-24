@@ -184,7 +184,7 @@
     },
     "tools/scaffolder": {
       "name": "@awesome-tools/scaffolder",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "dependencies": {
         "@nx/devkit": "22.3.3",
         "tslib": "^2.3.0",
@@ -1290,7 +1290,7 @@
 
     "@rolldown/binding-win32-x64-msvc": ["@rolldown/binding-win32-x64-msvc@1.1.0", "", { "os": "win32", "cpu": "x64" }, "sha512-Ogji1TQNqH3ACLnYr+1Ns1nyrJ0CO2P585u9Hsh02pXvtFiFpgtgT2b3P4PnCOU86VVCvqtAeCN4OftMT8KU4w=="],
 
-    "@rolldown/plugins-monorepo": ["@rolldown/plugins-monorepo@github:rolldown/plugins#ce84914", {}, "rolldown-plugins-ce84914", "sha512-j+xR4UTQaDTDBtwH/UP/+j5OMWzQQlbVEvE7vNgzpBhtNvFnVlFZqQSVcP3V6dx+p8YV+S8u+IUm1aUQvQAvJg=="],
+    "@rolldown/plugins-monorepo": ["@rolldown/plugins-monorepo@github:rolldown/plugins#af82029", {}, "rolldown-plugins-af82029", "sha512-2FibkZ7nuPpaMOkV9zAeBXTpECTL/vlvGjspMfYq4DdagXfSgF7SwdRUlsciqByZ/VKwoYulXYmnWX7rwe5yXg=="],
 
     "@rolldown/pluginutils": ["@rolldown/pluginutils@1.0.0-rc.3", "", {}, "sha512-eybk3TjzzzV97Dlj5c+XrBFW57eTNhzod66y9HrBlzJ6NsCrWCp/2kaPS3K9wJmurBC0Tdw4yPjXKZqlznim3Q=="],
 
