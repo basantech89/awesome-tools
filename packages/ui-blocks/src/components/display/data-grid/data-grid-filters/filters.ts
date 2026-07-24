@@ -35,29 +35,23 @@ const commonFilters: Record<
 	equals: {
 		label: 'Is',
 		operator: 'equals',
-		order: 20,
-		tooltip:
-			'Matches column values that are equal to the filter value (case-insensitive).'
+		order: 20
 	},
 	notEquals: {
 		label: 'Is not',
 		operator: 'notEquals',
-		order: 22,
-		tooltip:
-			'Matches column values that are not equal to the filter value (case-insensitive).'
+		order: 22
 	},
 	isEmpty: {
 		label: 'Is empty',
 		operator: 'isEmpty',
 		order: 24,
-		tooltip: 'Matches column values that are empty.',
 		needInput: false
 	},
 	notEmpty: {
 		label: 'Is not empty',
 		operator: 'notEmpty',
 		order: 25,
-		tooltip: 'Matches column values that are not empty.',
 		needInput: false
 	}
 }
@@ -71,21 +65,19 @@ const regexFilters: Record<
 	matchRegex: {
 		label: 'Matches regex',
 		operator: 'matchRegex',
-		order: 18,
-		tooltip: 'Matches column values that match the filter value as a regex.'
+		order: 18
 	},
 	notMatchRegex: {
 		label: 'Does not match regex',
 		operator: 'notMatchRegex',
-		order: 19,
-		tooltip:
-			'Matches column values that do not match the filter value as a regex.'
+		order: 19
 	}
 }
 
 type TextOperators =
 	| CommonOperators
 	| RegexOperators
+	| 'fuzzy'
 	| 'equalsSensitive'
 	| 'notEqualsSensitive'
 	| 'contains'
@@ -103,7 +95,6 @@ type TextOperators =
 
 export type DataGridTableFilter<TOperator> = {
 	label: string
-	tooltip: string
 	operator: TOperator
 	order?: number
 	needInput?: boolean // default true
@@ -116,103 +107,80 @@ export const textFilters: Record<
 	TextOperators,
 	DataGridTableFilter<TextOperators>
 > = {
+	fuzzy: {
+		label: 'Looks like (fuzzy)',
+		operator: 'fuzzy',
+		order: 1
+	},
 	equalsSensitive: {
 		label: 'Is (case sensitive)',
 		operator: 'equalsSensitive',
-		order: 21,
-		tooltip:
-			'Matches column values that are exactly equal to the filter value (case-sensitive).'
+		order: 21
 	},
 	notEqualsSensitive: {
 		label: 'Is not (case sensitive)',
 		operator: 'notEqualsSensitive',
-		order: 23,
-		tooltip:
-			'Matches column values that are not equal to the filter value (case-sensitive).'
+		order: 23
 	},
 	contains: {
 		label: 'Contains',
 		operator: 'contains',
-		order: 4,
-		tooltip:
-			'Matches column values that contain the filter value (case-insensitive).'
+		order: 4
 	},
 	containsSensitive: {
 		label: 'Contains (case sensitive)',
 		operator: 'containsSensitive',
-		order: 5,
-		tooltip:
-			'Matches column values that contain the filter value (case-sensitive).'
+		order: 5
 	},
 	notContains: {
 		label: 'Does not contain',
 		operator: 'notContains',
-		order: 6,
-		tooltip:
-			'Matches column values that do not contain the filter value (case-insensitive).'
+		order: 6
 	},
 	notContainsSensitive: {
 		label: 'Does not contain (case sensitive)',
 		operator: 'notContainsSensitive',
-		order: 7,
-		tooltip:
-			'Matches column values that do not contain the filter value (case-sensitive).'
+		order: 7
 	},
 	startsWith: {
 		label: 'Starts with',
 		operator: 'startsWith',
-		order: 8,
-		tooltip:
-			'Matches column values that start with the filter value (case-insensitive).'
+		order: 8
 	},
 	startsWithSensitive: {
 		label: 'Starts with (case sensitive)',
 		operator: 'startsWithSensitive',
-		order: 9,
-		tooltip:
-			'Matches column values that start with the filter value (case-sensitive).'
+		order: 9
 	},
 	notStartsWith: {
 		label: 'Does not start with',
 		operator: 'notStartsWith',
-		order: 10,
-		tooltip:
-			'Matches column values that do not start with the filter value (case-insensitive).'
+		order: 10
 	},
 	notStartsWithSensitive: {
 		label: 'Does not start with (case sensitive)',
 		operator: 'notStartsWithSensitive',
-		order: 11,
-		tooltip:
-			'Matches column values that do not start with the filter value (case-sensitive).'
+		order: 11
 	},
 	endsWith: {
 		label: 'Ends with',
 		operator: 'endsWith',
-		order: 12,
-		tooltip:
-			'Matches column values that end with the filter value (case-insensitive).'
+		order: 12
 	},
 	endsWithSensitive: {
 		label: 'Ends with (case sensitive)',
 		operator: 'endsWithSensitive',
-		order: 13,
-		tooltip:
-			'Matches column values that end with the filter value (case-sensitive).'
+		order: 13
 	},
 	notEndsWith: {
 		label: 'Does not end with',
 		operator: 'notEndsWith',
-		order: 14,
-		tooltip:
-			'Matches column values that do not end with the filter value (case-insensitive).'
+		order: 14
 	},
 	notEndsWithSensitive: {
 		label: 'Does not end with (case sensitive)',
 		operator: 'notEndsWithSensitive',
-		order: 15,
-		tooltip:
-			'Matches column values that do not end with the filter value (case-sensitive).'
+		order: 15
 	},
 	...commonFilters,
 	...regexFilters
@@ -234,43 +202,33 @@ export const numberFilters: Record<
 	lt: {
 		label: 'Less than',
 		operator: 'lt',
-		order: 2,
-		tooltip: 'Matches column values that are less than the filter value.'
+		order: 2
 	},
 	lte: {
 		label: 'Less than or equal to',
 		operator: 'lte',
-		order: 3,
-		tooltip:
-			'Matches column values that are less than or equal to the filter value.'
+		order: 3
 	},
 	gt: {
 		label: 'Greater than',
 		operator: 'gt',
-		order: 4,
-		tooltip: 'Matches column values that are greater than the filter value.'
+		order: 4
 	},
 	gte: {
 		label: 'Greater than or equal to',
 		operator: 'gte',
-		order: 5,
-		tooltip:
-			'Matches column values that are greater than or equal to the filter value.'
+		order: 5
 	},
 	inRange: {
 		label: 'In range',
 		operator: 'inRange',
 		order: 6,
-		tooltip:
-			'Matches column values that are within the specified range(including edges).',
 		needRangeInput: true
 	},
 	notInRange: {
 		label: 'Not in range',
 		operator: 'notInRange',
 		order: 7,
-		tooltip:
-			'Matches column values that are not within the specified range(excluding edges).',
 		needRangeInput: true
 	},
 	...commonFilters
@@ -293,42 +251,36 @@ export const dateFilters: Record<
 		label: 'Is before',
 		operator: 'isBefore',
 		order: 2,
-		tooltip: 'Matches column values that are before the filter value.',
 		needDateInput: true
 	},
 	isAfter: {
 		label: 'Is after',
 		operator: 'isAfter',
 		order: 3,
-		tooltip: 'Matches column values that are after the filter value.',
 		needDateInput: true
 	},
 	isOnOrBefore: {
 		label: 'Is on or before',
 		operator: 'isOnOrBefore',
 		order: 4,
-		tooltip: 'Matches column values that are on or before the filter value.',
 		needDateInput: true
 	},
 	isOnOrAfter: {
 		label: 'Is on or after',
 		operator: 'isOnOrAfter',
 		order: 5,
-		tooltip: 'Matches column values that are on or after the filter value.',
 		needDateInput: true
 	},
 	inBetween: {
 		label: 'In between',
 		operator: 'inBetween',
 		order: 6,
-		tooltip: 'Matches column values that are within the specified range.',
 		needDateRangeInput: true
 	},
 	notInBetween: {
 		label: 'Not in between',
 		operator: 'notInBetween',
 		order: 7,
-		tooltip: 'Matches column values that are not within the specified range.',
 		needDateRangeInput: true
 	},
 	...commonFilters
@@ -343,14 +295,12 @@ export const selectFilters: Record<
 	hasAnyOf: {
 		label: 'Has any of',
 		operator: 'hasAnyOf',
-		order: 2,
-		tooltip: 'Matches column values that have any of the filter values.'
+		order: 2
 	},
 	hasNoneOf: {
 		label: 'Has none of',
 		operator: 'hasNoneOf',
-		order: 3,
-		tooltip: 'Matches column values that have none of the filter values.'
+		order: 3
 	}
 }
 
@@ -364,8 +314,7 @@ export const multiSelectFilters: Record<
 	hasAllOf: {
 		label: 'Has all of',
 		operator: 'hasAllOf',
-		order: 4,
-		tooltip: 'Matches column values that have all of the filter values.'
+		order: 4
 	}
 }
 
@@ -379,14 +328,12 @@ export const checkboxFilters: Record<
 		label: 'Is checked',
 		operator: 'isChecked',
 		order: 2,
-		tooltip: 'Matches column values that are checked.',
 		needInput: false
 	},
 	isUnchecked: {
 		label: 'Is not checked',
 		operator: 'isUnchecked',
 		order: 3,
-		tooltip: 'Matches column values that are not checked.',
 		needInput: false
 	}
 }

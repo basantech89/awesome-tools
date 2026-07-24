@@ -15,6 +15,7 @@ import {
 	TooltipTrigger
 } from '@awesome-tools/ui'
 import { toPascalCase } from '@awesome-tools/utils'
+import { useSortable } from '@dnd-kit/react/sortable'
 import {
 	type ColumnSort,
 	flexRender,
@@ -31,6 +32,8 @@ import {
 	XIcon
 } from 'lucide-react'
 import React from 'react'
+
+import { cn } from '#blocks/lib/utils'
 
 import { useDataGrid } from '../data-grid'
 import {
@@ -56,6 +59,12 @@ export default function DataGridHeader<TData>({
 	const pinLeft = () => column.pin('left')
 	const pinRight = () => column.pin('right')
 	const unpin = () => column.pin(false)
+
+	const { ref, handleRef, isDragging } = useSortable({
+		id: column.id,
+		index: header.index,
+		group: column.id
+	})
 
 	const onSortingChange = React.useCallback(
 		(direction: SortDirection) => {
@@ -120,16 +129,37 @@ export default function DataGridHeader<TData>({
 		[column]
 	)
 
+	const className = cn({
+		'opacity-40': isDragging,
+		'z-1': isDragging
+	})
+
+	const style = {
+		width: `calc(var(--header-${header?.id}-size) * 1px)`
+	}
+
+	const resizingProps = {
+		onDoubleClick: () => header.column.resetSize(),
+		onMouseDown: header.getResizeHandler(),
+		onTouchStart: header.getResizeHandler(),
+		className: 'cursor-col-resize h-full'
+	}
+
 	if (header.subHeaders.length >= 1) {
 		return (
 			<TableHead
-				className="border-t-0 border-r border-b border-l-0 text-center"
+				style={style}
+				className={cn(
+					className,
+					'border-t-0 border-r border-b border-l-0 text-center'
+				)}
 				colSpan={header.colSpan}
 				key={header.id}
 			>
 				{header.isPlaceholder
 					? null
 					: flexRender(column.columnDef.header, header.getContext())}
+				<div {...resizingProps} />
 			</TableHead>
 		)
 	}
@@ -137,7 +167,11 @@ export default function DataGridHeader<TData>({
 	if (shouldShowOnlyTitle) {
 		return (
 			<TableHead
-				className="text-muted-foreground border-t-0 border-r border-b border-l-0 text-center text-xs"
+				style={style}
+				className={cn(
+					className,
+					'text-muted-foreground border-t-0 border-r border-b border-l-0 text-center text-xs'
+				)}
 				colSpan={header.colSpan}
 				key={header.id}
 			>
@@ -146,26 +180,41 @@ export default function DataGridHeader<TData>({
 						{flexRender(column.columnDef.header, header.getContext())}
 					</span>
 				)}
+				<div
+					{...resizingProps}
+					className="absolute top-0 right-0 w-[5px] cursor-col-resize"
+				/>
 			</TableHead>
 		)
 	}
 
 	return (
 		<TableHead
-			className="border-t-0 border-r border-b border-l-0 last:border-r-0"
+			style={style}
+			className={cn(
+				className,
+				'border-t-0 border-r border-b border-l-0 last:border-r-0'
+			)}
 			colSpan={header.colSpan}
 			key={header.id}
+			ref={ref}
 		>
-			<div className="flex items-center justify-between gap-6">
+			<div className="relative flex items-center justify-between gap-6">
 				<div className="flex">
 					<Tooltip>
 						<TooltipTrigger
 							render={
-								<DataGridHeaderIcon
-									cellType={cellType}
-									className="text-muted-foreground"
-									size={16}
-								/>
+								<Button
+									aria-label="Order column"
+									size="icon-sm"
+									variant="ghost"
+									ref={handleRef}
+								>
+									<DataGridHeaderIcon
+										cellType={cellType}
+										className="text-muted-foreground"
+									/>
+								</Button>
 							}
 						/>
 						<TooltipContent>
@@ -182,6 +231,12 @@ export default function DataGridHeader<TData>({
 								className: 'text-muted-foreground',
 								size: 16
 							})}
+							<div
+								{...resizingProps}
+								className="absolute top-0 right-0 w-[5px] cursor-col-resize"
+							>
+								Here
+							</div>
 						</Button>
 					)}
 				</div>

@@ -133,7 +133,14 @@ export function DataGrid<TData>({
 		columns,
 		initialState: {
 			...props.initialState,
-			columnPinning: { left: ['rowNumber'] }
+			columnPinning: { left: ['rowNumber'] },
+			columnOrder: columns.map(
+				column => column.id || (column as { accessorKey: string }).accessorKey
+			)
+		},
+		defaultColumn: {
+			minSize: 10,
+			maxSize: Number.MAX_SAFE_INTEGER
 		},
 		getCoreRowModel: getCoreRowModel(),
 		_features: [AdvancedColumnFiltersFeature, AdvancedColumnFeature]

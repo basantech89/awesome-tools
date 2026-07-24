@@ -85,9 +85,6 @@
 		"test": {
 			"dependsOn": ["^build"]
 		},
-		"typecheck": {
-			"dependsOn": ["^build"]
-		},
 		"build": {
 			"cache": true
 		},
@@ -114,18 +111,13 @@
 			"preVersionCommand": "nx run-many -t build",
 			"conventionalCommits": true
 		},
-		"changelog": {
-			"projectChangelogs": {
-				"createRelease": "github"
-			}
-		},
 		"git": {
 			"commitMessage": "🚚 chore(release): publish version",
 			"commitArgs": [
 				"-m",
 				"Signed-off-by: Basant Soni <basantech89@gmail.com>"
 			],
-			"tag": true
+			"tag": false
 		}
 	},
 	"generators": {

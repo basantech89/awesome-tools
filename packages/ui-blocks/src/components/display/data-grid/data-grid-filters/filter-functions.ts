@@ -1,5 +1,6 @@
 import type { Row } from '@tanstack/react-table'
 
+import { rankItem } from '@tanstack/match-sorter-utils'
 import { isAfter, isBefore, isEqual } from 'date-fns'
 
 import {
@@ -97,14 +98,6 @@ export function dataGridFilterFn<TData>(
 		return !areEqual(cellValue, filterValue, true)
 	}
 
-	if (operator === 'matchRegex') {
-		return new RegExp(filterValue as string).test(String(cellValue))
-	}
-
-	if (operator === 'notMatchRegex') {
-		return !new RegExp(filterValue as string).test(String(cellValue))
-	}
-
 	if (isDataGridActionableCell(cellType)) {
 		return filterFunctions[cellType]?.(cellValue, valueFromFilter)
 	}
@@ -123,6 +116,19 @@ function dataGridTextFilterFn(
 
 	const filterValueStr =
 		typeof filterValue === 'string' ? filterValue : String(filterValue)
+
+	if (operator === 'matchRegex') {
+		return new RegExp(filterValue as string).test(String(cellValue))
+	}
+
+	if (operator === 'notMatchRegex') {
+		return !new RegExp(filterValue as string).test(String(cellValue))
+	}
+
+	if (operator === 'fuzzy') {
+		const itemRank = rankItem(cellValueStr, filterValueStr)
+		return itemRank.passed
+	}
 
 	if (operator === 'contains') {
 		return cellValueStr.toLowerCase().includes(filterValueStr.toLowerCase())

@@ -5,11 +5,19 @@
 		"emitDeclarationOnly": true,
 		"importHelpers": true,
 		"isolatedModules": true,
-		"lib": ["es2022"],
+		"lib": [
+			"es2022"
+		],
 		"paths": {
-			"@awesome-tools/ui": ["./packages/ui/src/index.ts"],
-			"@awesome-tools/ui-blocks": ["./packages/ui-blocks/src/index.ts"],
-			"@awesome-tools/utils": ["./packages/utils/src/index.ts"]
+			"@awesome-tools/ui": [
+				"./packages/ui/src/index.ts"
+			],
+			"@awesome-tools/ui-blocks": [
+				"./packages/ui-blocks/src/index.ts"
+			],
+			"@awesome-tools/utils": [
+				"./packages/utils/src/index.ts"
+			]
 		},
 		"ignoreDeprecations": "6.0",
 		"module": "nodenext",
@@ -22,6 +30,12 @@
 		"skipLibCheck": true,
 		"strict": true,
 		"target": "es2022",
-		"customConditions": ["@awesome-tools/source"]
-	}
+		"customConditions": [
+			"@awesome-tools/source"
+		]
+	},
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
 }

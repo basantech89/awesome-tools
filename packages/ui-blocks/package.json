@@ -79,5 +79,8 @@
 		"targets": {
 			"lint": {}
 		}
+	},
+	"dependencies": {
+		"@tanstack/match-sorter-utils": "^8.19.4"
 	}
 }
